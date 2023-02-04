@@ -4,7 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'my-red':'#F74946'
+        'my-red':'#F74946',
+        'my-black': '#272727',
+      },
+      bottom:{
+        '1/5': '-15%',
       }
     },
   },
