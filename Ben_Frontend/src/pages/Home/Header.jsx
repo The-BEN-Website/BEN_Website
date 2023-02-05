@@ -25,12 +25,12 @@ const Header = () => {
                 </span>
             </div>
             {/* <DeleteIcon className='bg-white'/> */}
-            <div className='flex absolute -bottom-[10%] w-2/3 bg-white h-1/4  justify-center items-center m-auto gap-[6rem] drop-shadow-md '>
-                <span className='w-3/12' >
+            <div className='hidden md:flex flex absolute -bottom-[10%] w-2/3 md:w-3/4 lg:w-2/3 bg-white h-1/4 justify-center items-center m-auto gap-[6rem] drop-shadow-md md:gap-4 lg:gap-[6rem]'>
+                <span className='w-4/12 md:w-5/12 lg:w-4/12' >
                     <p className='text-lg font-semibold text-my-black'>Sunday Services</p>
                     <p className='text-3xl text-my-black font-medium'>2:00pm - 4:00pm</p>
                 </span>
-                <span className='w-3/12'>
+                <span className='w-4/12 md:w-5/12 lg:w-4/12'>
                     <p className='text-lg font-semibold text-my-black'>Tuesday & Thursday Services</p>
                     <p className='text-3xl text-my-black font-medium'>4:00pm - 6:00pm</p>
                 </span>
