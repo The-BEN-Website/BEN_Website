@@ -7,7 +7,8 @@ module.exports = {
         'my-red':'#F74946',
         'my-black': '#272727',
         'grey-background': '#D9D9D9',
-        'black-background': '#323232'
+        'black-background': '#323232',
+        'footer-background': '#979797',
       },
       bottom:{
         '1/5': '-15%',
