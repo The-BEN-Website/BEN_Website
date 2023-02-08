@@ -19,7 +19,7 @@ const Experience = () => {
             {/* second div with 2 items */}
             <div className='flex flex-col gap-6'>
                 <span className='flex flex-col gap-3'>
-                    <LocationOnIcon className='text-my-red' />
+                    <LocationOnIcon fontSize="large" className='text-my-red' />
                     <h3 className='text-xl font-semibold'>Plan a visit</h3>
                     <p>We gather every weekend as a church to be inspired to follow Jesus. We would love for you to be our guest.</p>
                     <a href="#" className='flex'>
@@ -28,7 +28,7 @@ const Experience = () => {
                     </a>
                 </span>
                 <span className='flex flex-col gap-3'>
-                    <ChurchIcon className='text-my-red'/>
+                    <ChurchIcon fontSize="large" className='text-my-red'/>
                     <h3 className='text-xl font-semibold'>Church Gathering</h3>
                     <p>Join us as we gather at one of our believers equipping network campuses..</p>
                     <a href="#">
@@ -40,7 +40,7 @@ const Experience = () => {
             {/* third div with 2 items */}
             <div className='flex flex-col gap-6'>
                 <span className='flex flex-col gap-3'>
-                    <LaptopIcon className='text-my-red' />
+                    <LaptopIcon fontSize="large" className='text-my-red' />
                     <h3 className='text-xl font-semibold'>Believers Online</h3>
                     <p>We gather every weekend as a church to be inspired to follow Jesus. We would love for you to be our guest.</p>
                     <a href="#">
@@ -48,7 +48,7 @@ const Experience = () => {
                     </a>
                 </span>
                 <span className='flex flex-col gap-3'>
-                    <EventIcon className='text-my-red'/>
+                    <EventIcon fontSize="large" className='text-my-red'/>
                     <h3 className='text-xl font-semibold'>Events</h3>
                     <p>Join us as we gather at one of our believers equipping network campuses..</p>
                     <a href="#">

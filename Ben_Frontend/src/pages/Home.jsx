@@ -1,10 +1,12 @@
 import React from 'react'
+// import Navbar from '../components/Navbar'
 import Header from './Home_Sections/Header';
 import Words from './Home_Sections/Words';
 import Experience from './Home_Sections/Experience';
 import Community from './Home_Sections/Community'
 import Discipleship from './Home_Sections/Discipleship'
 import NewsLetter from './Home_Sections/Newsletter'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -15,6 +17,7 @@ const Home = () => {
       <Community />
       <Discipleship />
       <NewsLetter />
+      <Footer/>
     </div>
   )
 }
