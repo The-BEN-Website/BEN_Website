@@ -1,27 +1,28 @@
-import { useState } from 'react'
-import './App.css';
-import Home from './pages/Home'
-// import Header from './pages/Home_Sections/Header';
-// import Words from './pages/Home_Sections/Words';
-// import Experience from './pages/Home_Sections/Experience';
-// import Discipleship from './pages/Home_Sections/Discipleship';
-// import Community from './pages/Home_Sections/Community';
-// import Newsletter from './pages/Home_Sections/Newsletter';
+import React, { Suspense, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import AppRoutes from "./Router";
+import "./App.css";
+import Navbar from './components/Navbar/Navbar'
+import Footer from './components/Footer'
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App flex flex-col gap-24">
-      <Home/>
-      {/* <Header />
-      <Words />
-      <Experience />
-      <Community />
-      <Discipleship />
-      <Newsletter /> */}
-    </div>
-  )
+    <>
+    <Navbar />
+      <Suspense fallback={<div>Loading...</div>}>
+        { <Routes>
+          {AppRoutes.map((route) => (
+            <Route path={route.path} element={route.element} key={route.path} />
+          ))}
+        </Routes> }
+        
+        
+      </Suspense>
+      <Footer />
+    </>
+  );
 }
 
-export default App
+export default App;
