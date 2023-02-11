@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import AppRoutes from "./Router";
 import "./App.css";
 import Navbar from './components/Navbar/Navbar'
+// import Nav from './components/Navbar/Nav'
 import Footer from './components/Footer'
 
 
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <>
+    {/* <Nav /> */}
     <Navbar />
       <Suspense fallback={<div>Loading...</div>}>
         { <Routes>
