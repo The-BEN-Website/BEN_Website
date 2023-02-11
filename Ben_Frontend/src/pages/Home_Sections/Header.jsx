@@ -5,8 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const Header = () => {
     return (
-        <div className='span-through flex items-center justify-center relative h-[32rem] 
-        w-full'>
+        <div className='span-through flex items-center justify-center relative h-[32rem] w-full'>
             <img
             src={BackgroundImage}
             className="absolute w-full h-full mix-blend-overlay object-fill md:hidden"
