@@ -3,7 +3,7 @@ import Disciple_Img from '../../assets/Home_assets/Discipleship.png'
 
 const Discipleship = () => {
     return (
-    <div className='bg-my-black lg:bg-grey-background h-[70rem] md:h-[65rem] lg:h-[30rem] w-full flex'>
+    <div className='bg-my-black lg:bg-grey-background h-[68rem] md:h-[60rem] lg:h-[30rem] w-full flex'>
         <div className='flex flex-col lg:flex-row w-10/12 m-auto gap-20 items-center text-white lg:text-my-black'>
             <img src={Disciple_Img} className="w-4/5 h-10/12 md:w-6/12 md:h-8/12 lg:w-5/12" alt="" />
             <div className='w-2/3 h-fit md:w-1/2 flex flex-col gap-5'>
