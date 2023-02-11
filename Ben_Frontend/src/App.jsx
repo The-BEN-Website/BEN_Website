@@ -5,7 +5,7 @@ import "./App.css";
 import Navbar from './components/Navbar/Navbar'
 import Loader from '../src/assets/Home_assets/Loader.gif'
 import Footer from './components/Footer'
-
+import Back from './components/BackBtn'
 
 function App() {
 
@@ -27,6 +27,7 @@ function App() {
         
         
       </Suspense>
+      <Back />
       <Footer />
     </>
   );
