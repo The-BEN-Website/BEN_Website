@@ -3,7 +3,8 @@ import BackgroundImage from '../../assets/Home_assets/Background!.png'
 import BackgroundImage1 from '../../assets/Home_assets/newBackground1.png'
 const Hero = () => {
   return (
-    <div className="span-through flex items-center justify-center relative h-[28rem] w-full">
+    <div className="flex items-center justify-center relative h-[30rem] w-full
+    ">
         <img
         src={BackgroundImage}
         className="absolute w-full h-full mix-blend-overlay object-fill md:hidden"

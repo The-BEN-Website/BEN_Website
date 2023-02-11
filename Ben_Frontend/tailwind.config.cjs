@@ -10,6 +10,7 @@ module.exports = {
         'black-background': '#323232',
         'footer-background': '#979797',
         'community-blue': '#6083FF',
+        'bg-red': '#FFF8F8',
       },
       bottom:{
         '1/5': '-15%',
