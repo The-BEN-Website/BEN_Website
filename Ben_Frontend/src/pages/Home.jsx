@@ -8,7 +8,7 @@ import NewsLetter from './Home_Sections/Newsletter'
 
 const Home = () => {
   return (
-    <div className="App flex flex-col gap-24">
+    <div className="App flex flex-col gap-20">
       <Header />
       <Words />
       <Experience />

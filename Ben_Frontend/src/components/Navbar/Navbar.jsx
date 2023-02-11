@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Navbar = () => {
+    
     return (
         <div className="sticky top-0 z-10 bg-teal-700 text-white">
             <section className="mx-auto flex max-w-4xl items-center justify-between p-4">

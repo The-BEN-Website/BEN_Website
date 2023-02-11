@@ -7,7 +7,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Experience = () => {
   return (
-    <div className='bg-my-black lg:bg-grey-background h-[72rem] md:h-[60rem] lg:h-[30rem] w-full flex'>
+    <div className='bg-my-black lg:bg-grey-background h-[75rem] md:h-[60rem] lg:h-[30rem] w-full flex'>
         {/* flex-col flex-col-reverse md:flex-row items-center justify-center m-auto gap-5 md:gap-3 */}
         <div className='flex flex-col lg:flex-row w-10/12 m-auto gap-10 items-center text-white lg:text-my-black'>
             {/* first div */}
