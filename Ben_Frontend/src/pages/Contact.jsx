@@ -1,8 +1,13 @@
 import React from 'react'
+import Hero from './Contact_Section/Hero'
+import Form_Body from './Contact_Section/Form_Container'
 
 const Contact = () => {
   return (
-    <div className='bg-red-700 text-white text-xl'>Contact</div>
+    <div className="App flex flex-col gap-14">
+      <Hero />
+      <Form_Body />
+    </div>
   )
 }
 

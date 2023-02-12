@@ -11,10 +11,11 @@ module.exports = {
         'footer-background': '#979797',
         'community-blue': '#6083FF',
         'bg-red': '#FFF8F8',
+        'contact-text' : '#8A8A8A',
       },
       bottom:{
         '1/5': '-15%',
-      }
+      },
     },
   },
   plugins: [],
