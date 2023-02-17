@@ -17,12 +17,12 @@ const Navbar = () => {
                     </button>
                     
                     <nav className="hidden space-x-5 text-xl md:block" aria-label="main">
-                        <a href="/" className="hover:opacity-90">Home</a>
-                        <a href="/about" className="hover:opacity-90">About</a>
-                        <a href="/resources" className="hover:opacity-90">Resources</a>
-                        <a href="/event" className="hover:opacity-90">Events</a>
-                        <a href="/contact" className="hover:opacity-90">Contact Us</a>
-                        <a href="/partnership" className="hover:opacity-90">Partnership</a>
+                        <a href="/" className="hover:opacity-90 font-my_font">Home</a>
+                        <a href="/about" className="hover:opacity-90 font-my_font">About</a>
+                        <a href="/resources" className="hover:opacity-90 font-my_font">Resources</a>
+                        <a href="/event" className="hover:opacity-90 font-my_font">Events</a>
+                        <a href="/contact" className="hover:opacity-90 font-my_font">Contact Us</a>
+                        <a href="/partnership" className="hover:opacity-90 font-my_font">Partnership</a>
                     </nav>
                 </div>
             </section>
@@ -32,19 +32,19 @@ const Navbar = () => {
                 <nav
                 className="flex min-h-screen flex-col items-center py-8"
                 aria-label="mobile">
-                <a href="/" className="w-full py-6 text-center hover:opacity-90"
+                <a href="/" className="w-full py-6 text-center hover:opacity-90 font-my_font"
                     >Home</a>
-                <a href="/about" className="w-full py-6 text-center hover:opacity-90"
+                <a href="/about" className="w-full py-6 text-center hover:opacity-90 font-my_font"
                     >About</a>
                 <a
                     href="/resources"
-                    className="w-full py-6 text-center hover:opacity-90"
+                    className="w-full py-6 text-center hover:opacity-90 font-my_font"
                     >Resources</a>
-                <a href="/event" className="w-full py-6 text-center hover:opacity-90"
+                <a href="/event" className="w-full py-6 text-center hover:opacity-90 font-my_font"
                     >Events</a>
-                <a href="/contact" className="w-full py-6 text-center hover:opacity-90"
+                <a href="/contact" className="w-full py-6 text-center hover:opacity-90 font-my_font"
                     >Contact Us</a>
-                <a href="/partnership" className="w-full py-6 text-center hover:opacity-90"
+                <a href="/partnership" className="w-full py-6 text-center hover:opacity-90 font-my_font"
                     >Partnership</a>
                 </nav>
             </section>
