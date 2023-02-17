@@ -8,8 +8,8 @@ const Info = () => {
   return (
     <div className="w-11/12 m-auto lg:w-1/2 h-auto flex flex-col lg:m-auto gap-3">
       <span className="text-my-black flex flex-col gap-3">
-        <h2 className="text-3xl font-medium">How Can We Help?</h2>
-        <p>We’d love to help get you connected to one of our locations, a small group, or a volunteer opportunity. Feel free to fill out the contact form to receive a reply, or contact us via phone.
+        <h2 className="text-3xl font-medium font-my_font">How Can We Help?</h2>
+        <p className="font-my_font">We’d love to help get you connected to one of our locations, a small group, or a volunteer opportunity. Feel free to fill out the contact form to receive a reply, or contact us via phone.
         </p>
       </span>
 
@@ -19,7 +19,7 @@ const Info = () => {
             <LocationOnOutlinedIcon fontSize="medium" />
           </a>
           <p className="text-contact-text">
-            <b className="text-xl text-my-black">Church Office</b>
+            <b className="text-xl text-my-black font-my_font">Church Office</b>
             <br/>
             Lorem ipsum dolor sit amet.
           </p>
@@ -30,7 +30,7 @@ const Info = () => {
             <LocalPhoneOutlinedIcon fontSize="medium" />
           </a>
           <p className="text-contact-text">
-            <b className="text-xl text-my-black">Phone</b>
+            <b className="text-xl text-my-black font-my_font">Phone</b>
             <br/>
             Lorem ipsum dolor sit ament
           </p>
@@ -41,7 +41,7 @@ const Info = () => {
             <MailOutlineIcon fontSize="medium" />
           </a>
           <p className="text-contact-text">
-            <b className="text-xl text-my-black">Email</b>
+            <b className="text-xl text-my-black font-my_font">Email</b>
             <br/>
             Lorem ipsum dolor sit amet.
           </p>

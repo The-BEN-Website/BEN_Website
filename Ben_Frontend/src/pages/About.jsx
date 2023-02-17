@@ -6,7 +6,7 @@ import Believe from './About_Section/Believe'
 
 const About = () => {
   return (
-    <div className="App flex flex-col gap-20">
+    <div className="App flex flex-col gap-20 font-my_font">
       <Header />
       <Values />
       <Quotes />
