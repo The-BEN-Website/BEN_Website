@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
+  theme: {    
     extend: {
       colors: {
         'my-red':'#F74946',
@@ -15,6 +15,9 @@ module.exports = {
       },
       bottom:{
         '1/5': '-15%',
+      },
+      fontFamily: {
+        'my_font': ['Urbanist', 'sans-serif'],
       },
     },
   },

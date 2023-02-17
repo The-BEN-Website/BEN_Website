@@ -16,10 +16,10 @@ const Hero = () => {
         alt=""
         />
       <div className="text-center text-white">
-        <h2 className="text-4xl sm:text-5xl mb-5 font-bold leading-7">
+        <h2 className="text-4xl sm:text-5xl mb-5 font-bold leading-7 font-my_font">
           About Us
         </h2>
-        <p className="text-2xl">
+        <p className="text-2xl font-my_font">
             Get connected with the Believers Equipping Network Church
         </p>
       </div>
