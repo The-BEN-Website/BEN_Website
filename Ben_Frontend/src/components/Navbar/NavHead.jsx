@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import NavBar from './Nav1';
-import BrandLogo from '../../assets/logo.png';
+import BrandLogo from '../../assets/Logo1.png';
 import { NavLink } from 'react-router-dom';
 import useWindowDimension from '../../hooks/useWindowDimension';
 import { GiHamburgerMenu } from 'react-icons/gi'
