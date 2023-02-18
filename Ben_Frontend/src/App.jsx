@@ -2,10 +2,10 @@ import React, { Suspense, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import AppRoutes from "./Router";
 import "./App.css";
-import Navbar from './components/Navbar/Navbar'
 import Loader from '../src/assets/Home_assets/Loader.gif'
 import Footer from './components/Footer'
 import Back from './components/BackBtn'
+import Navbar from './components/Navbar/NavHead'
 
 function App() {
 
@@ -24,8 +24,6 @@ function App() {
             <Route path={route.path} element={route.element} key={route.path} />
           ))}
         </Routes> }
-        
-        
       </Suspense>
       <Back />
       <Footer />
