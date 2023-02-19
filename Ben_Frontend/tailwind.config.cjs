@@ -12,6 +12,7 @@ module.exports = {
         'community-blue': '#6083FF',
         'bg-red': '#FFF8F8',
         'contact-text' : '#8A8A8A',
+        'background-red' : '#FF5046'
       },
       bottom:{
         '1/5': '-15%',
