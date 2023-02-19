@@ -8,7 +8,7 @@ import { MdOutlineClose } from "react-icons/md";
 import { IconContext } from 'react-icons';
 
 function Header() {
-    const [isOpen, setOpen] = useState(false);
+    const [isOpen, setOpen] = useState(true);
     const { width } = useWindowDimension();
 
     const handleOpen = () => {
