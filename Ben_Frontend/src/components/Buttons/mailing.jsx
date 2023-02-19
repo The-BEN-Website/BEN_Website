@@ -10,6 +10,7 @@ export default function MyComponent() {
         backgroundColor: "#F74946",
         padding: "10px",
         color: "white",
+        textTransform: "capitalize",
     }}>
         Connect with Us
       </Button>

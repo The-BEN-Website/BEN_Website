@@ -9,7 +9,8 @@ export default function MyComponent() {
         borderRadius: 5,
         padding: "7px",
         color: "#F74946",
-        margin: "auto"
+        margin: "auto",
+        textTransform: "capitalize",
     }}>
         Enroll
       </Button>

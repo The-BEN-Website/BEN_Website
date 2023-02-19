@@ -10,10 +10,11 @@ export default function MyComponent() {
         padding: "8px",
         margin: 'auto',
         color: "#FF5046",
-        background: "white"
+        background: "white",
+        textTransform: "capitalize",
     }}
       >
-        WHO WE ARE
+        Who we Are
       </Button>
 
       <Button variant="outlined" component={Link} to="/contact" className="md:w-[20rem] w-[14rem]"
@@ -22,9 +23,10 @@ export default function MyComponent() {
         borderColor: "white",
         padding: "8px",
         margin: 'auto',
-        color: "white"
+        color: "white",
+        textTransform: "capitalize",
     }}>
-        CONTACT US
+        Contact Us
       </Button>
     </div>
   );
