@@ -25,8 +25,8 @@ function Header() {
                 " "
               )}
             >
-              <div className="brand-logo cursor-pointer">
-                <img src={Logo} alt="Mentafix logo" />
+              <div className="brand-logo cursor-pointer border border-zinc-300">
+                <img src={Logo} alt="BEN logo" />
               </div>
             </NavLink>
             {width < 768 ? (

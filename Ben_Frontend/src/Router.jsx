@@ -6,6 +6,8 @@ const Event = lazy(() => import("./pages/Events"));
 const Partnership = lazy(() => import("./pages/Partnership"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Resources = lazy(() => import("./pages/Resources"));
+const Mailing = lazy(() => import("./pages/Mailing"))
+const Enroll = lazy(() => import("./pages/Enroll"))
 
 const AppRoutes = [
   {
@@ -27,6 +29,14 @@ const AppRoutes = [
   {
     path: "/resources",
     element: <Resources />,
+  },
+  {
+    path: "/mailing",
+    element: <Mailing />,
+  },
+  {
+    path: "/enroll",
+    element: <Enroll />,
   },
   {
     path: "/contact",
