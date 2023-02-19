@@ -18,14 +18,13 @@ const Header = () => {
             alt=""
             />
             {/* main header content */}
-            <div className='w-5/6 flex flex-col gap-3'>
-                <h2 className='text-white text-5xl font-bold font-my_font'>Believers Equipping<br/>Network</h2>
-                <p className='text-white text-sm font-my_font'>
+            <div className = 'w-5/6 flex flex-col items-center justify-center md:items-start gap-3 ' >
+                <h2 className='text-white text-5xl font-bold font-my_font text-center md:text-start'>Believers Equipping Network</h2>
+                <p className='text-white text-sm font-my_font md:w-1/3 w-2/3 text-center md:text-start '>
                     Heralding the Lordship of the word
-                    <br/>
                     Demonstrating the influence of the spirit 
                 </p>
-                <span className='flex gap-4 w-2/3'>
+                <span className='flex gap-4 w-full md:w-[15rem]'>
                     <ServiceBtn/>
                 </span>
             </div>
