@@ -1,8 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const SIGNUP = 'Signup';
-const LOGIN = 'Login';
 
 const NavLinks = [
   { title: "Home", href: "/" },

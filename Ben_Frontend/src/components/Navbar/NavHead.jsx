@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import NavBar from './Nav1';
-import BrandLogo from '../../assets/Logo1.png';
+import Logo from '../../../src/assets/Home_assets/Logo1.png';
 import { NavLink } from 'react-router-dom';
 import useWindowDimension from '../../hooks/useWindowDimension';
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -26,7 +26,7 @@ function Header() {
               )}
             >
               <div className="brand-logo cursor-pointer">
-                <img src={BrandLogo} alt="Mentafix logo" />
+                <img src={Logo} alt="Mentafix logo" />
               </div>
             </NavLink>
             {width < 768 ? (
