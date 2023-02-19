@@ -6,7 +6,7 @@ import ServiceBtn from '../../components/Buttons/button1'
 const Header = () => {
 
     return (
-        <div className='flex items-center justify-center relative h-[34rem] w-full font-my_font'>
+        <div className='flex items-center justify-center relative h-[36rem] w-full font-my_font'>
             <img
             src={BackgroundImage}
             className="absolute w-full h-full mix-blend-overlay object-fill md:hidden"
@@ -30,14 +30,14 @@ const Header = () => {
                 </span>
             </div>
             {/* <DeleteIcon className='bg-white'/> */}
-            <div className='hidden md:flex flex absolute -bottom-[10%] w-2/3 md:w-3/4 lg:w-2/3 bg-white h-1/4 justify-center items-center m-auto gap-[6rem] drop-shadow-md md:gap-4 lg:gap-[6rem]' id="service">
+            <div className='hidden md:flex flex absolute -bottom-[10%] w-2/3 md:w-3/4 lg:w-2/3 bg-white h-1/4 justify-center items-center m-auto gap-[6rem] drop-shadow-md md:gap-1 lg:gap-[6rem]' id="service">
                 <span className='w-4/12 md:w-5/12 lg:w-4/12' >
                     <p className='text-lg font-semibold text-my-black font-my_font'>Sunday Services</p>
-                    <p className='text-3xl text-my-black font-medium font-my_font'>2:00pm - 4:00pm</p>
+                    <p className='text-3xl md:text-2xl text-my-black font-medium font-my_font'>2:00pm - 4:00pm</p>
                 </span>
                 <span className='w-4/12 md:w-5/12 lg:w-4/12'>
                     <p className='text-lg font-semibold text-my-black font-my_font'>Tuesday & Thursday Services</p>
-                    <p className='text-3xl text-my-black font-medium font-my_font'>4:00pm - 6:00pm</p>
+                    <p className='text-2xl text-my-black font-medium font-my_font'>4:00pm - 6:00pm</p>
                 </span>
             </div>
         </div>
