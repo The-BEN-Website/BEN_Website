@@ -17,7 +17,7 @@ const Words = () => {
         <br/>
         <Connect />
       </div>
-      <img src={Pastor_Img} className="w-4/5 h-10/12 md:w-6/12 md:h-3/5 lg:w-6/12" alt="" />
+      <img src={Pastor_Img} loading="lazy" className="w-4/5 h-10/12 md:w-6/12 md:h-3/5 lg:w-6/12" alt="" />
     </div>
   )
 }
