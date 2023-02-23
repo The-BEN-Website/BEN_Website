@@ -29,7 +29,7 @@ const Values = () => {
         </section>
         
     </div>
-  )
+    )
 }
 
 export default Values
