@@ -20,7 +20,7 @@ function EventDeets () {
         <div className="App font-my_font">
         <Hero />
             <div className='flex'>
-            
+                
                     <div className='w-2/3 h-max mx-10 mt-20 px-5 py-5 shadow-md'>
                         <img src={thisItem.image} className='rounded-lg mb-3' />
                         <div className='flex gap-3 m-5 cursor-pointer'>
@@ -154,6 +154,11 @@ function EventDeets () {
             
                      </div>
                     </p>
+                    <div>
+                <button className='rounded-md w-20 md:w-[10rem] mx-3 bg-red-600 py-3 md:mx-3 md:mb-5 mt-5 text-white font-semibold'>
+                    <a href="/event" className='mb-32'>Back</a>
+                </button>
+            </div>
                 </div>
                 
 
