@@ -41,18 +41,18 @@ const Form = () => {
     }
 
   return (
-    <form className="w-11/12 lg:w-full h-fit rounded flex flex-col gap-6" onSubmit={sendEmail} ref={form}>
-      <span className="flex flex-col w-10/12">
+    <form className="mx-auto lg:mx-0 w-full lg:w-full h-fit rounded flex flex-col gap-6" onSubmit={sendEmail} ref={form}>
+      <span className="flex flex-col w-full">
         <label className="font-my_font">Name</label>
         <input type="text" placeholder="Enter Your Name" className="text-gray-400 border border-gray-200 rounded w-full py-3 px-2 font-my_font" ref={nameRef} name="name"/>
       </span>
 
-      <span className="flex flex-col w-10/12">
+      <span className="flex flex-col w-full">
         <label className="font-my_font">Email</label>
         <input type="email" placeholder="Enter Your Email" className="text-gray-400 border border-gray-200 rounded w-full py-3 px-2 font-my_font" ref={emailRef} name="email"/>
       </span>
 
-      <button className='bg-my-red text-white px-6 w-10/12 py-3 font-semibold rounded-sm font-my_fon t'>Submit</button>
+      <button className='bg-my-red text-white px-6 w-full py-3 font-semibold rounded-sm font-my_font'>Submit</button>
     </form>
   )
 }
