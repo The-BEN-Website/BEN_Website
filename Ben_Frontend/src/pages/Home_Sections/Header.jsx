@@ -1,24 +1,33 @@
 import React from 'react'
-import BackgroundImage from '../../assets/Home_assets/Background!.png'
-import BackgroundImage1 from '../../assets/Home_assets/newBackground1.png'
+import BackgroundImage from '../../assets/Home_assets/Background!.webp'
+import BackgroundImage1 from '../../assets/Home_assets/newBackground1.webp'
 import ServiceBtn from '../../components/Buttons/button1'
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Header = () => {
 
     return (
         <div className='flex items-center justify-center relative h-[36rem] w-full font-my_font'>
-            <img
+            <LazyLoadImage
             src={BackgroundImage}
+<<<<<<< HEAD
             className="absolute w-full h-full mix-blend-overlay object-fill md:hidden"
+=======
+            className="absolute w-full h-full object-fill md:hidden"
+>>>>>>> 7ff4cf824d596f9e485fdd35a027ad37dfcb0e82
             alt=""
             />
-            <img
+            <LazyLoadImage
             src={BackgroundImage1}
+<<<<<<< HEAD
             className="hidden md:inline-block absolute w-full h-full mix-blend-overlay"
+=======
+            className="hidden md:inline-block absolute w-full h-full"
+>>>>>>> 7ff4cf824d596f9e485fdd35a027ad37dfcb0e82
             alt=""
             />
             {/* main header content */}
-            <div className = 'w-5/6 flex flex-col items-center justify-center md:items-start gap-3 ' >
+            <div className = 'w-5/6 absolute flex flex-col items-center justify-center md:items-start gap-3 ' >
                 <h2 className='text-white text-5xl font-bold font-my_font text-center md:text-start'>Believers Equipping Network</h2>
                 <p className='text-white text-sm font-my_font md:w-1/3 w-2/3 text-center md:text-start '>
                     Heralding the Lordship of the word

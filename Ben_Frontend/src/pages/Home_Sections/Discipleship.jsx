@@ -1,11 +1,17 @@
 import React from 'react'
-import Disciple_Img from '../../assets/Home_assets/Discipleship.png' 
+import Disciple_Img from '../../assets/Home_assets/Discipleship.webp' 
+import LearnMore from '../../components/Buttons/disciple'
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Discipleship = () => {
     return (
     <div className='bg-my-black lg:bg-grey-background h-[68rem] md:h-[60rem] lg:h-[30rem] w-full flex font-my_font'>
         <div className='flex flex-col lg:flex-row w-10/12 m-auto gap-20 items-center text-white lg:text-my-black'>
+<<<<<<< HEAD
             <img src={Disciple_Img} className="w-4/5 h-10/12 md:w-6/12 md:h-8/12 lg:w-5/12" alt="" />
+=======
+            <LazyLoadImage src={Disciple_Img} className="w-4/5 h-10/12 md:w-6/12 md:h-8/12 lg:w-5/12" alt="" loading="lazy" />
+>>>>>>> 7ff4cf824d596f9e485fdd35a027ad37dfcb0e82
             <div className='w-2/3 h-fit md:w-1/2 flex flex-col gap-5'>
                 <h2 className='text-2xl font-semibold font-my_font'>Join the Discipleship Class</h2>
                 <blockquote className="relative">
@@ -14,7 +20,8 @@ const Discipleship = () => {
                     The next most important thing after salvation is knowledge. God desires that you grow in your knowledge of what Christ has done and what you have as a result.
                     </p>
                 </blockquote>
-                <button className='bg-my-red text-white px-8 py-3 font-semibold rounded-sm  font-my_font'>Learn More</button>
+                <LearnMore />
+                {/* <button className='bg-my-red text-white px-8 py-3 font-semibold rounded-sm  font-my_font'>Learn More</button> */}
             </div>
         </div>
         

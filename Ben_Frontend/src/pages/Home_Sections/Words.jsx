@@ -1,6 +1,7 @@
 import React from 'react'
-import Pastor_Img from '../../assets/Home_assets/Pastor.png'
+import Pastor_Img from '../../assets/Home_assets/Pastor.webp'
 import Connect from '../../components/Buttons/mailing'
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Words = () => {
   return (
@@ -17,7 +18,11 @@ const Words = () => {
         <br/>
         <Connect />
       </div>
+<<<<<<< HEAD
       <img src={Pastor_Img} className="w-4/5 h-10/12 md:w-6/12 md:h-3/5 lg:w-6/12" alt="" />
+=======
+      <LazyLoadImage src={Pastor_Img} loading="lazy" className="w-4/5 h-10/12 md:w-6/12 md:h-3/5 lg:w-6/12" alt="" />
+>>>>>>> 7ff4cf824d596f9e485fdd35a027ad37dfcb0e82
     </div>
   )
 }
