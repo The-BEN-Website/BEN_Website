@@ -10,12 +10,12 @@ const Header = () => {
             <img
             src={BackgroundImage}
             className="absolute w-full h-full mix-blend-overlay object-fill md:hidden"
-            alt="" loading="lazy"
+            alt=""
             />
             <img
             src={BackgroundImage1}
             className="hidden md:inline-block absolute w-full h-full mix-blend-overlay"
-            alt="" loading="lazy"
+            alt=""
             />
             {/* main header content */}
             <div className = 'w-5/6 flex flex-col items-center justify-center md:items-start gap-3 ' >

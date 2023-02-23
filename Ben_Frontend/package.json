@@ -19,6 +19,7 @@
     "@reacticons/ionicons": "^6.1.1",
     "emailjs": "^4.0.1",
     "firebase": "^9.17.1",
+    "framer-motion": "^9.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.1",

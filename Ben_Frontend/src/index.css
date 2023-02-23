@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    @media (max-width: 375px) {
+        .s-wr {
+            justify-content: start;
+            flex-wrap: wrap;
+        }
+        .sel {
+            margin-top: 3.5rem;
+        }
+    }
+
+     .sel_aft {
+        content: "";
+        display: block;
+        width: 0.8em;
+        height: 0.5em;
+        clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+        justify-self: end;
+    }
+    .border-w {
+        border-width: 1px;
+    }
+}
