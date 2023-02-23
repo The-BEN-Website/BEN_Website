@@ -30,13 +30,8 @@ const Newsletter = () => {
   return (
     <div className="h-[35rem] md:h-[40rem] lg:h-[30rem] w-full flex font-my_font">
         <div className='flex flex-col lg:flex-row w-10/12 m-auto gap-8 lg:gap-16 items-center text-black'>
-<<<<<<< HEAD
-            <img src={Subscribe} className="w-3/5 h-8/12 md:w-6/12 md:h-8/12 lg:w-5/12" alt="" />
-            <div className='w-11/12 h-fit md:w-1/2 flex flex-col gap-5 mb-5'>
-=======
             <LazyLoadImage src={Subscribe} loading="lazy" className="w-3/5 h-8/12 md:w-6/12 md:h-8/12 lg:w-5/12" alt="" />
             <form className='w-11/12 h-fit md:w-1/2 flex flex-col gap-5 mb-5' ref={form} onSubmit={subscribe} >
->>>>>>> 7ff4cf824d596f9e485fdd35a027ad37dfcb0e82
                 <h2 className='text-center text-3xl sm:text-left sm:text-3xl font-bold text-my-black font-my_font'>Subscribe to Our Newsletter</h2>
                 <p className='text-xl text-center sm:text-left font-my_font'>Subscribe to our newsletter and stay updated!</p>
                 <input type="email" name="email" id="email" value={message} placeholder="Your Email?"className='border border-my-red text-my-black px-8 py-3 font-semibold rounded-sm ' ref={emailRef} onChange={event => setMessage(event.target.value)} />

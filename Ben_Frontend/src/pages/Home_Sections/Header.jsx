@@ -10,20 +10,12 @@ const Header = () => {
         <div className='flex items-center justify-center relative h-[36rem] w-full font-my_font'>
             <LazyLoadImage
             src={BackgroundImage}
-<<<<<<< HEAD
-            className="absolute w-full h-full mix-blend-overlay object-fill md:hidden"
-=======
             className="absolute w-full h-full object-fill md:hidden"
->>>>>>> 7ff4cf824d596f9e485fdd35a027ad37dfcb0e82
             alt=""
             />
             <LazyLoadImage
             src={BackgroundImage1}
-<<<<<<< HEAD
-            className="hidden md:inline-block absolute w-full h-full mix-blend-overlay"
-=======
             className="hidden md:inline-block absolute w-full h-full"
->>>>>>> 7ff4cf824d596f9e485fdd35a027ad37dfcb0e82
             alt=""
             />
             {/* main header content */}

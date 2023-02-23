@@ -10,11 +10,7 @@ const Community = () => {
             <h2 className="text-3xl text-center font-semibold sm:text-4xl mb-6 text-my-black sm:text-center lg:text-left font-my_font">Join the community</h2>
             <ul className="list-none mx-auto my-12 flex flex-col lg:flex-row items-center gap-8 ">
                 <li className="w-11/12 md:w-10/12 h-[26rem] lg:w-5/6 flex flex-col items-start mx-auto span-through relative grid content-end drop-shadow-2xl">
-<<<<<<< HEAD
-                    <img src={Community1} alt="comm1" className="mb-6 w-full h-full absolute mix-blend-overlay "/>
-=======
                     <LazyLoadImage src={Community1} alt="comm1" loading="lazy" className="mb-6 w-full h-full absolute mix-blend-overlay "/>
->>>>>>> 7ff4cf824d596f9e485fdd35a027ad37dfcb0e82
                     <span className='mb-7'>
                       <h3 className="text-lg text-white mx-5 bg-blue-400 bg-opacity-100 w-fit px-5 font-semiboldfont-my_font">Community</h3>
                       <p className="sm:block text-2xl text-white mx-5 font-my_font">The Power Of Vulnerability</p>
@@ -22,11 +18,7 @@ const Community = () => {
                 </li>
 
                 <li className="w-11/12 md:w-10/12 h-[26rem] lg:w-5/6 flex flex-col items-start mx-auto span-through relative grid content-end drop-shadow-2xl">
-<<<<<<< HEAD
-                    <img src={Community2} alt="comm2" className="mb-6 w-full h-full absolute mix-blend-overlay "/>
-=======
                     <LazyLoadImage src={Community2} alt="comm2" loading="lazy" className="mb-6 w-full h-full absolute mix-blend-overlay "/>
->>>>>>> 7ff4cf824d596f9e485fdd35a027ad37dfcb0e82
                     <span className='mb-7'>
                       <h3 className="text-lg text-white mx-5 bg-blue-400 bg-opacity-100 w-fit px-5 font-semibold font-my_font">Act of Service</h3>
                       <p className="sm:block text-2xl text-white mx-5 font-my_font">Christmas At BEN </p>
@@ -34,11 +26,7 @@ const Community = () => {
                 </li>
 
                 <li className="w-11/12 md:w-10/12 h-[26rem] lg:w-5/6 flex flex-col items-start mx-auto span-through relative grid content-end drop-shadow-2xl">
-<<<<<<< HEAD
-                    <img src={Community3} alt="comm3" className="mb-6 w-full h-full absolute mix-blend-overlay "/>
-=======
                     <LazyLoadImage src={Community3} alt="comm3" loading="lazy" className="mb-6 w-full h-full absolute mix-blend-overlay "/>
->>>>>>> 7ff4cf824d596f9e485fdd35a027ad37dfcb0e82
                     <span className='mb-7'>
                       <h3 className="text-lg text-white mx-5 bg-blue-400 bg-opacity-100 w-fit px-5 font-semibold font-my_font">Discipleship</h3>
                       <p className="sm:block text-2xl text-white mx-5 font-my_font">The Power Of Discipleship</p>

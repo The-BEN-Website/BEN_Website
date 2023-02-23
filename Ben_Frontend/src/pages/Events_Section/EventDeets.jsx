@@ -5,8 +5,6 @@ import { List } from 'semantic-ui-react'
 import Hero from './Hero'
 
 
-
-
 function EventDeets () {
 
     const {id} = useParams()
