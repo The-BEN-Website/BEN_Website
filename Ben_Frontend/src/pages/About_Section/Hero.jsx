@@ -12,10 +12,10 @@ const Hero = () => {
         />
         <img
         src={BackgroundImage1}
-        className="hidden md:inline-block absolute w-full h-full mix-blend-overlay"
+        className="hidden md:inline-block absolute w-full h-full"
         alt=""
         />
-      <div className="text-center text-white">
+      <div className="text-center absolute text-white">
         <h2 className="text-4xl sm:text-5xl mb-5 font-bold leading-7 font-my_font">
           About Us
         </h2>
