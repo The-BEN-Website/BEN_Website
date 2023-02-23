@@ -3,7 +3,6 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ChurchIcon from '@mui/icons-material/Church';
 import LaptopIcon from '@mui/icons-material/Laptop';
 import EventIcon from '@mui/icons-material/Event';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Experience = () => {
   return (
@@ -21,8 +20,8 @@ const Experience = () => {
                 <span className='flex flex-col gap-3'>
                     <LocationOnIcon fontSize="large" className='text-my-red' />
                     <h3 className='text-xl font-semibold font-my_font'>Plan a visit</h3>
-                    <p className="font-my_font">We gather every weekend as a church to be inspired to follow Jesus. We would love for you to be our guest.</p>
-                    <a href="#" className='flex'>
+                    <p className="font-my_font">We gather every week as a church to be inspired to follow Jesus. We would love for you to be our guest.</p>
+                    <a href="/visit" className='flex'>
                         <p className='text-base font-semibold underline font-my_font'>Learn More
                         </p>
                     </a>
@@ -30,9 +29,9 @@ const Experience = () => {
                 <span className='flex flex-col gap-3'>
                     <ChurchIcon fontSize="large" className='text-my-red'/>
                     <h3 className='text-xl font-semibold font-my_font'>Church Gathering</h3>
-                    <p className="font-my_font">Join us as we gather at one of our believers equipping network campuses..</p>
-                    <a href="#">
-                        <p className='text-base font-semibold underline font-my_font'>Plan a Visit</p>
+                    <p className="font-my_font">Join us as we gather at one of our believers equipping network meetings..</p>
+                    <a href="/event">
+                        <p className='text-base font-semibold underline font-my_font'>Learn More</p>
                     </a>
                 </span>
             </div>
@@ -42,16 +41,16 @@ const Experience = () => {
                 <span className='flex flex-col gap-3'>
                     <LaptopIcon fontSize="large" className='text-my-red' />
                     <h3 className='text-xl font-semibold font-my_font'>Believers Online</h3>
-                    <p className="font-my_font">We gather every weekend as a church to be inspired to follow Jesus. We would love for you to be our guest.</p>
-                    <a href="#">
-                        <p className='text-base font-semibold underline font-my_font'>Learn More</p>
+                    <p className="font-my_font">We gather every week as a church to be inspired to follow Jesus. We would love for you to be our guest.</p>
+                    <a href="/mailing">
+                        <p className='text-base font-semibold underline font-my_font'>Connect with Us</p>
                     </a>
                 </span>
                 <span className='flex flex-col gap-3'>
                     <EventIcon fontSize="large" className='text-my-red'/>
                     <h3 className='text-xl font-semibold font-my_font'>Events</h3>
-                    <p className="font-my_font">Join us as we gather at one of our believers equipping network campuses..</p>
-                    <a href="#">
+                    <p className="font-my_font">Join us as we gather at one of our believers equipping network events & believers convention..</p>
+                    <a href="/event">
                         <p className='text-base font-semibold underline font-my_font'>Plan an Event</p>
                     </a>
                 </span>

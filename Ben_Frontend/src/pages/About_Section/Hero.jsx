@@ -1,6 +1,6 @@
 import React from 'react'
-import BackgroundImage from '../../assets/Home_assets/Background!.png'
-import BackgroundImage1 from '../../assets/Home_assets/newBackground1.png'
+import BackgroundImage from '../../assets/Home_assets/Background!.webp'
+import BackgroundImage1 from '../../assets/Home_assets/newBackground1.webp'
 const Hero = () => {
   return (
     <div className="flex items-center justify-center relative h-[30rem] w-full

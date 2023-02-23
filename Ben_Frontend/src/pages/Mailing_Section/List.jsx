@@ -1,5 +1,5 @@
 import React from 'react'
-import ListImg from '../../assets/Home_assets/Class1.png'
+import ListImg from '../../assets/Home_assets/Class1.webp'
 import Form from './Form'
 
 const List = () => {

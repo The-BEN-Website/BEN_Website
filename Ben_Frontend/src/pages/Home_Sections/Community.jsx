@@ -1,7 +1,7 @@
 import React from 'react'
-import Community1 from '../../assets/Home_assets/Community1.png'
-import Community2 from '../../assets/Home_assets/Community2.png'
-import Community3 from '../../assets/Home_assets/Community3.png'
+import Community1 from '../../assets/Home_assets/Community1.webp'
+import Community2 from '../../assets/Home_assets/Community2.webp'
+import Community3 from '../../assets/Home_assets/Community3.webp'
 
 const Community = () => {
   return (

@@ -1,5 +1,6 @@
 import React from 'react'
-import Disciple_Img from '../../assets/Home_assets/Discipleship.png' 
+import Disciple_Img from '../../assets/Home_assets/Discipleship.webp' 
+import LearnMore from '../../components/Buttons/disciple'
 
 const Discipleship = () => {
     return (
@@ -14,7 +15,8 @@ const Discipleship = () => {
                     The next most important thing after salvation is knowledge. God desires that you grow in your knowledge of what Christ has done and what you have as a result.
                     </p>
                 </blockquote>
-                <button className='bg-my-red text-white px-8 py-3 font-semibold rounded-sm  font-my_font'>Learn More</button>
+                <LearnMore />
+                {/* <button className='bg-my-red text-white px-8 py-3 font-semibold rounded-sm  font-my_font'>Learn More</button> */}
             </div>
         </div>
         
