@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense} from "react";
 import { Route, Routes } from "react-router-dom";
 import AppRoutes from "./Router";
 import "./App.css";
@@ -11,7 +11,6 @@ function App() {
 
   return (
     <>
-    {/* <Nav /> */}
     <Navbar />
       <Suspense fallback={
       <div className="flex flex-col justify-center items-center">

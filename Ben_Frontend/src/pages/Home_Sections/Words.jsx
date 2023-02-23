@@ -1,5 +1,5 @@
 import React from 'react'
-import Pastor_Img from '../../assets/Home_assets/Pastor.png'
+import Pastor_Img from '../../assets/Home_assets/Pastor.webp'
 import Connect from '../../components/Buttons/mailing'
 
 const Words = () => {

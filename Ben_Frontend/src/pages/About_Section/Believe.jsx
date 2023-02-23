@@ -1,5 +1,5 @@
 import React from 'react'
-import Believe_Img from '../../assets/Believe.png' 
+import Believe_Img from '../../assets/Believe.webp' 
 
 const Discipleship = () => {
     return (
