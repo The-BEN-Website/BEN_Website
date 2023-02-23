@@ -1,0 +1,46 @@
+{
+    "items":[
+    {
+        "id": 1,
+        "image": "uus",
+        "title": "Discipleship class",
+        "category": "discipleship",
+        "descripition": "lorem ipsum dolor sit amet"
+    },
+    {
+        "id": 2,
+        "image": "uus",
+        "title": "Discipleship class",
+        "category": "discipleship",
+        "descripition": "lorem ipsum dolor sit amet"
+    },
+    {
+        "id": 3,
+        "image": "uus",
+        "title": "Discipleship class",
+        "category": "discipleship",
+        "descripition": "lorem ipsum dolor sit amet"
+    },
+    {
+        "id": 4,
+        "image": "uus",
+        "title": "Discipleship class",
+        "category": "discipleship",
+        "descripition": "lorem ipsum dolor sit amet"
+    },
+    {
+        "id": 5,
+        "image": "uus",
+        "title": "Discipleship class",
+        "category": "discipleship",
+        "descripition": "lorem ipsum dolor sit amet"
+    },
+    {
+        "id": 6,
+        "image": "uus",
+        "title": "Discipleship class",
+        "category": "discipleship",
+        "descripition": "lorem ipsum dolor sit amet"
+    }
+]
+}
