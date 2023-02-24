@@ -1,4 +1,4 @@
-import pic1 from '../../assets/logo.png'
+import pic1 from '../../assets/Home_assets/Logo1.webp'
 
 
     export default [

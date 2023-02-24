@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import BackgroundImage from '../../assets/Resource_assets/image.png'
+import BackgroundImage from '../../assets/Resource_assets/image.webp'
 import BackgroundImage1 from '../../assets/Home_assets/newBackground1.webp'
 import ddata from './ResourcesDataLatest'
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
