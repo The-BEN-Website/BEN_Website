@@ -6,7 +6,7 @@ import EnrollmentList from './Enrollment_Section/List'
 
 const Enroll = () => {
   return (
-    <div className="App flex flex-col gap-7">
+    <div className="App flex flex-col gap-7 h-fit">
         <Header />
         <Headings />
         <EnrollmentList />

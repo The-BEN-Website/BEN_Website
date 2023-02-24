@@ -6,7 +6,7 @@ import MailingList from '../pages/Mailing_Section/List'
 
 const Mailing = () => {
   return (
-    <div className="App flex flex-col gap-10">
+    <div className="App flex flex-col gap-10 h-fit">
         <Header />
         <Header2 />
         <MailingList />
