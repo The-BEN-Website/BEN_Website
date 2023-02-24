@@ -26,43 +26,13 @@
   max-width: 100%;
 }
 
-.active-link {
-  text-decoration-color: #3d42ba;
-}
-
-.login-btn,
-.signup-btn {
-  width: 150px;
-}
-
 .span-through {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
 }
 
-.login-btn {
-  background-color: #fff;
-  color: #3d42ba;
-  border: 1.5px solid d42ba;
-}
 
-.signup-btn {
-  background-color: #3d42ba;
-  color: #ffff;
-  border: 1.5px solid #3d42ba;
-}
 
-.footer {
-  background-color: #3d42ba;
-  color: #fff;
-  font-family: lato;
-}
-
-.therapy-bg-img {
-  background-image: url('./assets/img/Therapy1.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 @media (min-width: 1024px) {
   .login-btn,

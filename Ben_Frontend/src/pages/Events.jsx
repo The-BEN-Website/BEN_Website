@@ -6,7 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 
 const Events = () => {
     return (
-        <div className="App flex flex-col gap-20 font-my_font">
+        <div className="App flex flex-col gap-20 font-my_font h-fit">
         
         <Header />
         <Evets />

@@ -4,7 +4,7 @@ import Form_Body from './Contact_Section/Form_Container'
 
 const Contact = () => {
   return (
-    <div className="App flex flex-col gap-14 font-my_font">
+    <div className="App flex flex-col gap-14 font-my_font h-fit">
       <Hero />
       <Form_Body />
     </div>
