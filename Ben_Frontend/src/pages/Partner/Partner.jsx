@@ -1,5 +1,5 @@
 import React, {useRef} from 'react'
-import Partner from '../../assets/Home_assets/Partner1.png'
+import Partner from '../../assets/Home_assets/thepartner1.png'
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Partnership = () => {
