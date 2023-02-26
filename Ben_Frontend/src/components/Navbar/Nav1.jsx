@@ -8,7 +8,7 @@ const NavLinks = [
   { title: "Resources", href: "/resources" },
   { title: "Events", href: "/event" },
   { title: "Contact", href: "/contact" },
-  { title: "Partnership", href: "/partnership" },
+  { title: "Giving", href: "/giving" },
 ];
 
 export default function NavBar({ width, onOpen }) {

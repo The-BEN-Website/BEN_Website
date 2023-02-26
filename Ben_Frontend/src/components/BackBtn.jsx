@@ -1,10 +1,13 @@
 import React from 'react'
+import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined';
 
 const BackBtn = () => {
   return (
     <div>
-        <button className="bg-my-red text-white border rounded-full p-4 w-15 h-15 underline fixed bottom-20 right-5">
-            <a href="#" >Back!</a>
+        <button className="bg-red-400 text-white border p-1 rounded-full w-fit h-fit underline fixed bottom-20 right-5">
+            <a href="#">
+              <ExpandLessOutlinedIcon/>
+            </a>
         </button>
     </div>
   )
