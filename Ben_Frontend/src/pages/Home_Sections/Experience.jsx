@@ -11,7 +11,7 @@ const Experience = () => {
         <div className='flex flex-col lg:flex-row w-10/12 m-auto gap-10 items-center text-white lg:text-my-black'>
             {/* first div */}
             <div className='flex flex-col gap-3 text-center lg:text-left'>
-                <h2 className='text-3xl font-bold font-my_font'>Experience The Believers Equipping Network</h2>
+                <h2 className='text-3xl font-bold font-my_font'>Experience The Believers Equipping Nation</h2>
                 <p className='text-lg font-my_font'>There are several ways to participate in Mariners’ worship experiences. Whatever your comfort level, there are opportunities for you to join in community and draw nearer to Jesus.</p>
             </div>
 

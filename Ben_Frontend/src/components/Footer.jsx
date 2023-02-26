@@ -12,7 +12,7 @@ const Footer = () => {
             <a href="#" className='p-3 bg-white rounded-full'><InstagramIcon fontSize="medium" /></a>
             <a href="#" className='p-3 bg-white rounded-full'><YouTubeIcon fontSize="medium" /></a>
         </span>
-        <p className='font-semibold text-xl text-white font-my_font'>Believers Equipping Network &copy; 2023</p>
+        <p className='font-semibold text-xl text-white font-my_font'>Believers Equipping Nation &copy; 2023</p>
         </div>
     </div>
   )
