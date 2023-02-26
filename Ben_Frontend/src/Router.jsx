@@ -27,7 +27,7 @@ const AppRoutes = [
     element: <Event />,
   },
   {
-    path: "/partnership",
+    path: "/giving",
     element: <Partnership/>,
   },
   {
