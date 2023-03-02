@@ -1,4 +1,4 @@
-import pic1 from '../../assets/Resource_assets/dataa.png'
+import pic1 from '../../assets/Resource_assets/dataa.webp'
 
 
     export default [

@@ -1,6 +1,6 @@
 import React from 'react'
-import BackgroundImage from '../../assets/Home_assets/directions.png'
-import BackgroundImage1 from '../../assets/Home_assets/directions.png'
+import BackgroundImage from '../../assets/Home_assets/directions.webp'
+import BackgroundImage1 from '../../assets/Home_assets/directions.webp'
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Hero = () => {
