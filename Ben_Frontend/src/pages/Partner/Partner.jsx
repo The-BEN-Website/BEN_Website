@@ -19,7 +19,11 @@ const Partnership = () => {
                     <p className="font-my_font">Account Number 2: ########## [Access]</p>
                 </span>
                 <p className='text-center'>OR</p>
-                <button className='bg-my-red text-white px-8 py-3 font-semibold rounded-sm  font-my_font'>Pay Online</button>
+                <button className='bg-my-red text-white px-8 py-3 font-semibold rounded-sm  font-my_font'>
+                  <a href="./payment">
+                  Pay Online
+                  </a>
+                </button>
             </form>
         </div>
     </div>

@@ -19,7 +19,11 @@ const Others = () => {
                   <option value="no2">Offering</option>
                   <option value="no3">Partnership</option>
                 </select>
-                <button className='bg-my-red text-white px-8 py-3 font-semibold rounded-sm  font-my_font'>Pay Online</button>
+                <button className='bg-my-red text-white px-8 py-3 font-semibold rounded-sm  font-my_font'>
+                  <a href="./payment1">
+                  Pay Online
+                  </a>
+                </button>
 
                 <p className='text-center'>OR</p>
 

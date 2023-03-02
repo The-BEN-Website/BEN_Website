@@ -11,6 +11,8 @@ const Enroll = lazy(() => import("./pages/Enroll"))
 const EventDeets = lazy(() => import("./pages/Events_Section/EventDeets"))
 const ResourceDeets = lazy(() => import("./pages/Resources_Section/ResourceDeets"))
 const Map = lazy(() => import("./pages/Map"))
+const Payment = lazy(() => import("./pages/Payment"))
+const Payment1 = lazy(() => import("./pages/Payment1"))
 const items = lazy(() => import("../public/EventData"))
 
 
@@ -58,6 +60,14 @@ const AppRoutes = [
   {
     path: `/resources/:id`,
     element: <ResourceDeets />
+  },
+  {
+    path: `/payment`,
+    element: <Payment />
+  },
+  {
+    path: `/payment1`,
+    element: <Payment1 />
   },
   {
     path: "*",
