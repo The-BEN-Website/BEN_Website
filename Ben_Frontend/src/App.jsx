@@ -13,7 +13,7 @@ function App() {
     <>
     <Navbar />
       <Suspense fallback={
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center w-full h-full">
         <img src={Loader} className="w-40 h-40" />
         <p className="text-2xl font-bold mb-10">Page is Loading...</p>
       </div>
