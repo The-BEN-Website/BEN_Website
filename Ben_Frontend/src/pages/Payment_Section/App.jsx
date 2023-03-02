@@ -48,7 +48,7 @@ const App = () => {
             <p className="text-lg">Category: Giving</p>
           </div>
         </div>
-        <div className="flex flex-col justify-center w-1/2 h-[26.9rem] border-[0.05rem] border-l-gray-300 bg-white">
+        <div className="flex flex-col justify-center w-1/2 h-[27rem] border-[0.05rem] border-l-gray-200 bg-white">
           <div className="p-5">
             <div className="flex flex-col mb-4">
               <label className="text-left text-my-black text-xs mb-2 uppercase ">Name</label>
@@ -90,7 +90,7 @@ const App = () => {
                 onChange={(e) => setAmount(e.target.value)}
               />
             </div>
-            <PaystackButton className="text-center text-base uppercase bg-my-red text-white font-medium rounded-md w-full h-[2.5rem] mt-10 cursor-pointer" {...componentProps} />
+            <PaystackButton className="text-center text-base uppercase bg-my-red text-white font-medium rounded-md w-full h-[2.5rem] mt-7 cursor-pointer" {...componentProps} />
           </div>
         </div>
       </div>
