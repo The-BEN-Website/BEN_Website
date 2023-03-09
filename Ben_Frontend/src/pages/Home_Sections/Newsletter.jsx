@@ -8,7 +8,7 @@ const Newsletter = () => {
   const [message, setMessage] = useState('');
   const form = useRef();
   const emailRef = useRef();
-  const ref = collection(firestore, 'subscribe')
+  const ref = collection(firestore, '/subscribe')
 
   const subscribe = (e) => {
     e.preventDefault();

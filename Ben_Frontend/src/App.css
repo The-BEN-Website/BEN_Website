@@ -30,13 +30,3 @@
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
 }
-
-
-
-
-@media (min-width: 1024px) {
-  .login-btn,
-  .signup-btn {
-    width: 100px;
-  }
-}
