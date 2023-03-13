@@ -9,9 +9,7 @@
             justify-content: start;
             flex-wrap: wrap;
         }
-        .sel {
-            margin-top: 3.5rem;
-        }
+
     }
 
      .sel_aft {
@@ -20,9 +18,30 @@
         width: 0.8em;
         height: 0.5em;
         clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-        justify-self: end;
     }
     .border-w {
         border-width: 1px;
+    }
+
+    .btneffect {
+        background: linear-gradient(to left, transparent 50%, white 50%) right;
+        background-size: 200%;
+        transition: .3s ease-in-out;
+    }
+    .btneffect:hover {
+        background-position: left;
+        color: #f74946;
+        outline-color: #f74946;
+    }
+    .btneffectred {
+        background: linear-gradient(to left, white 50%, #f74946 50%) right;
+        background-size: 200%;
+        transition: .3s ease-in-out;
+    }
+    .btneffectred:hover {
+        background-position: left;
+        background-color: #f74946;
+        color: white;
+        outline-color: white;
     }
 }

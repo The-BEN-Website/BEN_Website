@@ -25,11 +25,11 @@ const Hero = () => {
         alt=""
         />
         
-      <div className="text-white mt-20 ml-10 absolute">
+      <div className="hidden md:block text-white mt-20 ml-10 absolute">
       <p className="text-2xl font-my_font uppercase font-bold justify-start items-start">
         Latest Messsage
       </p>
-        <p className="font-my_font text-2xl sm:text-8xl font-bold leading-7">
+        <p className="font-my_font text-2xl md:text-7xl font-bold leading-7">
          Navigating Our New World
         </p>
         
@@ -44,6 +44,16 @@ const Hero = () => {
          </a>
 
          </div>
+        </p>
+      </div>
+      <div className="md:hidden text-center text-white">
+        <h2 className="font-my_font text-4xl sm:text-5xl mb-5 font-bold leading-7">
+         Resources
+        </h2>
+        <p className="text-[22px] font-my_font">
+        Heralding the Lordship of the word
+        Demonstrating the influence 
+        <p className='font-my_font'>of the spirit</p>
         </p>
       </div>
     </div>

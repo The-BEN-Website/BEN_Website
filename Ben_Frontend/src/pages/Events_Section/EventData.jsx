@@ -39,21 +39,21 @@ import pic6 from '../../assets/Home_assets/Event6.webp'
           image: pic5,
           title: "Believers Convention",
           category: "Meetings",
-          description: "lorem ipsum dolor sit amet"
+          description: "Thursdays and Sundays @ Admin"
         },
         {
           id: '6',
           image: pic6,
           title: "Fasting and Prayers",
           category: "discipleship",
-          description: "lorem ipsum dolor sit amet"
+          description: "By 4:00pm on Tuesdays @ Admin"
         },
         {
           id: '7',
           image: pic2,
           title: "Evangelism (Out Reach)",
           category: "Evangelism",
-          description: "lorem ipsum dolor sit amet"
+          description: "Saturdays at 9:00pm @Admin"
         }
       ];
       
