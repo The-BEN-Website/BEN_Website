@@ -21,7 +21,7 @@ const Hero = () => {
         </h2>
         <p className="text-2xl font-my_font">
         Join us at any of our special events taking place across 
-        <p>Believers Equipping Nation</p>
+        <p className="text-2xl font-my_font">Believers Equipping Nation</p>
         </p>
       </div>
     </div>

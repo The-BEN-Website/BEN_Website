@@ -19,11 +19,11 @@ function EventDeets () {
     return (
         <div className="App font-my_font">
         <Hero />
-            <div className='flex'>
+            <div className='flex-column md:flex'>
                 
-                    <div className='w-2/3 h-max mx-10 mt-20 px-5 py-5 shadow-md'>
+                    <div className='md:w-3/5 h-max mx-5 md:mx-10 mt-10 px-5 py-5 shadow-md'>
                         <img src={thisItem.image} className='rounded-lg mb-3' />
-                        <div className='flex gap-3 m-5 cursor-pointer'>
+                        <div className='flex gap-3 md:m-5 my-5 cursor-pointer'>
                         <a className='flex gap-1 cursor-pointer group hover:underline'>
                         <VideoLibraryOutlined className='hover:underline text-red-800 text-5xl w-10 font-bold'/>
                         <p className='group-hover:underline'>
@@ -41,7 +41,8 @@ function EventDeets () {
                          </a>
                 
                          </div>
-                         <p className='font-my_font'>Symphony
+                         <p className='font-my_font mb-1'>Symphony</p>
+                         <p className='font-my_font'>
 
                          Romans 12:1
                          Reasonable service is the way God wants to be served.
@@ -78,7 +79,7 @@ function EventDeets () {
                          It is not about eloquence.ce.
                          It is not about eloquence. If you get the protocol right, it does not really matter what </p>
                     </div>
-                <div className='h-auto mt-20 mb-10 px-5 py-5 shadow-md'>
+                <div className='h-auto md:mt-10 mb-10 px-5 py-5 shadow-md'>
 
                     <h2 className='uppercase font-bold m-3'>In this series</h2>
                     <td className='hidden md:block md:w-80 h-[1px] bg-gray-200'/>
