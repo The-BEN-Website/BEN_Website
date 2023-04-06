@@ -16,16 +16,16 @@ function Header() {
     }
 
     return (
-      <header className="header w-full relative md:absolute fixed z-10 text-black sm:text-white">
+      <header className="header w-full relative fixed z-10 text-black sm:text-white">
         <div className="xl:container mx-auto">
-          <div className="flex flex-row items-center justify-between md:flex md:justify-between sm:px-12 px-4">
+          <div className="flex flex-row items-center justify-between md:flex md:justify-between sm:px-12 lg:px-[0.01rem] px-4">
             <NavLink
               to="/"
               className={["block my-3", width > 600 ? "w-36" : "w-20"].join(
                 " "
               )}
             >
-              <div className="brand-logo cursor-pointer border border-zinc-300">
+              <div className="brand-logo cursor-pointer">
                 <img src={Logo} alt="BEN logo" />
               </div>
             </NavLink>

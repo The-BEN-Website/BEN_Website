@@ -21,9 +21,9 @@ export default function NavBar({ width, onOpen }) {
           to={link.href}
           className={({ isActive }) =>
             [
-              "btn py-2 px-3 mx-2 text-center   hover:text-red-100 ",
+              "btn py-2 px-3 mx-2 text-center   hover:text-red-600 ",
               isActive ? "underline decoration-2 decoration-red-600 " : "",
-              width < 768 ? " block my-5 text-black" : "inline-block my-2 ml-0 text-white",
+              width < 768 ? " block my-5 text-black" : "inline-block my-2 ml-0 text-black",
             ].join(" ")
           }
         >
