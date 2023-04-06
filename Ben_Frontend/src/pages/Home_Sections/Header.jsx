@@ -24,8 +24,13 @@ const Header = () => {
                 {/* image */}
                 <LazyLoadImage src={BackgroundImage} className="w-10/12 sm:w-2/3 md:w-1/2 h-fit flex items-center mx-auto lg:my-9" alt="" />
             </section>
+            {/* <hr className='bg-red-300 border-0 h-0.5 w-full absolute bottom-[11%]'/> */}
             {/* <DeleteIcon className='bg-white'/> */}
+<<<<<<< HEAD
             <div className='hidden md:flex flex absolute sm:-bottom-[7%] lg:-bottom-[9%] w-2/3 md:w-3/4 lg:w-2/3 bg-white h-1/4 justify-center items-center m-auto gap-[6rem] drop-shadow-xl md:gap-1 lg:gap-[6rem]' id="service">
+=======
+            <div className='hidden md:flex flex absolute sm:-bottom-[7%] lg:-bottom-[10%] w-2/3 md:w-3/4 lg:w-2/3 bg-white h-1/4 justify-center items-center m-auto gap-[6rem] drop-shadow-xl md:gap-1 lg:gap-[6rem]' id="service">
+>>>>>>> b5332e8613d6b37604648d512ee66850418ab46e
                 <span className='w-4/12 md:w-5/12 lg:w-4/12' >
                     <p className='text-lg font-semibold text-my-black font-my_font'>Sunday Services</p>
                     <p className='text-3xl md:text-2xl text-my-black font-medium font-my_font'>2:00pm - 4:00pm</p>
