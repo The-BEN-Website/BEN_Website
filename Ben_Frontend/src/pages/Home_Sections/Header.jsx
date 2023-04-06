@@ -8,10 +8,10 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 const Header = () => {
 
     return (
-        <div className='border border-blue-600 flex items-center justify-center relative h-fit md:h-[40rem] w-full font-my_font'>
-            <section className='w-11/12 md:h-[25rem] lg:h-full border border-red-700 flex flex-col lg:flex-row flex-col-reverse'>
+        <div className='flex items-center justify-center relative h-fit md:h-[40rem] w-full font-my_font'>
+            <section className='w-11/12 md:h-[25rem] lg:h-full flex flex-col lg:flex-row flex-col-reverse'>
                 {/* main header content */}
-                <div className = 'w-full lg:w-1/2 flex flex-col items-center justify-center md:items-center lg:items-start gap-3 border border-green-500' >
+                <div className = 'w-full lg:w-1/2 flex flex-col items-center justify-center md:items-center lg:items-start gap-3 ' >
                     <h2 className='text-black text-4xl lg:text-5xl font-bold font-my_font text-center md:text-start tracking-wide'>Believers Equipping Nation</h2>
                     <p className='tracking-widest text-black text-sm font-my_font md:w-1/2 w-2/3 text-center md:text-start'>
                         Heralding the Lordship of the word
