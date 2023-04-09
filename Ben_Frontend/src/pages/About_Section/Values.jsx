@@ -2,7 +2,7 @@ import React from 'react'
 
 const Values = () => {
   return (
-    <div className="w-10/12 m-auto h-auto flex flex-col gap-7 ">
+    <div className="w-10/12 m-auto h-auto flex flex-col gap-7 " id='values'>
         <h2 className="font-bold text-3xl text-center mb-5 font-my_font">Our Values</h2>
         <section className="flex md:flex-row flex-col w-full gap-10 ">
         {/* border-[0.1rem] border-red-600 p-4 rounded-xl */}
