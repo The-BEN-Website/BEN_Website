@@ -85,7 +85,7 @@ function EventDeets () {
                     <td className='hidden md:block md:w-80 h-[1px] bg-gray-200'/>
                     <p className='mt-7'>
                     <div className='flex gap-2 mt-5 -space-y-1 cursor-pointer group hover:underline'>
-                        <a className='flex gap-2 -space-y-3 cursor-pointer group hover:underline'>
+                        <a href='https://whyp.it/tracks/88535/christian-service?token=I6vkc' className='flex gap-2 -space-y-3 cursor-pointer group hover:underline'>
                         <PlayCircleOutlineIcon className='hover:underline text-red-800 text-5xl w-10 font-bold'/>
                         <p className='font-my_font group-hover:underline text-xl font-extrabold'>
                             His Silence Is Not Absence 
@@ -121,7 +121,7 @@ function EventDeets () {
                     </p>
                     <p className='mt-7'>
                     <div className='flex gap-2 mt-5 -space-y-1 cursor-pointer group hover:underline'>
-                        <a className='flex gap-2 -space-y-3 cursor-pointer group hover:underline'>
+                        <a href='../../assets/Resource_assets/Christian Service.m4a' className='flex gap-2 -space-y-3 cursor-pointer group hover:underline'>
                         <PlayCircleOutlineIcon className='hover:underline text-red-800 text-5xl w-10 font-bold'/>
                         <p className='font-my_font group-hover:underline text-xl font-extrabold'>
                             His Silence Is Not Absence 
