@@ -43,15 +43,15 @@ function Evets(props) {
   return (
     
     <div className='bg-white text-black text-xl py-0 px-2 md:px-14 flex-grow'>
-    <h1 className='font-my_font font-extrabold text-center justify-center mb-10 text-4xl'> Explore Other Series</h1>
-    <div className='my-6 lg:ml-48 mr-3 items-center justify-items-center md:gap-10 grid grid-cols-2 md:flex gap-4'>
-      <div className="lg:items-center justify-center font-my_font rounded-md border-b-gray-300 md:w-[30%] w-11/12 bg-[length:16px_16px] lg:ml-32 bg-l-10-c bg-no-repeat px-2  py-3 pr-5 
-          border-w border-solid border-gray-300 text-gray-800 shadow-md transition-all duration-300 hover:shadow-none">
+    {/* <h1 className='font-my_font font-extrabold text-center justify-center mb-10 text-4xl'> Explore Other Series</h1> */}
+    <div className='w-8/12 mx-auto items-center justify-center md:gap-10 space-y-0 md:flex gap-4 lg:flex flex'>
+      <div className="w-1/2 sel border-gray-100 border cursor-pointer leading-4 bg-white
+      items-center relative shadow-lg rounded-md transition-all hover:shadow-sm after:sel-aft">
        <select
          onChange={(e) => setFilter(e.target.value)}
-         className="w-full rounded-md cursor-pointer bg-transparent text-gray-400 px-2 sm:text-[16px] md:text-[20px] py-0 font-my_font"
+         className="w-11/12 rounded-md cursor-pointer text-gray-400 m-0 py-5 pr-2 pl-4 font-my_font"
          aria-label="Filter Events By Category">
-         <option className='text-gray-400  pr-2' value="">Series</option>
+         <option className='text-gray-400' value="">Filter by category</option>
          {filter_items.map((item) => (
          <option className='text-gray-400 pr-2' value={item}>Filter By {item}</option>
          ))}
@@ -63,9 +63,8 @@ function Evets(props) {
           type="search"
           name="search-form"
           id="search-form"
-          className='font-my_font rounded-md border-b-gray-300 min-w-min max-w-max w-full bg-[length:16px_16px] bg-l-10-c bg-no-repeat py-3 px-8 pl-9 
-          border-w border-solid border-gray-300 text-gray-800 shadow-md transition-all duration-300 hover:shadow-none'
-          placeholder="Search.."
+          className='w-[25rem] font-my_font rounded-md  bg-[length:16px_16px] bg-l-10-c bg-no-repeat py-5 px-8 pl-9 border border-gray-100 text-gray-800 shadow-lg transition-all duration-300 hover:shadow-none'
+          placeholder="Search "
           onChange={(e) => setQuery(e.target.value)}
           /> */}
           
@@ -96,31 +95,40 @@ function Evets(props) {
 
       </div>
       <AnimatePresence>
-      <div className='grid grid-cols-2 md:grid-cols-3 flex-column gap-2 md:gap-10 pb-20'>
+      <div className='w-11/12 mx-auto grid grid-cols-2 md:grid-cols-3 flex-column gap-2 md:gap-10 pb-20'>
       {
           search(menuItem).map((item) => {
-              return <motion.div className='w-full py-6 px-2 ' key={item.id}
-              layoutScroll
-                initial={{ opacity: 0.3 }}
-                animate={{ opacity: 1 }}
-                transition={{ 
-                  opacity:{ease:"linear"},
-                layout: {duration:0.5} }}
-                exit={{opacity:0.3}}
-              >
-              
-                  <div className='overflow-hidden flex-grow hover:scale-x-110 transition-all hover:cursor-pointer duration-300 ease-in-out object-contain'>
-                  <Link to={`/event/${item.id}`}>
-                      <motion.img layout
-                        src={item.image} 
+              return (
+                <motion.div
+                  className="w-full py-3 px-2 "
+                  key={item.id}
+                  layoutScroll
+                  initial={{ opacity: 0.3 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    opacity: { ease: "linear" },
+                    layout: { duration: 0.5 },
+                  }}
+                  exit={{ opacity: 0.3 }}
+                >
+                  <div className="overflow-hidden flex-grow hover:scale-x-110 transition-all hover:cursor-pointer duration-300 ease-in-out object-contain">
+                    <Link to={`/event/${item.id}`}>
+                      <motion.img
+                        layout
+                        src={item.image}
                         alt={item.title}
-                        className='w-11/12 flex-grow font-my_font rounded-lg transition-all duration-300 ease-in-out'
-                        />
-                      <h2 className='md:text-2xl font-bold  text-black transition-all duration-300 font-my_font'>{item.title}</h2>
-                      <p className='text-gray-500 font-my_font'>{item.description}</p>
-                      </Link>
+                        className="w-11/12 flex-grow font-my_font rounded-lg transition-all duration-300 ease-in-out"
+                      />
+                      <h2 className="md:text-2xl font-bold  text-black transition-all duration-300 font-my_font">
+                        {item.title}
+                      </h2>
+                      <p className="text-contact-text text-base font-thin font-my_font">
+                        {item.description}
+                      </p>
+                    </Link>
                   </div>
-              </motion.div>
+                </motion.div>
+              );
               })
           }
       </div>      </AnimatePresence>
