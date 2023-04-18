@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import ddata from './EventData';
-import { MenuItem } from '@mui/material';
+import { MenuItem, TextField } from '@mui/material';
 import Header from './Hero';
 import {AnimatePresence, motion} from 'framer-motion';
 import { MenuOpen, Loupe } from '@mui/icons-material';
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import EventDeets from './EventDeets';
+import IconButton from '@mui/material/IconButton';
+import { Search } from '@mui/icons-material';
+import InputAdornment from '@mui/material/InputAdornment';
 
 
 function Evets(props) {
@@ -40,6 +43,7 @@ function Evets(props) {
   return (
     
     <div className='bg-white text-black text-xl py-0 px-2 md:px-14 flex-grow'>
+<<<<<<< HEAD
     {/* <h1 className='font-my_font font-extrabold text-center justify-center mb-10 text-4xl'> Explore Other Series</h1> */}
     <div className='w-8/12 mx-auto items-center justify-center md:gap-10 space-y-0 md:flex gap-4 lg:flex flex'>
       <div className="w-1/2 sel border-gray-100 border cursor-pointer leading-4 bg-white
@@ -49,24 +53,63 @@ function Evets(props) {
          className="w-11/12 rounded-md cursor-pointer text-gray-400 m-0 py-5 pr-2 pl-4 font-my_font"
          aria-label="Filter Events By Category">
          <option className='text-gray-400' value="">Filter by category</option>
+=======
+    <h1 className='font-my_font font-extrabold text-center justify-center mb-10 text-4xl'> Explore Other Series</h1>
+    <div className='my-6 lg:ml-48 mr-3 items-center justify-items-center md:gap-10 grid grid-cols-2 md:flex gap-4'>
+      <div className="lg:items-center justify-center font-my_font rounded-md border-b-gray-300 md:w-[30%] w-11/12 bg-[length:16px_16px] lg:ml-32 bg-l-10-c bg-no-repeat px-2  py-3 pr-5 
+          border-w border-solid border-gray-300 text-gray-800 shadow-md transition-all duration-300 hover:shadow-none">
+       <select
+         onChange={(e) => setFilter(e.target.value)}
+         className="w-full rounded-md cursor-pointer bg-transparent text-gray-400 px-2 sm:text-[16px] md:text-[20px] py-0 font-my_font"
+         aria-label="Filter Events By Category">
+         <option className='text-gray-400  pr-2' value="">Series</option>
+>>>>>>> ccc0305ea3a3d5fccdce870ddda18bceb871df86
          {filter_items.map((item) => (
-         <option className='text-gray-400' value={item}>Filter By {item}</option>
+         <option className='text-gray-400 pr-2' value={item}>Filter By {item}</option>
          ))}
        </select>
      </div>  
-      <div className='s-wr w-3/4 md:max-w-max'>
-          <input
+      <div className='s-wr2 mr-'>
+      
+          {/* <input
           type="search"
           name="search-form"
           id="search-form"
           className='w-[25rem] font-my_font rounded-md  bg-[length:16px_16px] bg-l-10-c bg-no-repeat py-5 px-8 pl-9 border border-gray-100 text-gray-800 shadow-lg transition-all duration-300 hover:shadow-none'
           placeholder="Search "
           onChange={(e) => setQuery(e.target.value)}
+          /> */}
+          
+          <TextField
+            onChange={(e) => setQuery(e.target.value)}
+            className='rounded-lg outline-none'
+            sx={{ width: '100%', fontFamily: 'Urbanist', border: '0.5px solid #d4d8dd', "& fieldset": { border: 'none' },}} 
+            label="Search..."
+            size='small'
+            borderColor='#9ca3af'
+            
+            InputLabelProps={{ style: { fontSize: 18, paddingTop:'5px', color: '#9ca3af'} }}
+
+                        
+            InputProps={{
+              sx: { color: '#9ca3af', paddingLeft:'10px', fontSize: 18, border: '#9ca3af' },
+              className: 'font-my_font py-1 rounded-md border-b-gray-300 min-w-min max-w-max w-full bg-[length:16px_16px] bg-l-10-c bg-no-repeat pl-10 border-w border-solid text-gray-800 shadow-md transition-all duration-300 hover:shadow-none',
+              endAdornment: (
+                <InputAdornment>
+                  <IconButton>
+                  <Search className='' />
+                  </IconButton>
+                </InputAdornment>
+              )
+            }}
           />
         </div>
 
       </div>
+<<<<<<< HEAD
       <br/>
+=======
+>>>>>>> ccc0305ea3a3d5fccdce870ddda18bceb871df86
       <AnimatePresence>
       <div className='w-11/12 mx-auto grid grid-cols-2 md:grid-cols-3 flex-column gap-2 md:gap-10 pb-20'>
       {
