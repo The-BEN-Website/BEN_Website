@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './Map_Section/Header'
-import MapSection from './Map_Section/Map1' // import the map here
+import MapSection from './Map_Section/Map1'
+import Branches from './Map_Section/Branches' // import the map here
 
 
 // const location = {
@@ -20,6 +21,7 @@ const App = () => {
     <div className="App flex flex-col h-fit">
       <Header />
       <MapSection />
+      <Branches/>
     </div>
   )
 }
