@@ -1,31 +1,19 @@
-import React from 'react'
-// import BackgroundImage from '../../assets/Home_assets/Background!.webp'
-import BackgroundImage from '../../assets/Home_assets/hero_Img1.webp'
-// import BackgroundImage1 from '../../assets/Home_assets/Header.webp'
-import ServiceBtn from '../../components/Buttons/button1'
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React from "react";
 
 const Header = () => {
+  return (
+    <div className="flex flex-col h-[18rem] w-full font-my_font justify-center bg-background-red">
+      {/* main header content */}
+      <div className="w-10/12 lg:w-5/6 lg:mx-auto md:mx-20 mt-20 flex flex-col items-center justify-center md:items-start gap-7 mx-auto">
+        <p className="text-white text-sm font-my_font md:w-2/3 w-10/12 text-center md:text-start uppercase underline underline-offset-1">
+          Events
+        </p>
+        <h2 className="text-white text-5xl font-bold font-my_font text-center md:text-start sm:w-full lg:w-2/3">
+          Believers Convention 2023
+        </h2>
+      </div>
+    </div>
+  );
+};
 
-    return (
-        <div className='flex items-center justify-center relative h-[35rem] lg:h-[28rem] w-11/12 mx-auto font-my_font'>
-            <section className='w-11/12 md:h-[25rem] lg:h-full flex flex-col lg:flex-row flex-col-reverse sm:flex-col'>
-                {/* main header content */}
-                <div className = 'w-full lg:w-1/2 flex flex-col items-center justify-center md:items-center lg:items-start gap-3' >
-                    <h2 className='text-black text-4xl lg:text-5xl font-bold font-my_font text-center md:text-start tracking-wide'>Events Page</h2>
-                    <p className='tracking-widest text-black text-sm font-my_font w-2/3 text-center md:text-start'>
-                    Looking for more information? Submit your information and BEN representative will follow up with you as soon as possible.
-                    </p>
-                    
-                </div>
-                {/* image */}
-                <LazyLoadImage src={BackgroundImage} className="w-10/12 sm:w-2/3 md:w-3/5 lg:w-1/2 h-fit flex items-center mx-auto lg:my-9" alt="" />
-            </section>
-            {/* <hr className='bg-red-300 border-0 h-0.5 w-full absolute bottom-[11%]'/> */}
-            {/* <DeleteIcon className='bg-white'/> */}
-            
-        </div>
-    )
-}
-
-export default Header
+export default Header;
