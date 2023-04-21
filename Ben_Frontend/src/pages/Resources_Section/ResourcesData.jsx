@@ -5,9 +5,10 @@ import pic1 from '../../assets/Resource_assets/dataa.webp'
         {
           id: '1',
           image: pic1,
-          title: "Discipleship class",
+          title: "Christian Service",
           category: "Prayer",
-          descripition: "lorem ipsum dolor sit amet"
+          descripition: "lorem ipsum dolor sit amet",
+          link: 'http://u.pc.cd/F1gctalK'
         },
         {
           id: '2',

@@ -24,17 +24,17 @@ function EventDeets () {
                     <div className='md:w-3/5 h-max mx-5 md:mx-10 mt-10 px-5 py-5 shadow-md'>
                         <img src={thisItem.image} className='rounded-lg mb-3' />
                         <div className='flex gap-3 md:m-5 my-5 cursor-pointer'>
-                        <a className='flex gap-1 cursor-pointer group hover:underline'>
+                        <a href={thisItem.link} target='_blank' className='flex gap-1 cursor-pointer group hover:underline'>
                         <VideoLibraryOutlined className='hover:underline text-red-800 text-5xl w-10 font-bold'/>
                         <p className='group-hover:underline'>
-                         Watch </p>
+                         Play </p>
                          </a>
-                        <a className='flex gap-1 cursor-pointer group hover:underline'>
+                        <a href={thisItem.link} target='_blank' className='flex gap-1 cursor-pointer group hover:underline'>
                         <Headphones className='hover:underline text-red-800 text-5xl w-10 font-bold'/>
                         <p className='group-hover:underline'>
                          Listen </p>
                          </a>
-                        <a className='flex gap-1 cursor-pointer group hover:underline'>
+                        <a href={thisItem.link} target='_blank' className='flex gap-1 cursor-pointer group hover:underline'>
                         <DownloadingOutlined className='hover:underline text-red-800 text-5xl w-10 font-bold'/>
                         <p className='group-hover:underline'>
                          Download </p>

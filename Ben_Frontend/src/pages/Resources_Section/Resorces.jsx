@@ -66,7 +66,7 @@ function Evets(props) {
   return (
     
     <div className='bg-white text-black text-xl py-0 px-2 md:px-14 flex-grow'>
-    <h1 className='font-my_font font-extrabold text-center justify-center mb-10 text-4xl'> Explore Other Series</h1>
+    <h1 className='font-my_font font-bold text-center justify-center mb-10 text-4xl'> Explore Other Series</h1>
     <div className='my-6 lg:ml-48 mr-3 items-center justify-items-center md:gap-10 grid grid-cols-2 md:flex gap-4'>
       <div className="lg:items-center justify-center font-my_font rounded-md border-b-gray-300 md:w-[30%] w-11/12 bg-[length:16px_16px] lg:ml-32 bg-l-10-c bg-no-repeat px-2  py-3 pr-5 
           border-w border-solid border-gray-300 text-gray-800 shadow-md transition-all duration-300 hover:shadow-none">
