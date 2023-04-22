@@ -6,22 +6,22 @@ import Loader from '../src/assets/Home_assets/Loader.gif'
 import Footer from './components/Footer'
 import Back from './components/BackBtn'
 import Navbar from './components/Navbar/NavHead'
-import Red from './pages/Anniversary'
+// import Red from './pages/Anniversary'
 
 function App() {
 
   return (
     <>
-      <Navbar />
-      {/* <Suspense
+      {window.location.href != "http://localhost:5173/" ? <Navbar /> : null}
+      {/* <Navbar /> */}
+      <Suspense
         fallback={
           <div className="flex flex-col justify-center items-center w-full h-full">
             <img src={Loader} className="w-40 h-40" />
             <p className="text-2xl font-bold mb-10">Page is Loading...</p>
           </div>
         }
-      > */}
-        <Suspense fallback={<Red/>}>
+      >
         {
           <Routes>
             {AppRoutes.map((route) => (
@@ -35,7 +35,8 @@ function App() {
         }
       </Suspense>
       <Back />
-      <Footer />
+      {window.location.href != "http://localhost:5173/" ? <Footer /> : null}
+      {/* <Footer /> */}
     </>
   );
 }

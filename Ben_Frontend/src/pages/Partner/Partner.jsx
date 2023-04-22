@@ -29,7 +29,7 @@ const Partnership = () => {
               Our Account Details
             </h2>
             <p className="text-xl font-semibold font-my_font">
-              Account Name: Believers Equipping Nation
+              Account Name: Believers Equipping Network
             </p>
             <p className="font-my_font">Account Number: 1430458522 </p>
             <p className="font-my_font">Account Bank: Access Bank </p>
