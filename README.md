@@ -1,1 +1,1 @@
-# Believers Equipping Nation Website!
+# Believers Equipping Network Website!
