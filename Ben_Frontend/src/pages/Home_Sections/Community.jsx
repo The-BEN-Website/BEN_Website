@@ -11,7 +11,7 @@ const Community = () => {
       className="p-6 w-full md:w-[45rem] lg:w-11/12 m-auto"
     >
       <h2 className="text-3xl text-center font-semibold sm:text-4xl mb-6 text-my-black sm:text-center lg:text-left font-my_font">
-        Join the community
+        Join Us Today!
       </h2>
       <ul className="list-none mx-auto my-12 flex flex-col lg:flex-row items-center gap-6">
         <li className="w-11/12 md:w-10/12 h-[26rem] lg:w-full flex flex-col items-start mx-auto span-through relative grid content-end drop-shadow-2xl">
@@ -23,10 +23,10 @@ const Community = () => {
           />
           <span className="mb-7">
             <h3 className="text-lg text-white mx-5 bg-community-blue bg-opacity-100 w-fit px-5 font-semiboldfont-my_font">
-              Community
+              Spiritual Growth
             </h3>
             <p className="sm:block text-2xl text-white mx-5 font-my_font">
-              The Power Of Vulnerability
+              Training believers in the Ministry
             </p>
           </span>
         </li>
@@ -43,7 +43,7 @@ const Community = () => {
               Act of Service
             </h3>
             <p className="sm:block text-2xl text-white mx-5 font-my_font">
-              Christmas At BEN{" "}
+              Send-forth Celebration
             </p>
           </span>
         </li>
@@ -60,7 +60,7 @@ const Community = () => {
               Discipleship
             </h3>
             <p className="sm:block text-2xl text-white mx-5 font-my_font">
-              The Power Of Discipleship
+              The Essence of Discipleship
             </p>
           </span>
         </li>

@@ -12,7 +12,7 @@ const Header = () => {
             <section className='w-11/12 md:h-[25rem] lg:h-full flex flex-col lg:flex-row flex-col-reverse'>
                 {/* main header content */}
                 <div className = 'w-full lg:w-1/2 flex flex-col items-center justify-center md:items-center lg:items-start gap-3' >
-                    <h2 className='text-black text-4xl lg:text-5xl font-bold font-my_font text-center md:text-start tracking-wide'>Believers <strong className='text-red-500'>Equipping </strong>Nation</h2>
+                    <h2 className='text-black text-4xl lg:text-[2.8rem] font-bold font-my_font text-center md:text-start tracking-wide'>Believers <strong className='text-red-500'>Equipping </strong>Network</h2>
                     <p className='tracking-widest text-black text-sm font-my_font md:w-1/2 w-2/3 text-center md:text-start'>
                         Heralding the Lordship of the word
                         Demonstrating the influence of the spirit 

@@ -22,7 +22,7 @@ const Hero = () => {
           About Us
         </h2>
         <p className="text-2xl font-my_font">
-            Get connected with the Believers Equipping Nation
+            Get connected with the Believers Equipping Network
         </p>
       </div>
     </div>

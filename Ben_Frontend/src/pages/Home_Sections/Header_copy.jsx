@@ -20,7 +20,7 @@ const Header = () => {
             />
             {/* main header content */}
             <div className = 'w-5/6 absolute flex flex-col items-center justify-center md:items-start gap-3 ' >
-                <h2 className='text-white text-5xl font-bold font-my_font text-center md:text-start'>Believers Equipping Nation</h2>
+                <h2 className='text-white text-5xl font-bold font-my_font text-center md:text-start'>Believers Equipping Network</h2>
                 <p className='text-white text-sm font-my_font md:w-1/3 w-2/3 text-center md:text-start '>
                     Heralding the Lordship of the word
                     Demonstrating the influence of the spirit 
