@@ -1,21 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import Believe_Img from "../assets/Home_assets/flyer.jpeg";
+import Firework from "../assets/Home_assets/vid_.gif";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
-function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setLoading(false);
-    }, 5000); // 5 seconds timeout
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, []);
+const Anniversary = () => {
+  const navigate = useNavigate();
+  setTimeout(() => {
+    navigate("/home");
+    window.location.reload()
+  }, 10000);
 
   return (
-    <div>{loading ? <div>Loading...</div> : <div>Other contents...</div>}</div>
+    <div className="flex items-center justify-center relative h-full w-full">
+      <LazyLoadImage
+        src={Firework}
+        className="inline-block absolute w-full h-full"
+        alt=""
+      />
+      <div className="absolute mx-auto w-1/3 h-fit text-center border rounded-2xl p-0 bg-zinc-100">
+        <LazyLoadImage
+          src={Believe_Img}
+          className="w-fit mx-auto rounded-2xl"
+          alt=""
+        />
+      </div>
+    </div>
   );
-}
+};
 
-export default App;
+export default Anniversary;

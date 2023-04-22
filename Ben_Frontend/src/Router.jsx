@@ -14,11 +14,16 @@ const Map = lazy(() => import("./pages/Map"))
 const Payment = lazy(() => import("./pages/Payment"))
 const Payment1 = lazy(() => import("./pages/Payment1"))
 const items = lazy(() => import("../public/EventData"))
+const Anniversary = lazy(() => import("../src/pages/Anniversary.jsx"))
 
 
 const AppRoutes = [
   {
     path: "/",
+    element: <Anniversary />,
+  },
+  {
+    path: "/home",
     element: <Home />,
   },
   {
@@ -31,7 +36,7 @@ const AppRoutes = [
   },
   {
     path: "/giving",
-    element: <Partnership/>,
+    element: <Partnership />,
   },
   {
     path: "/resources",
@@ -55,25 +60,24 @@ const AppRoutes = [
   },
   {
     path: `/event/:id`,
-    element: <EventDeets />
+    element: <EventDeets />,
   },
   {
     path: `/resources/:id`,
-    element: <ResourceDeets />
+    element: <ResourceDeets />,
   },
   {
     path: `/payment`,
-    element: <Payment />
+    element: <Payment />,
   },
   {
     path: `/payment1`,
-    element: <Payment1 />
+    element: <Payment1 />,
   },
   {
     path: "*",
     element: <div>Not found</div>,
   },
-
 ];
 
 export default AppRoutes;

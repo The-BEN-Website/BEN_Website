@@ -10,8 +10,7 @@ const Info = () => {
       <span className="text-my-black flex flex-col gap-3">
         <h2 className="text-3xl font-medium font-my_font">How Can We Help?</h2>
         <p className="font-my_font">
-          We’d love to help get you connected to one of our locations, a small
-          group, or a volunteer opportunity. Feel free to fill out the contact
+          We’d love to help get you connected to one of our branches, discipleship groups and believers online. Feel free to fill out the contact
           form to receive a reply, or contact us via phone.
         </p>
       </span>
