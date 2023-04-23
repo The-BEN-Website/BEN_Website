@@ -18,7 +18,7 @@ const Experience = () => {
             We Preach And Teach the Gospel of Christ With Strong Emphasis On Who We Are In Christ And The Finished Work
             Of Redemption With Its Realities, Privileges And
             Rights, We Demonstrate The Things Of The
-            Spirit In Gifts(Utterance,Revelation And Power) And We Will Be Full Of Joy!
+            Spirit In Gifts(Utterance,Revelation And Power) And We Are Full Of Joy!
           </p>
         </div>
 
