@@ -123,32 +123,40 @@ function Evets(props) {
       <div className='grid grid-cols-2 md:grid-cols-3 flex-column gap-4 md:gap-10 pb-20'>
       {
           search(menuItem).map((item) => {
-              return <motion.div className='w-full py-6 px-5 shadow-md rounded-md' key={item.id}
-              layoutScroll
-                initial={{ opacity: 0.3 }}
-                animate={{ opacity: 1 }}
-                transition={{ 
-                  opacity:{ease:"linear"},
-                layout: {duration:0.5} }}
-                exit={{opacity:0.3}}
-              >
-              
-                  <div className='overflow-hidden flex-grow group transition-all hover:cursor-pointer duration-300 ease-in-out object-contain'>
-                  <Link to={`/resources/${item.id}`}>
-                      <motion.img layout
-                        src={item.image} 
+              return (
+                <motion.div
+                  className="w-full shadow-md rounded-md"
+                  key={item.id}
+                  layoutScroll
+                  initial={{ opacity: 0.3 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    opacity: { ease: "linear" },
+                    layout: { duration: 0.5 },
+                  }}
+                  exit={{ opacity: 0.3 }}
+                >
+                  <div className="overflow-hidden flex-grow group transition-all hover:cursor-pointer duration-300 ease-in-out object-contain">
+                    <Link to={`/resources/${item.id}`}>
+                      <motion.img
+                        layout
+                        src={item.image}
                         alt={item.title}
-                        className='w-full group-hover:scale-x-110 flex-grow font-my_font rounded-lg transition-all duration-300 ease-in-out'
-                        />
-                      <h2 className='mx-2 mt-2 md:text-2xl font-bold  text-black transition-all duration-300 font-my_font'>{item.title}</h2>
-                      <p className='ml-2 my-1 text-gray-500 md:text-xl text-[15px] font-my_font'>Category: {item.category}</p>
-                      </Link>
-                      <VideoCameraBackOutlined className='md:mr-3 mx-2 hover:text-red-600'/>
-                      <HeadphonesOutlined className='md:mr-3 mx-2 hover:text-red-600'/>
-                      <CloudDownloadOutlined className='mx-2 hover:text-red-600'/>
-                      
+                        className="w-full group-hover:scale-x-110 flex-grow font-my_font rounded-t-xl transition-all duration-300 ease-in-out"
+                      />
+                      <h2 className="mx-5 mt-2 md:text-2xl font-bold  text-black transition-all duration-300 font-my_font">
+                        {item.title}
+                      </h2>
+                      <p className="ml-5 my-1 text-gray-500 md:text-xl text-[15px] font-my_font">
+                        Category: {item.category}
+                      </p>
+                    </Link>
+                    <VideoCameraBackOutlined className="md:mr-3 mx-5 my-4 hover:text-red-600" />
+                    <HeadphonesOutlined className="my-4 md:mr-3 mx-2 hover:text-red-600" />
+                    <CloudDownloadOutlined className="my-4 mx-2 hover:text-red-600" />
                   </div>
-              </motion.div>
+                </motion.div>
+              );
               })
           }
       </div>      </AnimatePresence>
