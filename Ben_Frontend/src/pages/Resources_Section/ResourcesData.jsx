@@ -12,57 +12,64 @@ import pic8 from "../../assets/Resource_assets/angels1.webp"
       {
         id: "1",
         image: pic3,
-        title: "Angels - Are They Not Ministering Spirits? 3",
+        title: "Angels - Are They Not Ministering Spirits? - 3",
         category: "Series",
-        descripition: "lorem ipsum dolor sit amet",
+        descripition:
+          "Listen to gain clarity on the subject of Angels. You would blessed",
         link: "http://u.pc.cd/nLgctalK",
       },
       {
         id: "2",
         image: pic2,
-        title: "Angels - Are They Not Ministering Spirits? 2",
+        title: "Angels - Are They Not Ministering Spirits? - 2",
         category: "Series",
-        descripition: "lorem ipsum dolor sit amet",
-        link:"http://u.pc.cd/XvYotalK"
+        descripition:
+          "Listen to gain clarity on the subject of Angels. You would blessed",
+        link: "http://u.pc.cd/XvYotalK",
       },
       {
         id: "3",
         image: pic8,
         title: "Angels - Are They Not Ministering Spirits?",
         category: "Series",
-        descripition: "lorem ipsum dolor sit amet",
-        link: "http://u.pc.cd/qpY7"
+        descripition:
+          "Listen to gain clarity on the subject of Angels. You would blessed",
+        link: "http://u.pc.cd/qpY7",
       },
       {
         id: "4",
         image: pic4,
-        title: "Christian Service 3",
+        title: "Christian Service - 3",
         category: "Act of Service",
-        descripition: "lorem ipsum dolor sit amet",
-        link:"http://u.pc.cd/RvtrtalK"
+        descripition:
+          "We have been called to serve. What does it entail? Listen, surely you would be blessed",
+        link: "http://u.pc.cd/RvtrtalK",
       },
       {
         id: "5",
         image: pic7,
-        title: "Christian Service 2",
+        title: "Christian Service - 2",
         category: "Act of Service",
-        descripition: "lorem ipsum dolor sit amet",
-        link:"http://u.pc.cd/tKfrtalK"
+        descripition:
+          "We have been called to serve. What does it entail? Listen, surely you would be blessed",
+        link: "http://u.pc.cd/tKfrtalK",
       },
       {
         id: "6",
         image: pic5,
         title: "Christian Service",
         category: "Act of Service",
-        descripition: "lorem ipsum dolor sit amet",
-        link: "http://u.pc.cd/F1gctalK"
+        descripition:
+          "We have been called to serve. What does it entail? Listen, surely you would be blessed",
+        link: "http://u.pc.cd/F1gctalK",
       },
       {
         id: "7",
         image: pic6,
         title: "Did God Do All These Things - 15",
         category: "Series",
-        descripition: "lorem ipsum dolor sit amet",
+        descripition:
+          "Listen to gain clarity on the subject of God's involvement in the events of the scriptures and whether or not did he really do all these things. You would blessed",
         link: "http://u.pc.cd/sMJrtalK",
       },
     ];
