@@ -19,9 +19,7 @@ const Discipleship = () => {
             </h2>
             <blockquote className="relative">
               <p className="text-lg md:text-base lg:text-lg before:content-['\201C'] before:font-serif before:absolute before:-top-20 before:left-0 before:text-7xl before:text-my-red before:opacity-50 before:transform before:-translate-x-7 before:translate-y-16 after:content-['\201D'] after:font-serif after:absolute after:-bottom-34 after:right-0 after:text-7xl after:text-my-red after:opacity-50 after:transform after:translate-x-6 after:translate-y-2 font-my_font">
-                "All scripture is given by inspiration of God and is useful for
-                doctrine, for reproof, for correction and for training in
-                righteousness:” (2 Timothy 3:16). The next most important thing
+                "All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness:” (2 Timothy 3:16). The next most important thing
                 after salvation is knowledge. God desires that you grow in your
                 knowledge of what Christ has done and what you have as a result.
               </p>
