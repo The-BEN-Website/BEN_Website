@@ -4,6 +4,7 @@ import pic3 from "../../assets/Home_assets/Event3.webp";
 import pic4 from "../../assets/Home_assets/Event4.webp";
 import pic5 from "../../assets/Home_assets/Event5.webp";
 import pic6 from "../../assets/Home_assets/Event6.webp";
+// import pic7 from  "../../assets/Home_assets/fasting.webp"
 
 export default [
   {
