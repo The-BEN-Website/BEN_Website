@@ -18,10 +18,10 @@ function EventDeets () {
             <div className="hidden md:block lg:ml-10 lg:-mr-20 flex-column lg:max-w-max md:w-2/3">
               <div className="mx-10 lg:w-96 md:w-60 md:h-60 md:mx-10 items-center justify-center mt-20 px-5 py-5 h-full shadow-md">
                 <h2 className="text-xl font-bold">{thisItem.title}</h2>
-                <p className="mb-7">Every Thursday (4pm) and Sunday (2pm)</p>
+                <p className="mb-7">  {thisItem.description} </p>
                 <h2 className="text-xl font-bold"> Where:</h2>
                 {/* <p>Admin</p> */}
-                <p>Edo State University, Uzairue</p>
+                <p>{thisItem.location}</p>
               </div>
               <div>
                 <button className="hidden md:block btneffect outline items-center px-5 md:px-0 w-56 justify-center rounded-md lg:w-96 md:w-50 ml-20  md:ml-[60px] bg-[#F74946] py-3 lg:ml-10 mt-5 mb-5 text-white font-semibold">
@@ -44,15 +44,15 @@ function EventDeets () {
             </div>
             <div className=" md:max-w-max md:h-auto md:mr-10 md:mt-20 mt-10 mb-10 px-5 py-5 h-full shadow-md">
               <img src={thisItem.image} className="rounded-lg mb-3" />
-              <p className="mb-7">Every Thursday by 4:00pm and Sundays by 2pm</p>
-              <p className="mb-4">
+              <p className="mb-7"> Venue: {thisItem.location}</p>
+              {/* <p className="mb-4">
                 Come join us for the 4:00pm service ibn the lecture hall 1 for
                 food, trivia and fun
-              </p>
+              </p> */}
               <td className="w-80 h-[1px] bg-gray-200" />
               <p className="mt-4">
-                Join us at the Discipleship session at 4:00pm saturday service in
-                the worship center
+                Join us at our
+                the worship centers and you will be blessed!
               </p>
               <List bulleted>
                 <List.Item as="li">Come and be edified</List.Item>
