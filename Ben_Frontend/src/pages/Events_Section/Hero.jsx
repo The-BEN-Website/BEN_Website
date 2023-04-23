@@ -8,8 +8,8 @@ const Header = () => {
         <p className="text-white text-sm font-my_font md:w-2/3 w-10/12 text-center md:text-start uppercase underline underline-offset-1">
           Events
         </p>
-        <h2 className="text-white text-5xl font-bold font-my_font text-center md:text-start sm:w-full lg:w-2/3">
-          Believers Convention 2023
+        <h2 className="text-white text-5xl font-bold font-my_font text-center md:text-start sm:w-full lg:w-full">
+          Happy Anniversary Believers Equipping Network!!!
         </h2>
       </div>
     </div>
