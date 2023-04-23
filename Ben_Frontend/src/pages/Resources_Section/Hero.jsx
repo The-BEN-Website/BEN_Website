@@ -37,7 +37,7 @@ const Hero = () => {
         
         April 20th, 2023 By Pastor Esosa Enoyoze
         <div className='flex gap-2 mt-5 -space-y-1 cursor-pointer group hover:underline'>
-        <a href={hero.file} className='flex gap-2 -space-y-1 cursor-pointer group hover:underline'>
+        <a href={hero.file} target='_blank' className='flex gap-2 -space-y-1 cursor-pointer group hover:underline'>
         <PlayCircleOutlineIcon className='hover:underline text-red-800 text-5xl w-10 font-bold'/>
         <p className='group-hover:underline'>
          Listen to Message </p>
