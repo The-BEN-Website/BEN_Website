@@ -43,7 +43,7 @@ const Experience = () => {
               Church Gathering
             </h3>
             <p className="font-my_font">
-              Join us as we gather at one of our Believers Equipping Network
+              Join us as we gather at one of our
               meetings..
             </p>
             <a href="/event">
@@ -74,8 +74,8 @@ const Experience = () => {
             <EventIcon fontSize="large" className="text-my-red" />
             <h3 className="text-xl font-semibold font-my_font">Events</h3>
             <p className="font-my_font">
-              Join us as we gather at one of our BEN events & believers
-              convention..
+              Join us as we gather at one of our BEN events & Believers
+              convention.
             </p>
             <a href="/event">
               <p className="text-base font-semibold underline font-my_font">
