@@ -1,9 +1,11 @@
 import pic1 from '../../assets/Resource_assets/dataa.webp'
-import pic2 from '../../assets/Resource_assets/angels2.webp'
+import pic2 from '../../assets/Resource_assets/angles2.webp'
 import pic3 from '../../assets/Resource_assets/angels3.webp'
 import pic4 from '../../assets/Resource_assets/cs3.webp'
 import pic5 from '../../assets/Resource_assets/cs.webp'
 import pic6 from '../../assets/Resource_assets/dgdatt15.webp'
+import pic7 from "../../assets/Home_assets/cs2.webp";
+import pic8 from "../../assets/Resource_assets/angels1.webp"
 
 
     export default [
@@ -25,7 +27,7 @@ import pic6 from '../../assets/Resource_assets/dgdatt15.webp'
       },
       {
         id: "3",
-        image: pic2,
+        image: pic8,
         title: "Angels - Are They Not Ministering Spirits?",
         category: "Series",
         descripition: "lorem ipsum dolor sit amet",
@@ -41,7 +43,7 @@ import pic6 from '../../assets/Resource_assets/dgdatt15.webp'
       },
       {
         id: "5",
-        image: pic5,
+        image: pic7,
         title: "Christian Service 2",
         category: "Act of Service",
         descripition: "lorem ipsum dolor sit amet",
