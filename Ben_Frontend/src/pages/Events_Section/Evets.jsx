@@ -41,24 +41,29 @@ function Evets(props) {
 
 
   return (
-    
-    <div className='bg-white text-black text-xl py-0 px-2 md:px-14 flex-grow'>
-    {/* <h1 className='font-my_font font-extrabold text-center justify-center mb-10 text-4xl'> Explore Other Series</h1> */}
-    <div className='w-8/12 mx-auto items-center justify-center md:gap-10 space-y-0 md:flex gap-4 lg:flex flex'>
-      <div className="w-1/2 sel border-gray-100 border cursor-pointer leading-4 bg-white
-      items-center relative shadow-lg rounded-md transition-all hover:shadow-sm after:sel-aft">
-       <select
-         onChange={(e) => setFilter(e.target.value)}
-         className="w-11/12 rounded-md cursor-pointer text-gray-400 m-0 py-5 pr-2 pl-4 font-my_font"
-         aria-label="Filter Events By Category">
-         <option className='text-gray-400' value="">Filter by category</option>
-         {filter_items.map((item) => (
-         <option className='text-gray-400 pr-2' value={item}>Filter By {item}</option>
-         ))}
-       </select>
-     </div>  
-      <div className='s-wr2 mr-'>
-      
+    <div className="bg-white text-black text-xl py-0 px-2 md:px-14 flex-grow">
+      {/* <h1 className='font-my_font font-extrabold text-center justify-center mb-10 text-4xl'> Explore Other Series</h1> */}
+      <div className="w-8/12 mx-auto items-center justify-center md:gap-10 space-y-0 md:flex gap-4 lg:flex flex">
+        <div
+          className="w-1/2 sel border-gray-100 border cursor-pointer leading-4 bg-white
+      items-center relative shadow-lg rounded-md transition-all hover:shadow-sm after:sel-aft"
+        >
+          <select
+            onChange={(e) => setFilter(e.target.value)}
+            className="w-11/12 rounded-md cursor-pointer text-gray-400 m-0 py-5 pr-2 pl-4 font-my_font"
+            aria-label="Filter Events By Category"
+          >
+            <option className="text-gray-400" value="">
+              Filter by category
+            </option>
+            {filter_items.map((item) => (
+              <option className="text-gray-400 pr-2" value={item}>
+                Filter By {item}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="s-wr2 mr-">
           {/* <input
           type="search"
           name="search-form"
@@ -67,76 +72,81 @@ function Evets(props) {
           placeholder="Search "
           onChange={(e) => setQuery(e.target.value)}
           /> */}
-          
+
           <TextField
             onChange={(e) => setQuery(e.target.value)}
-            className='rounded-lg outline-none'
-            sx={{ width: '100%', fontFamily: 'Urbanist', border: '0.5px solid #d4d8dd', "& fieldset": { border: 'none' },}} 
+            className="rounded-lg outline-none"
+            sx={{
+              width: "100%",
+              fontFamily: "Urbanist",
+              border: "0.5px solid #d4d8dd",
+              "& fieldset": { border: "none" },
+            }}
             label="Search..."
-            size='small'
-            borderColor='#9ca3af'
-            
-            InputLabelProps={{ style: { fontSize: 18, paddingTop:'5px', color: '#9ca3af'} }}
-
-                        
+            size="small"
+            borderColor="#9ca3af"
+            InputLabelProps={{
+              style: { fontSize: 18, paddingTop: "5px", color: "#9ca3af" },
+            }}
             InputProps={{
-              sx: { color: '#9ca3af', paddingLeft:'10px', fontSize: 18, border: '#9ca3af' },
-              className: 'font-my_font py-1 rounded-md border-b-gray-300 min-w-min max-w-max w-full bg-[length:16px_16px] bg-l-10-c bg-no-repeat pl-10 border-w border-solid text-gray-800 shadow-md transition-all duration-300 hover:shadow-none',
+              sx: {
+                color: "#9ca3af",
+                paddingLeft: "10px",
+                fontSize: 18,
+                border: "#9ca3af",
+              },
+              className:
+                "font-my_font py-1 rounded-md border-b-gray-300 min-w-min max-w-max w-full bg-[length:16px_16px] bg-l-10-c bg-no-repeat pl-10 border-w border-solid text-gray-800 shadow-md transition-all duration-300 hover:shadow-none",
               endAdornment: (
                 <InputAdornment>
                   <IconButton>
-                  <Search className='' />
+                    <Search className="" />
                   </IconButton>
                 </InputAdornment>
-              )
+              ),
             }}
           />
         </div>
-
       </div>
       <AnimatePresence>
-      <div className='w-11/12 mx-auto grid grid-cols-2 md:grid-cols-3 flex-column gap-2 md:gap-10 pb-20'>
-      {
-          search(menuItem).map((item) => {
-              return (
-                <motion.div
-                  className="w-full py-3 px-2 "
-                  key={item.id}
-                  layoutScroll
-                  initial={{ opacity: 0.3 }}
-                  animate={{ opacity: 1 }}
-                  transition={{
-                    opacity: { ease: "linear" },
-                    layout: { duration: 0.5 },
-                  }}
-                  exit={{ opacity: 0.3 }}
-                >
-                  <div className="overflow-hidden flex-grow hover:scale-x-110 transition-all hover:cursor-pointer duration-300 ease-in-out object-contain">
-                    <Link to={`/event/${item.id}`}>
-                      <motion.img
-                        layout
-                        src={item.image}
-                        alt={item.title}
-                        className="w-11/12 flex-grow font-my_font rounded-lg transition-all duration-300 ease-in-out"
-                      />
-                      <h2 className="md:text-2xl font-bold  text-black transition-all duration-300 font-my_font">
-                        {item.title}
-                      </h2>
-                      <p className="text-contact-text text-base font-thin font-my_font">
-                        {item.description}
-                      </p>
-                    </Link>
-                  </div>
-                </motion.div>
-              );
-              })
-          }
-      </div>      </AnimatePresence>
-       
+        <div className="w-11/12 mx-auto grid grid-cols-2 md:grid-cols-3 flex-column gap-2 md:gap-10 pb-20 pt-10">
+          {search(menuItem).map((item) => {
+            return (
+              <motion.div
+                className="w-full py-3 px-2 "
+                key={item.id}
+                layoutScroll
+                initial={{ opacity: 0.3 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  opacity: { ease: "linear" },
+                  layout: { duration: 0.5 },
+                }}
+                exit={{ opacity: 0.3 }}
+              >
+                <div className="overflow-hidden flex-grow hover:scale-x-110 transition-all hover:cursor-pointer duration-300 ease-in-out object-contain">
+                  <Link to={`/event/${item.id}`}>
+                    <motion.img
+                      layout
+                      src={item.image}
+                      alt={item.title}
+                      className="w-11/12 flex-grow font-my_font rounded-lg transition-all duration-300 ease-in-out"
+                    />
+                    <h2 className="md:text-2xl font-bold  text-black transition-all duration-300 font-my_font">
+                      {item.title}
+                    </h2>
+                    <p className="text-contact-text text-base font-thin font-my_font">
+                      {item.description}
+                    </p>
+                  </Link>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>{" "}
+      </AnimatePresence>
     </div>
-   
-    
-  )
+  );
   
 }
 

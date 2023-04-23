@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      {window.location.href != "http://localhost:5173/" ? <Navbar /> : null}
+      {window.location.href != "https://www.believersequippingnetwork.org/" ? <Navbar /> : null}
       {/* <Navbar /> */}
       <Suspense
         fallback={
@@ -35,7 +35,7 @@ function App() {
         }
       </Suspense>
       <Back />
-      {window.location.href != "http://localhost:5173/" ? <Footer /> : null}
+      {window.location.href != "https://www.believersequippingnetwork.org/" ? <Footer /> : null}
       {/* <Footer /> */}
     </>
   );
