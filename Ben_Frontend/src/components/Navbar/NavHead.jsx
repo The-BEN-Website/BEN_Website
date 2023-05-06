@@ -20,7 +20,7 @@ function Header() {
         <div className="xl:container mx-auto">
           <div className="flex flex-row items-center justify-between md:flex md:justify-between sm:px-12 lg:px-[0.01rem] px-4">
             <NavLink
-              to="/home"
+              to="/"
               className={["block my-3", width > 600 ? "w-36" : "w-20"].join(
                 " "
               )}
