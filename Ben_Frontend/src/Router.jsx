@@ -18,12 +18,12 @@ const Anniversary = lazy(() => import("../src/pages/Anniversary.jsx"))
 
 
 const AppRoutes = [
+  // {
+  //   path: "/",
+  //   element: <Anniversary />,
+  // },
   {
     path: "/",
-    element: <Anniversary />,
-  },
-  {
-    path: "/home",
     element: <Home />,
   },
   {

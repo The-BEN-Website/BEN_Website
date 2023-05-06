@@ -12,8 +12,8 @@ function App() {
 
   return (
     <>
-      {window.location.href != "https://www.believersequippingnetwork.org/" ? <Navbar /> : null}
-      {/* <Navbar /> */}
+      {/* {window.location.href != "https://www.believersequippingnetwork.org/" ? <Navbar /> : null} */}
+      <Navbar />
       <Suspense
         fallback={
           <div className="flex flex-col justify-center items-center w-full h-full">
@@ -35,8 +35,8 @@ function App() {
         }
       </Suspense>
       <Back />
-      {window.location.href != "https://www.believersequippingnetwork.org/" ? <Footer /> : null}
-      {/* <Footer /> */}
+      {/* {window.location.href != "https://www.believersequippingnetwork.org/" ? <Footer /> : null} */}
+      <Footer />
     </>
   );
 }
