@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const NavLinks = [
   { title: "Home", href: "/" },
   { title: "About", href: "/about" },
-  { title: "Media", href: "https://www.believersequippingnetwork.org/" },
+  { title: "Media", href: "https://media.believersequippingnetwork.org/" },
   // { title: "Events", href: "/event" },
   {title: "Visit", href: "/visit" },
   { title: "Giving", href: "/giving" },
