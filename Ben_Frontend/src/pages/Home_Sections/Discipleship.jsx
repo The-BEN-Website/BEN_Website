@@ -5,8 +5,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Discipleship = () => {
     return (
-      <div className="bg-my-black lg:bg-grey-background h-[68rem] md:h-[60rem] lg:h-[30rem] w-full flex font-my_font">
-        <div className="flex flex-col lg:flex-row w-10/12 m-auto gap-20 items-center text-white lg:text-my-black">
+      <div className="bg-my-black h-[68rem] md:h-[60rem] lg:h-[30rem] w-full flex font-my_font">
+        <div className="flex flex-col lg:flex-row w-10/12 m-auto gap-20 items-center text-white">
           <LazyLoadImage
             src={Disciple_Img}
             className="w-4/5 h-10/12 md:w-6/12 md:h-8/12 lg:w-5/12"

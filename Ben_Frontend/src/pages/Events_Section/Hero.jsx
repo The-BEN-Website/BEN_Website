@@ -9,7 +9,7 @@ const Header = () => {
           Events
         </p>
         <h2 className="text-white text-5xl font-bold font-my_font text-center md:text-start sm:w-full lg:w-full">
-          Happy Anniversary Believers Equipping Network!!!
+          Believers Equipping Network Events
         </h2>
       </div>
     </div>

@@ -30,7 +30,7 @@ const Hero = () => {
           for a <b>Wonderful Experience!!</b>
         </p>
         <button className="bg-white border border-my-red w-fit text-my-red px-8 py-3 font-medium rounded-md font-my_font mx-auto">
-          <a href="/visit">Plan a Visit</a>
+          <a href="https://forms.gle/W6YVruT9qz8ayyxH8" target='_blank'>Plan a Visit</a>
         </button>
       </div>
     </div>
