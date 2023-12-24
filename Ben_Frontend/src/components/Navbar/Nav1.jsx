@@ -5,10 +5,11 @@ import { NavLink } from 'react-router-dom';
 const NavLinks = [
   { title: "Home", href: "/" },
   { title: "About", href: "/about" },
-  { title: "Resources", href: "/resources" },
-  { title: "Events", href: "/event" },
-  { title: "Contact", href: "/contact" },
+  { title: "Media", href: "https://www.believersequippingnetwork.org/" },
+  // { title: "Events", href: "/event" },
+  {title: "Visit", href: "/visit" },
   { title: "Giving", href: "/giving" },
+  { title: "Contact", href: "/contact" },
 ];
 
 export default function NavBar({ width, onOpen }) {
