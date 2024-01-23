@@ -17,7 +17,7 @@ function Header() {
 
     return (
       <header className="header w-full relative fixed z-10 text-black sm:text-white">
-        <div className="xl:container mx-auto">
+        <div className="w-11/12 mx-auto">
           <div className="flex flex-row items-center justify-between md:flex md:justify-between sm:px-12 lg:px-[0.01rem] px-4">
             <NavLink
               to="/"

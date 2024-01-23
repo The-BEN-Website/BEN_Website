@@ -16,7 +16,7 @@ export default function MyComponent() {
         About US
       </Button>
 
-      <Button variant="outlined" component={Link} to="/enroll" color="error" className="md:w-[16rem] w-[14rem]"
+      <Button variant="outlined" component={Link} to="/enroll" color="error" className="md:w-[19rem] w-[14rem]"
       style={{
         borderRadius: 0,
         backgroundColor: "transparent",
@@ -27,7 +27,7 @@ export default function MyComponent() {
         textTransform: "capitalize",
 
     }}>
-        Service Time
+       Learn with Us
       </Button>
     </div>
   );

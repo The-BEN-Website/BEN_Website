@@ -5,7 +5,7 @@ import Logo from '../assets/Home_assets/Logo1.webp'
 const Footer = () => {
     return (
       <footer className="bg-my-black text-white border border-gray-300 border-l-0 border-r-0 border-b-0">
-        <div className="mx-auto w-footer-width max-w-screen-xl p-4 py-6 lg:py-8">
+        <div className="mx-auto w-11/12 p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <a href="https://www.believersequippingnetwork.org/" className="flex items-center">
