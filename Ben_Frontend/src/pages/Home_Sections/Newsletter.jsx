@@ -28,7 +28,7 @@ const Newsletter = () => {
     emailRef.current.value = "";
 }
   return (
-    <div className="h-[35rem] md:h-[40rem] lg:h-[30rem] w-full flex font-my_font">
+    <div className="h-[35rem] md:h-[40rem] lg:h-fit w-full flex font-my_font mb-10">
         <div className='flex flex-col lg:flex-row w-10/12 m-auto gap-8 lg:gap-16 items-center text-black'>
             <LazyLoadImage src={Subscribe} loading="lazy" className="w-3/5 h-8/12 md:w-6/12 md:h-8/12 lg:w-5/12" alt="" />
             <form className='w-11/12 h-fit md:w-1/2 flex flex-col gap-5 mb-5' ref={form} onSubmit={subscribe} >
