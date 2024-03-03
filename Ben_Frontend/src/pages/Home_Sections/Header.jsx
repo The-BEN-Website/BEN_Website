@@ -23,7 +23,7 @@ const Header = () => {
                 </div>
                 {/* image */}
                 <div className='border border-blue-500 lg:w-1/2'>
-                    <LazyLoadImage src={BackgroundImage} className="border border-red-600 w-10/12 sm:w-2/3 md:w-3/5 lg:w-full h-fit flex items-center mx-auto lg:my-9" alt="" />
+                    <LazyLoadImage src={BackgroundImage} className="border border-red-600 w-10/12 sm:w-2/3 md:w-3/5 lg:w-full md:h-fit flex items-center mx-auto lg:my-9" alt="" />
                 </div>
             </section>
             {/* <hr className='bg-red-300 border-0 h-0.5 w-full absolute bottom-[11%]'/> */}
