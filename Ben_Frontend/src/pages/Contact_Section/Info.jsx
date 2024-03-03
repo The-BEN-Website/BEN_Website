@@ -45,7 +45,8 @@ const Info = () => {
           <p className="text-contact-text">
             <b className="text-xl text-my-black font-my_font">Email</b>
             <br />
-            mediabelieversequippingnetwork@gmail.com
+            mediabelieversequipping
+            <br/>network@gmail.com
           </p>
         </span>
       </div>
