@@ -52,7 +52,8 @@ const Footer = () => {
                       href="mailto:mediabelieversequippingnetwork@gmail.com"
                       className="hover:underline"
                     >
-                      mediabelieversequippingnetwork@gmail.com
+                      mediabelieversequipping
+                      <br/>network@gmail.com
                     </a>
                   </li>
                 </ul>
