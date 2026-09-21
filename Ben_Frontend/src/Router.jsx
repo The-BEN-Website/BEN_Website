@@ -15,6 +15,8 @@ const Payment = lazy(() => import("./pages/Payment"))
 const Payment1 = lazy(() => import("./pages/Payment1"))
 const items = lazy(() => import("../public/EventData"))
 const Anniversary = lazy(() => import("../src/pages/Anniversary.jsx"))
+const PrivacyPolicy = lazy(() => import("./pages/Legal/PrivacyPolicy"))
+const TermsOfService = lazy(() => import("./pages/Legal/TermsOfService"))
 
 
 const AppRoutes = [
@@ -73,6 +75,14 @@ const AppRoutes = [
   {
     path: `/payment1`,
     element: <Payment1 />,
+  },
+  {
+    path: "/privacy",
+    element: <PrivacyPolicy />,
+  },
+  {
+    path: "/terms",
+    element: <TermsOfService />,
   },
   {
     path: "*",
