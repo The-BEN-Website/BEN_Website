@@ -117,8 +117,7 @@ const PrivacyPolicy = () => {
             <h2 className="mb-2 text-base font-semibold">Data Retention and Deletion</h2>
             <p>
               We retain your account and the information you provide until you ask us to delete
-              it. To request deletion of your account and data, contact us using the &quot;Ask the
-              Pastor&quot; feature in the App, or email{" "}
+              it. To request deletion of your account and data, email{" "}
               <a href="mailto:egyadesmond@gmail.com" className="text-my-red underline">
                 egyadesmond@gmail.com
               </a>
