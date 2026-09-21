@@ -3,6 +3,7 @@
 // import YouTubeIcon from "@mui/icons-material/YouTube";
 import Logo from '../assets/Home_assets/Logo1.webp'
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
     return (
       <footer className="bg-my-black text-white border border-gray-300 border-l-0 border-r-0 border-b-0">
         <div className="mx-auto w-11/12 p-4 py-6 lg:py-8">
@@ -80,8 +81,8 @@ const Footer = () => {
           <hr className="my-6 border-gray-500 sm:mx-autolg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-between">
             <span className="text-sm text-white sm:text-center lg:text-left">
-              © 2023{" "}
-              <a href="https://cobac-place.com/" className="hover:underline">
+              © {currentYear}
+              <a href="https://www.believersequippingnetwork.org/" className="hover:underline">
                 by Believers Equipping Network:
               </a>
               <i> Raising Godly Seeds❤️</i>
