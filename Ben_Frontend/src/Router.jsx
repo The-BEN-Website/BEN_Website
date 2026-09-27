@@ -17,6 +17,7 @@ const items = lazy(() => import("../public/EventData"))
 const Anniversary = lazy(() => import("../src/pages/Anniversary.jsx"))
 const PrivacyPolicy = lazy(() => import("./pages/Legal/PrivacyPolicy"))
 const TermsOfService = lazy(() => import("./pages/Legal/TermsOfService"))
+const Live = lazy(() => import("./pages/Live"))
 
 
 const AppRoutes = [
@@ -83,6 +84,10 @@ const AppRoutes = [
   {
     path: "/terms",
     element: <TermsOfService />,
+  },
+  {
+    path: "/live",
+    element: <Live />,
   },
   {
     path: "*",
