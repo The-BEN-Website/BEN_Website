@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.believersequippingnetwork.app",
+      "sha256_cert_fingerprints": [
+        "E4:93:D0:E4:75:A3:0D:18:DC:01:6C:4F:42:92:E9:18:34:EC:60:DD:EF:20:F4:E8:E3:83:70:B6:8B:89:EB:C2"
+      ]
+    }
+  }
+]

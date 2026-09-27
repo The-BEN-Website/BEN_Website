@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "QH3RG4G83U.com.believersequippingnetwork.app",
+        "paths": ["/live", "/live/*"]
+      }
+    ]
+  }
+}
