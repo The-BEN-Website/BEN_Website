@@ -1,160 +1,167 @@
 import React from "react";
-import Logo from "../../assets/Home_assets/Logo1.webp";
+import {
+  LegalLink,
+  LegalList,
+  LegalPage,
+  LegalSection,
+  LegalSubheading,
+  Term,
+} from "../../components/legal/Legal";
 
-const PrivacyPolicy = () => {
+const CONTACT_EMAIL = "believersequippingnetwork@gmail.com";
+
+function PrivacyPolicy() {
   return (
-    <div className="App font-my_font pt-32 pb-20 px-4">
-      <div className="mx-auto flex max-w-2xl flex-col gap-6">
-        <div className="flex items-center gap-2.5">
-          <img src={Logo} alt="BEN Logo" className="h-10 w-10 rounded-md bg-white object-contain" />
-          <span className="text-sm font-bold text-my-black">Believers Equipping Network</span>
-        </div>
+    <LegalPage title="Privacy Policy" lastUpdated="September 28, 2026">
+      <p>
+        This Privacy Policy describes how Believers Equipping Network (&quot;we,&quot;
+        &quot;us&quot;) collects, uses, and protects information through the Believers Equipping
+        Network mobile app (&quot;the App&quot;) and our website at believersequippingnetwork.org
+        (&quot;the Website&quot;).
+      </p>
 
-        <div>
-          <h1 className="text-2xl font-bold text-my-black">Privacy Policy</h1>
-          <p className="mt-1 text-sm text-contact-text">Last updated: September 22, 2026</p>
-        </div>
+      <LegalSection title="Information We Collect">
+        <LegalSubheading>In the App</LegalSubheading>
+        <p>
+          You must sign in with your Google or Apple account to use the App. We never see or receive
+          your password — sign-in is handled entirely by Google or Apple. When you sign in, we
+          receive your name, email address, and (if available) your profile photo from your Google
+          or Apple account, and we ask whether you are a member of Believers Equipping Network.
+        </p>
+        <p>We also collect the following, tied to your account:</p>
+        <LegalList>
+          <li>
+            <Term>Prayer Requests and Ask the Pastor.</Term> The text of any prayer request or
+            question you submit, and optionally your name and phone number if you provide them and
+            do not submit anonymously. You can view and edit your own past submissions in the App.
+          </li>
+          <li>
+            <Term>Service Attendance.</Term> If you watch a live service in the App for a few
+            continuous minutes, we record that you attended that service, tied to your account, so
+            church leadership has an accurate record of attendance.
+          </li>
+          <li>
+            <Term>Giving.</Term> The Give feature displays our bank account details so you can make
+            a donation by bank transfer. No online payment is currently processed within the App.
+          </li>
+          <li>
+            <Term>Push Notifications.</Term> If you enable notifications, your device registers a
+            push notification token with us so we can send you bulletin and announcement
+            notifications. This token is also shared with Expo&apos;s push notification service,
+            which delivers the notification through Apple&apos;s or Google&apos;s own notification
+            systems.
+          </li>
+          <li>
+            <Term>Bulletin Read Receipts.</Term> We record that a bulletin post was opened, using an
+            anonymous identifier generated on your device (not tied to your account), so we know how
+            many people engaged with a post.
+          </li>
+        </LegalList>
+        <p>
+          We do not collect your location or contacts. The App does not read your existing photos,
+          videos, or files — if you choose to save a photo from the App&apos;s gallery, it is
+          written to your device&apos;s photo library, but nothing is read from it.
+        </p>
 
-        <div className="flex flex-col gap-5 text-sm leading-relaxed text-my-black">
-          <p>
-            This Privacy Policy describes how the Believers Equipping Network mobile app
-            (&quot;the App,&quot; &quot;we,&quot; &quot;us&quot;) collects, uses, and protects
-            information when you use it.
-          </p>
+        <LegalSubheading>On the Website</LegalSubheading>
+        <p>
+          You do not need an account to use the Website. We only collect information you choose to
+          submit through its forms:
+        </p>
+        <LegalList>
+          <li>
+            <Term>Discipleship Class sign-up.</Term> Your full name and phone number, and your email
+            address if you provide it.
+          </li>
+          <li>
+            <Term>Contact form.</Term> Your name, email address, and the message you send us.
+          </li>
+        </LegalList>
+        <p>
+          The Website does not use cookies or similar technologies for analytics, advertising, or
+          tracking, and it does not ask for your location.
+        </p>
+      </LegalSection>
 
-          <section>
-            <h2 className="mb-2 text-base font-semibold">Information We Collect</h2>
-            <p className="mb-2">
-              You must sign in with your Google or Apple account to use the App. We never see or
-              receive your password — sign-in is handled entirely by Google or Apple. When you
-              sign in, we receive your name, email address, and (if available) your profile photo
-              from your Google or Apple account, and we ask whether you are a member of Believers
-              Equipping Network.
-            </p>
-            <p className="mb-2">We also collect the following, tied to your account:</p>
-            <ul className="list-disc space-y-2 pl-5">
-              <li>
-                <span className="font-medium">Prayer Requests and Ask the Pastor.</span> The text
-                of any prayer request or question you submit, and optionally your name and phone
-                number if you provide them and do not submit anonymously. You can view and edit
-                your own past submissions in the App.
-              </li>
-              <li>
-                <span className="font-medium">Service Attendance.</span> If you watch a live
-                service in the App for a few continuous minutes, we record that you attended that
-                service, tied to your account, so church leadership has an accurate record of
-                attendance.
-              </li>
-              <li>
-                <span className="font-medium">Giving.</span> The Give feature displays our bank
-                account details so you can make a donation by bank transfer. No online payment is
-                currently processed within the App.
-              </li>
-              <li>
-                <span className="font-medium">Push Notifications.</span> If you enable
-                notifications, your device registers a push notification token with us so we can
-                send you bulletin and announcement notifications. This token is also shared with
-                Expo&apos;s push notification service, which delivers the notification through
-                Apple&apos;s or Google&apos;s own notification systems.
-              </li>
-              <li>
-                <span className="font-medium">Bulletin Read Receipts.</span> We record that a
-                bulletin post was opened, using an anonymous identifier generated on your device
-                (not tied to your account), so we know how many people engaged with a post.
-              </li>
-            </ul>
-            <p className="mt-2">
-              We do not collect your location or contacts. The App does not read your existing
-              photos, videos, or files — if you choose to save a photo from the App&apos;s
-              gallery, it is written to your device&apos;s photo library, but nothing is read from
-              it.
-            </p>
-          </section>
+      <LegalSection title="How We Use Information">
+        <p>We use the information described above only to:</p>
+        <LegalList>
+          <li>Identify you within the App and maintain your sign-in session</li>
+          <li>Respond to prayer requests and pastoral questions</li>
+          <li>Maintain accurate service attendance records</li>
+          <li>Send push notifications about church bulletins and announcements</li>
+          <li>Contact you about the Discipleship Class when you sign up on the Website</li>
+          <li>Reply to messages you send through the Website&apos;s contact form</li>
+        </LegalList>
+        <p>
+          We do not use your information for advertising, marketing to third parties, or analytics
+          or tracking.
+        </p>
+      </LegalSection>
 
-          <section>
-            <h2 className="mb-2 text-base font-semibold">How We Use Information</h2>
-            <p className="mb-2">We use the information described above only to:</p>
-            <ul className="list-disc space-y-1 pl-5">
-              <li>Identify you within the App and maintain your sign-in session</li>
-              <li>Respond to prayer requests and pastoral questions</li>
-              <li>Maintain accurate service attendance records</li>
-              <li>Send push notifications about church bulletins and announcements</li>
-            </ul>
-            <p className="mt-2">
-              We do not use your information for advertising, marketing to third parties, or
-              analytics or tracking.
-            </p>
-          </section>
+      <LegalSection title="Sharing of Information">
+        <p>
+          We do not sell your information. Only authorised church administrators can view what you
+          submit. We share information only as necessary to operate the App and the Website:
+        </p>
+        <LegalList>
+          <li>
+            <Term>Google and Apple</Term> authenticate your sign-in to the App; we receive only the
+            profile information described above.
+          </li>
+          <li>
+            <Term>Supabase</Term>, our database provider, stores the information described above,
+            from both the App and the Website, on our behalf.
+          </li>
+          <li>
+            <Term>Expo</Term>, and transitively Apple and Google, deliver push notifications using
+            your device&apos;s push token.
+          </li>
+          <li>
+            <Term>YouTube</Term> hosts video content (sermons and live streams) embedded in the App
+            and on the Website&apos;s Live page; viewing this content is also subject to
+            YouTube&apos;s own privacy policy.
+          </li>
+          <li>
+            <Term>Google Fonts</Term> serves the typeface used on the Website. When a page loads,
+            your browser connects to Google&apos;s servers, which receive your IP address.
+          </li>
+        </LegalList>
+      </LegalSection>
 
-          <section>
-            <h2 className="mb-2 text-base font-semibold">Sharing of Information</h2>
-            <p className="mb-2">
-              We do not sell your information. We share information only as necessary to operate
-              the App:
-            </p>
-            <ul className="list-disc space-y-2 pl-5">
-              <li>
-                <span className="font-medium">Google and Apple</span> authenticate your sign-in;
-                we receive only the profile information described above.
-              </li>
-              <li>
-                <span className="font-medium">Supabase</span>, our database provider, stores the
-                information described above on our behalf.
-              </li>
-              <li>
-                <span className="font-medium">Expo</span>, and transitively Apple and Google,
-                deliver push notifications using your device&apos;s push token.
-              </li>
-              <li>
-                <span className="font-medium">YouTube</span> hosts video content (sermons and live
-                streams) embedded in the App; viewing this content is also subject to
-                YouTube&apos;s own privacy policy.
-              </li>
-            </ul>
-          </section>
+      <LegalSection title="Data Retention and Deletion">
+        <p>
+          We retain your App account and the information you provide until you ask us to delete it.
+          Information submitted through the Website is kept only as long as we need it to follow up
+          with you, after which church administrators delete it.
+        </p>
+        <p>
+          To request deletion of your App account, or of anything you submitted through the
+          Website, email <LegalLink href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</LegalLink>.
+        </p>
+      </LegalSection>
 
-          <section>
-            <h2 className="mb-2 text-base font-semibold">Data Retention and Deletion</h2>
-            <p>
-              We retain your account and the information you provide until you ask us to delete
-              it. To request deletion of your account and data, email{" "}
-              <a href="mailto:egyadesmond@gmail.com" className="text-my-red underline">
-                egyadesmond@gmail.com
-              </a>
-              .
-            </p>
-          </section>
+      <LegalSection title="Children's Privacy">
+        <p>
+          The App and the Website are not directed at children, and we do not knowingly collect
+          personal information from children.
+        </p>
+      </LegalSection>
 
-          <section>
-            <h2 className="mb-2 text-base font-semibold">Children&apos;s Privacy</h2>
-            <p>
-              The App is not directed at children, and we do not knowingly collect personal
-              information from children.
-            </p>
-          </section>
+      <LegalSection title="Changes to This Policy">
+        <p>
+          We may update this Privacy Policy from time to time. Changes will be posted on this page.
+        </p>
+      </LegalSection>
 
-          <section>
-            <h2 className="mb-2 text-base font-semibold">Changes to This Policy</h2>
-            <p>
-              We may update this Privacy Policy from time to time. Changes will be posted on this
-              page.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="mb-2 text-base font-semibold">Contact Us</h2>
-            <p>
-              If you have questions about this Privacy Policy, please contact us at{" "}
-              <a href="mailto:egyadesmond@gmail.com" className="text-my-red underline">
-                egyadesmond@gmail.com
-              </a>
-              .
-            </p>
-          </section>
-        </div>
-      </div>
-    </div>
+      <LegalSection title="Contact Us">
+        <p>
+          If you have questions about this Privacy Policy, please contact us at{" "}
+          <LegalLink href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</LegalLink>.
+        </p>
+      </LegalSection>
+    </LegalPage>
   );
-};
+}
 
 export default PrivacyPolicy;

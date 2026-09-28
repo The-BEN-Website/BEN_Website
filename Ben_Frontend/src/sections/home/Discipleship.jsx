@@ -52,7 +52,11 @@ function Discipleship() {
   };
 
   return (
-    <section aria-labelledby="discipleship-heading">
+    <section
+      id="discipleship"
+      aria-labelledby="discipleship-heading"
+      className="scroll-mt-20 md:scroll-mt-32"
+    >
       <Container className="grid items-center gap-10 py-12 md:py-16 lg:grid-cols-2 lg:gap-16 xl:gap-24">
         {step === STEPS.intro && (
           <Intro headingRef={headingRef} onStart={() => goTo(STEPS.form)} />

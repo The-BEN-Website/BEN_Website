@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "../../components/ui/Button";
 import Card from "../../components/ui/Card";
 import Field from "../../components/ui/Field";
@@ -95,6 +96,13 @@ function ContactForm() {
         <Button type="submit" className="mt-5 w-full" disabled={status === "submitting"}>
           {status === "submitting" ? "Sending..." : "Submit"}
         </Button>
+        <p className="text-center text-xs text-secondary">
+          We&apos;ll only use your details to reply to your message. See our{" "}
+          <Link to="/privacy" className="underline underline-offset-2 hover:text-primary">
+            Privacy Policy
+          </Link>
+          .
+        </p>
       </form>
     </Card>
   );

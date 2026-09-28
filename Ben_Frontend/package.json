@@ -9,10 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.10.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@formspree/react": "^2.4.1",
     "@headlessui/react": "^1.7.10",
     "@iconify/icons-mdi": "^1.2.42",
     "@iconify/react": "^4.1.0",
@@ -21,8 +19,6 @@
     "@react-hook/window-size": "^3.1.1",
     "@reacticons/ionicons": "^6.1.1",
     "@supabase/supabase-js": "^2.117.2",
-    "emailjs": "^4.0.1",
-    "firebase": "^9.17.1",
     "framer-motion": "^9.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

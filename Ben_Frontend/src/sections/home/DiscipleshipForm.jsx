@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "../../components/ui/Button";
 import Field from "../../components/ui/Field";
 import { submitDiscipleshipInterest } from "../../api/discipleship";
@@ -85,7 +86,11 @@ function DiscipleshipForm({ headingRef, onSubmitted }) {
         {status === "submitting" ? "Submitting..." : "Submit Interest"}
       </Button>
       <p className="mt-4 text-center text-xs text-secondary">
-        Your details will only be used to contact you about the Discipleship Class.
+        Your details will only be used to contact you about the Discipleship Class. See our{" "}
+        <Link to="/privacy" className="underline underline-offset-2 hover:text-primary">
+          Privacy Policy
+        </Link>
+        .
       </p>
     </form>
   );
