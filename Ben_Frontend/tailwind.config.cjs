@@ -29,6 +29,7 @@ module.exports = {
         // UI rework type scale
         body: ["18px", { lineHeight: "27px" }],
         display: ["50px", { lineHeight: "1" }],
+        quote: ["114.75px", { lineHeight: "172.13px" }],
       },
       boxShadow: {
         glow: "0 0 4px 0 #FF333317",
