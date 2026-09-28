@@ -24,11 +24,13 @@ module.exports = {
         line: "#EEEEEE",
         "line-strong": "#E5E5E5",
         surface: "#F6F6F7",
+        placeholder: "#E6E6E6",
       },
       fontSize: {
         // UI rework type scale
         body: ["18px", { lineHeight: "27px" }],
         display: ["50px", { lineHeight: "1" }],
+        heading: ["40px", { lineHeight: "1" }],
         quote: ["114.75px", { lineHeight: "172.13px" }],
       },
       boxShadow: {

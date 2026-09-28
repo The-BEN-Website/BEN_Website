@@ -20,7 +20,7 @@ function Hero() {
 
           <h1
             id="hero-heading"
-            className="mt-4 text-[40px] font-semibold leading-none text-black sm:text-display lg:text-[40px] xl:text-display"
+            className="mt-4 text-heading font-semibold text-black sm:text-display lg:text-heading xl:text-display"
           >
             Believers Equipping Network
           </h1>
