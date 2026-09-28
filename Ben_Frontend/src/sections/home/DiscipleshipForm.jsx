@@ -1,22 +1,9 @@
 import React, { useState } from "react";
 import Button from "../../components/ui/Button";
+import Field from "../../components/ui/Field";
 import { submitDiscipleshipInterest } from "../../api/discipleship";
 
 const emptyForm = { fullName: "", phone: "", email: "" };
-
-const inputClass =
-  "mt-2 w-full rounded-[10px] border border-line-strong bg-white px-4 py-2.5 text-base text-black placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20";
-
-function Field({ id, label, ...inputProps }) {
-  return (
-    <div>
-      <label htmlFor={id} className="text-base font-medium text-black">
-        {label}
-      </label>
-      <input id={id} name={id} className={inputClass} {...inputProps} />
-    </div>
-  );
-}
 
 function DiscipleshipForm({ headingRef, onSubmitted }) {
   const [values, setValues] = useState(emptyForm);

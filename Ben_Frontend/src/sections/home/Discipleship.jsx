@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import { MdCheck } from "react-icons/md";
 import Container from "../../components/ui/Container";
 import Button from "../../components/ui/Button";
+import Card from "../../components/ui/Card";
+import SuccessPanel from "../../components/ui/SuccessPanel";
 import DiscipleshipForm from "./DiscipleshipForm";
 import classroomImage from "../../assets/home/home-classroom.jpg";
 
@@ -9,7 +10,7 @@ import classroomImage from "../../assets/home/home-classroom.jpg";
 // intro → form → success → (Done) back to intro.
 const STEPS = { intro: "intro", form: "form", success: "success" };
 
-const panelCard = "rounded-[20px] border border-line bg-card p-5 sm:p-6";
+const panelPadding = "p-5 sm:p-6";
 
 function Intro({ headingRef, onStart }) {
   return (
@@ -29,31 +30,6 @@ function Intro({ headingRef, onStart }) {
       </p>
       <Button className="mt-10" onClick={onStart}>
         Join the Class
-      </Button>
-    </div>
-  );
-}
-
-function Success({ headingRef, onDone }) {
-  return (
-    <div className={`${panelCard} flex flex-col items-center text-center`} role="status">
-      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white">
-        <MdCheck aria-hidden="true" size={30} />
-      </span>
-      <h2
-        id="discipleship-heading"
-        ref={headingRef}
-        tabIndex={-1}
-        className="mt-6 text-2xl font-semibold text-black focus:outline-none"
-      >
-        You&apos;re all set
-      </h2>
-      <p className="mt-4 text-body font-medium text-secondary">
-        Your interest has been submitted successfully. Someone from the team will contact you
-        shortly.
-      </p>
-      <Button className="mt-8 w-full" onClick={onDone}>
-        Done
       </Button>
     </div>
   );
@@ -82,15 +58,24 @@ function Discipleship() {
           <Intro headingRef={headingRef} onStart={() => goTo(STEPS.form)} />
         )}
         {step === STEPS.form && (
-          <div className={panelCard}>
+          <Card className={panelPadding}>
             <DiscipleshipForm
               headingRef={headingRef}
               onSubmitted={() => goTo(STEPS.success)}
             />
-          </div>
+          </Card>
         )}
         {step === STEPS.success && (
-          <Success headingRef={headingRef} onDone={() => goTo(STEPS.intro)} />
+          <Card className={panelPadding}>
+            <SuccessPanel
+              headingId="discipleship-heading"
+              headingRef={headingRef}
+              title="You're all set"
+              message="Your interest has been submitted successfully. Someone from the team will contact you shortly."
+              actionLabel="Done"
+              onAction={() => goTo(STEPS.intro)}
+            />
+          </Card>
         )}
 
         <img
