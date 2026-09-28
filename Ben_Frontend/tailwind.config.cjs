@@ -19,6 +19,8 @@ module.exports = {
         ink: "#1A1A1A",
         "ink-soft": "#333333",
         subheading: "#383838",
+        "ink-muted": "#464646",
+        icon: "#414141",
         "detail-title": "#343434",
         "form-label": "#2E2E2E",
         secondary: "#666666",
@@ -35,6 +37,8 @@ module.exports = {
         placeholder: "#E6E6E6",
         card: "#FDFDFD",
         "card-line": "#F2F2F2",
+        tile: "#FCFCFC",
+        "tile-line": "#EDEDED",
       },
       fontSize: {
         // UI rework type scale

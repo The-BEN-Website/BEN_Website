@@ -3,7 +3,7 @@ import React, { lazy } from "react";
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const Event = lazy(() => import("./pages/Events"));
-const Partnership = lazy(() => import("./pages/Partnership"));
+const Giving = lazy(() => import("./pages/Giving"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Resources = lazy(() => import("./pages/Resources"));
 const Mailing = lazy(() => import("./pages/Mailing"))
@@ -39,7 +39,7 @@ const AppRoutes = [
   },
   {
     path: "/giving",
-    element: <Partnership />,
+    element: <Giving />,
   },
   {
     path: "/resources",
