@@ -6,7 +6,7 @@ const variants = {
   secondary: "border border-line-strong bg-white text-black hover:bg-surface",
 };
 
-// Renders a router Link for internal paths, an <a> for external URLs,
+// Renders a router Link for internal paths, an <a> for URLs and in-page anchors,
 // and a <button> when neither `to` nor `href` is given.
 function Button({ variant = "primary", to, href, className = "", children, ...rest }) {
   const classes = [
@@ -26,8 +26,15 @@ function Button({ variant = "primary", to, href, className = "", children, ...re
   }
 
   if (href) {
+    // In-page anchors (#id) stay in the tab; other URLs open in a new one.
+    const external = !href.startsWith("#");
     return (
-      <a href={href} className={classes} target="_blank" rel="noreferrer" {...rest}>
+      <a
+        href={href}
+        className={classes}
+        {...(external && { target: "_blank", rel: "noreferrer" })}
+        {...rest}
+      >
         {children}
       </a>
     );

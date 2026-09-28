@@ -68,7 +68,12 @@ function Branches() {
   if (status === "success" && branches.length === 0) return null;
 
   return (
-    <section aria-labelledby="branches-heading" className="py-12 md:py-16">
+    <section
+      id="branches"
+      aria-labelledby="branches-heading"
+      // Keeps the heading clear of the sticky navbar when scrolled to via #branches.
+      className="scroll-mt-20 py-12 md:scroll-mt-32 md:py-16"
+    >
       <Container>
         <h2 id="branches-heading" className="text-heading font-semibold text-black">
           Our Branches

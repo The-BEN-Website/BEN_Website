@@ -31,7 +31,7 @@ function Hero() {
           </p>
 
           <div className="mt-12 flex flex-wrap gap-2">
-            <Button to="/visit">Join Us This Sunday</Button>
+            <Button href="#branches">Join Us This Sunday</Button>
             <Button to="/live" variant="secondary">
               Watch Live
               <span aria-hidden="true" className="h-2 w-2 rounded-full bg-primary" />
