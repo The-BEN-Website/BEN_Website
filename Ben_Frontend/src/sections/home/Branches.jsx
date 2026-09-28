@@ -84,7 +84,7 @@ function Branches() {
       ) : (
         <ul
           aria-busy={status === "loading"}
-          className={`mt-12 md:mt-20 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 ${rowInset}`}
+          className={`mt-12 md:mt-20 flex snap-x snap-mandatory gap-6 overflow-x-auto scrollbar-none ${rowInset}`}
         >
           {status === "loading"
             ? Array.from({ length: 3 }, (_, i) => <BranchCardSkeleton key={i} />)

@@ -52,3 +52,12 @@
         outline-color: white;
     }
 }
+@layer utilities {
+    /* Hides the scrollbar while keeping the element scrollable (touch, trackpad, keyboard). */
+    .scrollbar-none {
+        scrollbar-width: none;
+    }
+    .scrollbar-none::-webkit-scrollbar {
+        display: none;
+    }
+}

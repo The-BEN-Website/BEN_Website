@@ -12,6 +12,7 @@ function Button({ variant = "primary", to, href, className = "", children, ...re
   const classes = [
     "inline-flex items-center justify-center gap-2 rounded-[10px] px-3 py-[9px] text-body font-medium transition-colors",
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
+    "disabled:cursor-not-allowed disabled:opacity-60",
     variants[variant],
     className,
   ].join(" ");

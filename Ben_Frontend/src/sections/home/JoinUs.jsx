@@ -1,11 +1,11 @@
 import React from "react";
 import Container from "../../components/ui/Container";
-import sundayServiceImage from "../../assets/home/join-sunday-service.jpg";
+import classroomImage from "../../assets/home/home-classroom.jpg";
 import thursdayMeetingImage from "../../assets/home/join-thursday-meeting.jpg";
 
 // Images are added as they're exported from Figma; cards without one show a neutral placeholder.
 const gatherings = [
-  { name: "Sunday Service", time: "1pm", image: sundayServiceImage },
+  { name: "Sunday Service", time: "1pm", image: classroomImage },
   { name: "Foundation Class", time: "4pm", image: null },
   { name: "Thursday Meeting", time: "4pm", image: thursdayMeetingImage },
 ];
@@ -45,7 +45,7 @@ function JoinUs() {
           and Spirit in a community of faith.
         </p>
 
-        <ul className="-mx-4 mt-12 flex snap-x snap-mandatory scroll-px-4 gap-6 overflow-x-auto px-4 pb-2 sm:-mx-8 sm:scroll-px-8 sm:px-8 md:mx-0 md:scroll-px-0 md:px-0 lg:grid lg:grid-cols-3 lg:overflow-visible">
+        <ul className="-mx-4 mt-12 flex snap-x snap-mandatory scroll-px-4 gap-6 overflow-x-auto scrollbar-none px-4 sm:-mx-8 sm:scroll-px-8 sm:px-8 md:mx-0 md:scroll-px-0 md:px-0 lg:grid lg:grid-cols-3 lg:overflow-visible">
           {gatherings.map((gathering) => (
             <GatheringCard key={gathering.name} {...gathering} />
           ))}

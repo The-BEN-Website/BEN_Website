@@ -20,11 +20,13 @@ module.exports = {
         "ink-soft": "#333333",
         secondary: "#666666",
         label: "#646464",
+        subtle: "#717171",
         muted: "#909090",
         line: "#EEEEEE",
         "line-strong": "#E5E5E5",
         surface: "#F6F6F7",
         placeholder: "#E6E6E6",
+        card: "#FCFCFC",
       },
       fontSize: {
         // UI rework type scale
