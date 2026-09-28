@@ -54,9 +54,9 @@ function Hero() {
 
         <img
           src={heroImage}
-          alt="The pastor speaking at the pulpit with church members beside him"
-          width={1080}
-          height={870}
+          alt="The pastor speaking at the pulpit during the Holy Spirit Camp Meeting"
+          width={1200}
+          height={959}
           fetchpriority="high"
           className="aspect-[600/540] w-full rounded-3xl object-cover md:aspect-[16/10] lg:aspect-[600/540]"
         />
