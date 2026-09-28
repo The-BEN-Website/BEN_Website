@@ -1,12 +1,13 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import Container from "../../components/ui/Container";
+import { FACEBOOK_URL, INSTAGRAM_URL, YOUTUBE_CHANNEL_URL } from "../../config/links";
 
 // Icon colours are each platform's own brand colour, not part of our palette.
 const socials = [
-  { platform: "Facebook", handle: "The Believers Equipping Network", href: "https://www.facebook.com/share/1BNM4SUmsY/", Icon: FaFacebook, color: "#1877F2" },
-  { platform: "Instagram", handle: "@believersequippingnetwork", href: "https://www.instagram.com/believersequippingnetwork", Icon: FaInstagram, color: "#C13584" },
-  { platform: "YouTube", handle: "Believers Equipping Network", href: "https://www.youtube.com/@BelieversEquippingNetworkGM", Icon: FaYoutube, color: "#FF0000" },
+  { platform: "Facebook", handle: "The Believers Equipping Network", href: FACEBOOK_URL, Icon: FaFacebook, color: "#1877F2" },
+  { platform: "Instagram", handle: "@believersequippingnetwork", href: INSTAGRAM_URL, Icon: FaInstagram, color: "#C13584" },
+  { platform: "YouTube", handle: "Believers Equipping Network", href: YOUTUBE_CHANNEL_URL, Icon: FaYoutube, color: "#FF0000" },
 ];
 
 function SocialLink({ platform, handle, href, Icon, color }) {

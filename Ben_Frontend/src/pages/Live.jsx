@@ -1,38 +1,118 @@
 import React from "react";
-import Logo from "../assets/Home_assets/Logo1.webp";
+import Button from "../components/ui/Button";
+import Container from "../components/ui/Container";
+import LiveDot from "../components/ui/LiveDot";
+import useAsync from "../hooks/useAsync";
+import { getLiveStreamStatus } from "../api/liveStream";
+import {
+  APP_STORE_URL,
+  PLAY_STORE_URL,
+  YOUTUBE_CHANNEL_URL,
+  YOUTUBE_STREAMS_URL,
+} from "../config/links";
 
-const PLAY_STORE_URL =
-  "https://play.google.com/store/apps/details?id=com.believersequippingnetwork.app";
+// /live is also the app's universal link, so phones with the app installed
+// open it there; everyone else lands on this page.
 
-const Live = () => {
+const nextServiceFormat = new Intl.DateTimeFormat(undefined, {
+  weekday: "long",
+  month: "long",
+  day: "numeric",
+  hour: "numeric",
+  minute: "2-digit",
+});
+
+function LiveNow({ title, youtubeVideoId, meetingUrl }) {
   return (
-    <div className="App font-my_font flex min-h-screen flex-col items-center justify-center gap-6 px-4 pt-32 pb-20 text-center">
-      <img src={Logo} alt="BEN Logo" className="h-16 w-16 rounded-xl bg-white object-contain" />
-
-      <div className="flex max-w-md flex-col gap-3">
-        <h1 className="text-2xl font-bold text-my-black">Watch Live in the App</h1>
-        <p className="text-sm leading-relaxed text-contact-text">
-          Our live services stream inside the Believers Equipping Network app. If you already have
-          it installed, this link should have opened it directly — if you're seeing this instead,
-          get the app below to join in.
-        </p>
+    <>
+      <div className="flex flex-col items-start gap-4 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p className="inline-flex items-center gap-2 rounded-[10px] border border-line bg-white px-2.5 py-1 text-body font-medium text-primary shadow-glow">
+            <LiveDot pulsing />
+            Live now
+          </p>
+          <h1 className="mt-4 text-heading font-semibold text-black">{title || "Live Service"}</h1>
+        </div>
+        {meetingUrl && <Button href={meetingUrl}>Join the Google Meet</Button>}
       </div>
 
-      <div className="flex flex-col items-center gap-3">
-        <a
-          href={PLAY_STORE_URL}
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-full bg-my-red px-6 py-3 text-sm font-semibold text-white"
-        >
-          Get it on Google Play
-        </a>
-        <p className="text-xs text-contact-text">
-          On iPhone or iPad, search &quot;Believers Equipping Network&quot; on the App Store.
-        </p>
+      <div className="mt-8 aspect-video overflow-hidden rounded-3xl bg-black">
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${youtubeVideoId}`}
+          title={title || "Live service"}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          className="h-full w-full"
+        />
+      </div>
+    </>
+  );
+}
+
+function NotLive({ nextServiceAt, failed }) {
+  const next = nextServiceAt ? new Date(nextServiceAt) : null;
+  const hasUpcoming = next && next > new Date();
+
+  let message = "Join us during our service times, or catch up on past services on YouTube.";
+  if (failed) message = "We couldn't check the live stream right now. You can still find our services on YouTube.";
+  else if (hasUpcoming) message = `Our next service starts ${nextServiceFormat.format(next)}.`;
+
+  return (
+    <div className="mx-auto max-w-xl py-8 text-center md:py-16">
+      <h1 className="text-heading font-semibold text-black">We&apos;re not live right now</h1>
+      <p className="mt-6 text-body font-medium text-secondary">{message}</p>
+      <div className="mt-10 flex flex-wrap justify-center gap-2">
+        <Button href={YOUTUBE_STREAMS_URL}>Watch Past Services</Button>
+        <Button href={YOUTUBE_CHANNEL_URL} variant="secondary">
+          Visit our YouTube
+        </Button>
       </div>
     </div>
   );
-};
+}
+
+function LiveSkeleton() {
+  return (
+    <div aria-busy="true" aria-label="Checking live stream">
+      <div className="h-10 w-2/3 max-w-md animate-pulse rounded-lg bg-placeholder" />
+      <div className="mt-8 aspect-video animate-pulse rounded-3xl bg-placeholder" />
+    </div>
+  );
+}
+
+const storeLink = "font-medium text-primary hover:underline";
+
+function Live() {
+  const { status, data } = useAsync(getLiveStreamStatus);
+  const isLive = status === "success" && data?.is_live && data.youtube_video_id;
+
+  return (
+    <Container as="main" className="py-12 md:py-20">
+      {status === "loading" && <LiveSkeleton />}
+      {isLive && (
+        <LiveNow
+          title={data.title}
+          youtubeVideoId={data.youtube_video_id}
+          meetingUrl={data.meeting_url}
+        />
+      )}
+      {status !== "loading" && !isLive && (
+        <NotLive nextServiceAt={data?.next_service_at} failed={status === "error"} />
+      )}
+
+      <p className="mt-16 text-center text-base text-secondary">
+        Prefer the app? Get it on the{" "}
+        <a href={APP_STORE_URL} target="_blank" rel="noreferrer" className={storeLink}>
+          App Store
+        </a>{" "}
+        or{" "}
+        <a href={PLAY_STORE_URL} target="_blank" rel="noreferrer" className={storeLink}>
+          Google Play
+        </a>
+        .
+      </p>
+    </Container>
+  );
+}
 
 export default Live;

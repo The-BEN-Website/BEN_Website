@@ -1,6 +1,9 @@
 import React from "react";
 import Container from "../../components/ui/Container";
 import Button from "../../components/ui/Button";
+import LiveDot from "../../components/ui/LiveDot";
+import useAsync from "../../hooks/useAsync";
+import { getLiveStreamStatus } from "../../api/liveStream";
 import heroImage from "../../assets/home/home-hero.jpg";
 
 // TODO: source from the `service_times` table once the Supabase client is wired up.
@@ -10,6 +13,9 @@ const serviceTimes = [
 ];
 
 function Hero() {
+  const { data: liveStatus } = useAsync(getLiveStreamStatus);
+  const isLive = Boolean(liveStatus?.is_live);
+
   return (
     <section aria-labelledby="hero-heading">
       <Container className="grid items-center gap-10 py-8 md:py-12 lg:grid-cols-2 lg:gap-16 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
@@ -33,8 +39,8 @@ function Hero() {
           <div className="mt-12 flex flex-wrap gap-2">
             <Button href="#branches">Join Us This Sunday</Button>
             <Button to="/live" variant="secondary">
-              Watch Live
-              <span aria-hidden="true" className="h-2 w-2 rounded-full bg-primary" />
+              {isLive ? "Watch Live" : "Watch Online"}
+              <LiveDot pulsing={isLive} />
             </Button>
           </div>
 
