@@ -1,54 +1,77 @@
-import React, {useState} from 'react';
-import NavBar from './Nav1';
-import Logo from '../../../src/assets/Home_assets/Logo1.webp';
-import { NavLink } from 'react-router-dom';
-import useWindowDimension from '../../hooks/useWindowDimension';
-import { GiHamburgerMenu } from 'react-icons/gi'
+import React, { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
-import { IconContext } from 'react-icons';
+import Logo from "../../assets/brand/logo-lockup.png";
+
+const links = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/resources", label: "Media" },
+  { to: "/giving", label: "Giving" },
+  { to: "/contact", label: "Contact" },
+];
+
+const linkClass = ({ isActive }) =>
+  [
+    "text-lg font-medium leading-none transition-colors",
+    isActive
+      ? "text-primary underline underline-offset-4"
+      : "text-muted hover:text-ink",
+  ].join(" ");
 
 function Header() {
-    const [isOpen, setOpen] = useState(true);
-    const { width } = useWindowDimension();
+  const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
 
-    const handleOpen = () => {
-      return setOpen(!isOpen)
-    }
+  // Close the mobile menu whenever the route changes
+  useEffect(() => setOpen(false), [pathname]);
 
-    return (
-      <header className="header w-full relative fixed z-10 text-black sm:text-white">
-        <div className="w-11/12 mx-auto">
-          <div className="flex flex-row items-center justify-between md:flex md:justify-between sm:px-12 lg:px-[0.01rem] px-4">
-            <NavLink
-              to="/"
-              className={["block my-3", width > 600 ? "w-36" : "w-20"].join(
-                " "
-              )}
-            >
-              <div className="brand-logo cursor-pointer">
-                <img src={Logo} alt="BEN logo" />
-              </div>
-            </NavLink>
-            {width < 768 ? (
-              <div onClick={() => handleOpen()}>
-                <IconContext.Provider 
-                  value={{ color: "#000000", size: "2rem" }}
-                >
-                  {/* ISOPEN, CHANGES IT TO X, WHILE !ISOPEN CHANGES IT TO HAMBURGER */}
-                  {!isOpen ? <MdOutlineClose /> : <GiHamburgerMenu />}
-                </IconContext.Provider>
-              </div>
-            ) : (
-              <NavBar width={width} onOpen={isOpen}/>
-            )}
-          </div>
-          {/* note the first isopen. isOpen, opens the mobile nav. !isopen closes it
-          while the isoPEN FOR THE SECOND ONE, REMOVES THE WIDTH OF THE MOBILE. WHILE !ISOPEN, OPENS IT
-          */}
-            {!isOpen && <NavBar width={width} onOpen={!isOpen}/>}
-        </div>
-      </header>
-    );
+  return (
+    <header className="sticky top-0 z-30 w-full bg-white">
+      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-4 py-6 sm:px-8 md:w-[86%] md:px-0 md:py-10">
+        <NavLink to="/" aria-label="Believers Equipping Network home">
+          <img src={Logo} alt="Believers Equipping Network" className="h-9 w-auto md:h-12" />
+        </NavLink>
+
+        <nav className="hidden md:block">
+          <ul className="flex items-center gap-6">
+            {links.map(({ to, label }) => (
+              <li key={to}>
+                <NavLink to={to} end={to === "/"} className={linkClass}>
+                  {label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <button
+          type="button"
+          className="text-ink md:hidden"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((o) => !o)}
+        >
+          {open ? <MdOutlineClose size={28} /> : <GiHamburgerMenu size={24} />}
+        </button>
+      </div>
+
+      {open && (
+        <nav className="border-t border-line bg-white md:hidden">
+          <ul className="flex flex-col px-4 py-2 sm:px-8">
+            {links.map(({ to, label }) => (
+              <li key={to}>
+                <NavLink to={to} end={to === "/"} className={(s) => `block py-3 ${linkClass(s)}`}>
+                  {label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+    </header>
+  );
 }
 
 export default Header;
