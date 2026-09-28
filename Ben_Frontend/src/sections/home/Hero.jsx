@@ -12,20 +12,20 @@ const serviceTimes = [
 function Hero() {
   return (
     <section aria-labelledby="hero-heading">
-      <Container className="grid items-center gap-10 py-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] md:gap-16 md:py-12">
+      <Container className="grid items-center gap-10 py-8 md:py-12 lg:grid-cols-2 lg:gap-16 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
         <div className="flex flex-col items-start">
-          <p className="rounded-lg border border-line bg-white px-2.5 py-1.5 text-base text-primary shadow-sm">
+          <p className="rounded-[10px] border border-line bg-white px-2.5 py-1 text-lg font-medium leading-[27px] text-primary shadow-glow">
             ...raising godly seeds
           </p>
 
           <h1
             id="hero-heading"
-            className="mt-4 text-4xl font-semibold leading-tight tracking-tight text-ink lg:text-5xl"
+            className="mt-4 text-[40px] font-semibold leading-none text-black sm:text-[50px] lg:text-[40px] xl:text-[50px]"
           >
             Believers Equipping Network
           </h1>
 
-          <p className="mt-6 max-w-md text-base leading-6 text-secondary">
+          <p className="mt-6 max-w-md text-lg font-medium leading-[27px] text-secondary">
             Equipping believers through sound teaching and spiritual empowerment to influence their
             world with the wisdom of the Word and the power of the Holy Spirit.
           </p>
@@ -34,15 +34,15 @@ function Hero() {
             <Button to="/visit">Join Us This Sunday</Button>
             <Button to="/live" variant="secondary">
               Watch Live
-              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-primary" />
+              <span aria-hidden="true" className="h-2 w-2 rounded-full bg-primary" />
             </Button>
           </div>
 
-          <dl className="mt-5 flex flex-wrap">
+          <dl className="mt-5 flex">
             {serviceTimes.map(({ label, time }) => (
-              <div key={label} className="border-r border-line px-2 py-1.5">
-                <dt className="text-base text-secondary">{label}</dt>
-                <dd className="mt-1 text-base font-medium text-ink">{time}</dd>
+              <div key={label} className="min-w-0 border-r border-line px-2 py-2">
+                <dt className="text-base font-medium leading-tight text-label sm:text-lg sm:leading-none lg:text-base xl:text-lg">{label}</dt>
+                <dd className="mt-2.5 text-base font-semibold leading-none text-ink-soft sm:text-lg lg:text-base xl:text-lg">{time}</dd>
               </div>
             ))}
           </dl>
@@ -54,7 +54,7 @@ function Hero() {
           width={1080}
           height={870}
           fetchpriority="high"
-          className="aspect-[600/540] w-full rounded-3xl object-cover"
+          className="aspect-[600/540] w-full rounded-3xl md:aspect-[16/10] lg:aspect-[600/540] object-cover"
         />
       </Container>
     </section>

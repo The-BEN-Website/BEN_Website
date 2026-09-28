@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 const variants = {
   primary: "bg-primary text-white hover:bg-primary/90",
-  secondary: "border border-line bg-white text-ink hover:bg-surface",
+  secondary: "border border-line-strong bg-white text-black hover:bg-surface",
 };
 
 // Renders a router Link for internal paths, an <a> for external URLs,
 // and a <button> when neither `to` nor `href` is given.
 function Button({ variant = "primary", to, href, className = "", children, ...rest }) {
   const classes = [
-    "inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2.5 text-base leading-none transition-colors",
+    "inline-flex items-center justify-center gap-2 rounded-[10px] px-3 py-[9px] text-lg font-medium leading-[27px] transition-colors",
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
     variants[variant],
     className,

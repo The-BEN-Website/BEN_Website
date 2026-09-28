@@ -17,10 +17,16 @@ module.exports = {
         // UI rework design tokens
         primary: "#FF3333",
         ink: "#1A1A1A",
-        secondary: "#5E5E5E",
+        "ink-soft": "#333333",
+        secondary: "#666666",
+        label: "#646464",
         muted: "#909090",
-        line: "#ECECEC",
+        line: "#EEEEEE",
+        "line-strong": "#E5E5E5",
         surface: "#F6F6F7",
+      },
+      boxShadow: {
+        glow: "0 0 4px 0 #FF333317",
       },
       bottom: {
         "1/5": "-15%",
