@@ -10,7 +10,7 @@ const variants = {
 // and a <button> when neither `to` nor `href` is given.
 function Button({ variant = "primary", to, href, className = "", children, ...rest }) {
   const classes = [
-    "inline-flex items-center justify-center gap-2 rounded-[10px] px-3 py-[9px] text-lg font-medium leading-[27px] transition-colors",
+    "inline-flex items-center justify-center gap-2 rounded-[10px] px-3 py-[9px] text-body font-medium transition-colors",
     "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
     variants[variant],
     className,

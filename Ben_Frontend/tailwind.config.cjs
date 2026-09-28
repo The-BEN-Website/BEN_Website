@@ -25,6 +25,11 @@ module.exports = {
         "line-strong": "#E5E5E5",
         surface: "#F6F6F7",
       },
+      fontSize: {
+        // UI rework type scale
+        body: ["18px", { lineHeight: "27px" }],
+        display: ["50px", { lineHeight: "1" }],
+      },
       boxShadow: {
         glow: "0 0 4px 0 #FF333317",
       },
