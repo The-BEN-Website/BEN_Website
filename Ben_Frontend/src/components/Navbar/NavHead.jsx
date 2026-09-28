@@ -3,6 +3,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
 import Logo from "../../assets/brand/logo-lockup.png";
+import Container from "../ui/Container";
 
 const links = [
   { to: "/", label: "Home" },
@@ -29,7 +30,7 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-30 w-full bg-white">
-      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-4 py-6 sm:px-8 md:w-[86%] md:px-0 md:py-10">
+      <Container className="flex items-center justify-between py-6 md:py-10">
         <NavLink to="/" aria-label="Believers Equipping Network home">
           <img src={Logo} alt="Believers Equipping Network" className="h-9 w-auto md:h-12" />
         </NavLink>
@@ -55,7 +56,7 @@ function Header() {
         >
           {open ? <MdOutlineClose size={28} /> : <GiHamburgerMenu size={24} />}
         </button>
-      </div>
+      </Container>
 
       {open && (
         <nav className="border-t border-line bg-white md:hidden">

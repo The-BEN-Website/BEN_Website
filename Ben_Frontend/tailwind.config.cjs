@@ -17,6 +17,7 @@ module.exports = {
         // UI rework design tokens
         primary: "#FF3333",
         ink: "#1A1A1A",
+        secondary: "#5E5E5E",
         muted: "#909090",
         line: "#ECECEC",
         surface: "#F6F6F7",

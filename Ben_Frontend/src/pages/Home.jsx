@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from './Home_Sections/Header';
+import Hero from '../sections/home/Hero';
 import Words from './Home_Sections/Words';
 import Experience from './Home_Sections/Experience';
 import Community from './Home_Sections/Community'
@@ -9,7 +9,7 @@ import NewsLetter from './Home_Sections/Newsletter'
 const Home = () => {
   return (
     <div className="App flex flex-col gap-20 h-fit">
-      <Header />
+      <Hero />
       <Words />
       <Experience />
       <Community />
