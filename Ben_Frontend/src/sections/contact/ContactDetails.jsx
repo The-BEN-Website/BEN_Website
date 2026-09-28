@@ -3,7 +3,7 @@ import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 
 const details = [
   { label: "Church Office", value: "Edo University Iyamho, Auchi, Edo State", Icon: FiMapPin },
-  { label: "Phone", value: "+234 703 539 9975", href: "tel:+2347035399975", Icon: FiPhone },
+  { label: "Phone", value: "+234 701 767 3889", href: "tel:+2347017673889", Icon: FiPhone },
   {
     label: "Email",
     value: "believersequippingnetwork@gmail.com",

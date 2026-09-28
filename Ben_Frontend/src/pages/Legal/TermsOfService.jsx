@@ -2,6 +2,7 @@ import React from "react";
 import { LegalLink, LegalList, LegalPage, LegalSection } from "../../components/legal/Legal";
 
 const CONTACT_EMAIL = "believersequippingnetwork@gmail.com";
+const CONTACT_PHONE = "+234 701 767 3889";
 
 function TermsOfService() {
   return (
