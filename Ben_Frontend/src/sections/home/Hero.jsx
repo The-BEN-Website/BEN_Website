@@ -4,13 +4,39 @@ import Button from "../../components/ui/Button";
 import LiveDot from "../../components/ui/LiveDot";
 import useAsync from "../../hooks/useAsync";
 import { getLiveStreamStatus } from "../../api/liveStream";
+import { listServiceTimes } from "../../api/serviceTimes";
+import { upcomingServices } from "../../lib/serviceTimes";
 import heroImage from "../../assets/home/home-hero.jpg";
 
-// TODO: source from the `service_times` table once the Supabase client is wired up.
-const serviceTimes = [
-  { label: "Sunday Services", time: "1:00pm" },
-  { label: "Tuesday & Thursday Services", time: "4:00pm - 6:00pm" },
+// Shown while the real service times load, and if they can't be loaded.
+const placeholderServices = [
+  { id: "sunday", name: "Sunday Services", when: "8:30am" },
+  { id: "thursday", name: "Thursday Services", when: "4:00pm" },
 ];
+
+const labelClass =
+  "text-base font-medium leading-tight text-label sm:text-lg sm:leading-none lg:text-base xl:text-lg";
+const timeClass =
+  "mt-2.5 text-base font-semibold leading-none text-ink-soft sm:text-lg lg:text-base xl:text-lg";
+
+// The next two services (admin-managed on the dashboard's Service Times page),
+// with the fixed placeholder times shown until they load or if they can't.
+function UpcomingServices() {
+  const { status, data } = useAsync(listServiceTimes);
+  const upcoming = status === "success" ? upcomingServices(data, 2) : [];
+  const services = upcoming.length > 0 ? upcoming : placeholderServices;
+
+  return (
+    <dl aria-label="Upcoming services" className="mt-5 flex">
+      {services.map(({ id, name, when }) => (
+        <div key={id} className="min-w-0 border-r border-line px-2 py-2">
+          <dt className={labelClass}>{name}</dt>
+          <dd className={timeClass}>{when}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
 
 function Hero() {
   const { data: liveStatus } = useAsync(getLiveStreamStatus);
@@ -44,18 +70,7 @@ function Hero() {
             </Button>
           </div>
 
-          <dl className="mt-5 flex">
-            {serviceTimes.map(({ label, time }) => (
-              <div key={label} className="min-w-0 border-r border-line px-2 py-2">
-                <dt className="text-base font-medium leading-tight text-label sm:text-lg sm:leading-none lg:text-base xl:text-lg">
-                  {label}
-                </dt>
-                <dd className="mt-2.5 text-base font-semibold leading-none text-ink-soft sm:text-lg lg:text-base xl:text-lg">
-                  {time}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <UpcomingServices />
         </div>
 
         <img
