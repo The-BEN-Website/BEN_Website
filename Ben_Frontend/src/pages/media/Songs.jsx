@@ -13,7 +13,7 @@ function Songs() {
       Icon={IoMusicalNote}
       tone={mediaTones.pink}
       emptyMessage="No songs yet. Check back soon."
-      errorMessage="We couldn't load the songs right now. Please try again later."
+      errorMessage="We couldn't load the songs"
     />
   );
 }

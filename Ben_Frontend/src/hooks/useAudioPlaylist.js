@@ -2,13 +2,15 @@ import { useEffect, useRef, useState } from "react";
 
 // Drives a list of tracks through a single <audio> element, so only one track
 // plays at a time and the next one starts when the current one ends.
-// Spread `audioProps` onto the page's <audio> element.
+// Spread `audioProps` onto the page's <audio> element. If a track fails to load
+// (bad connection, missing file), `failedIndex` marks it; playing it again retries.
 function useAudioPlaylist(tracks) {
   const audioRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(null);
   const [playing, setPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(NaN);
+  const [failedIndex, setFailedIndex] = useState(null);
 
   const current = currentIndex !== null ? tracks?.[currentIndex] : null;
 
@@ -23,6 +25,14 @@ function useAudioPlaylist(tracks) {
 
   const toggle = (index) => {
     const audio = audioRef.current;
+    if (index === failedIndex) {
+      setFailedIndex(null);
+      if (index === currentIndex) {
+        audio.load();
+        audio.play().catch(() => setPlaying(false));
+        return;
+      }
+    }
     if (index !== currentIndex) {
       setCurrentIndex(index);
       return;
@@ -43,12 +53,17 @@ function useAudioPlaylist(tracks) {
     onPause: () => setPlaying(false),
     onTimeUpdate: (event) => setCurrentTime(event.currentTarget.currentTime),
     onLoadedMetadata: (event) => setDuration(event.currentTarget.duration),
+    onError: () => {
+      setPlaying(false);
+      setFailedIndex(currentIndex);
+    },
+    onPlaying: () => setFailedIndex(null),
     onEnded: () => {
       if (currentIndex !== null && currentIndex < tracks.length - 1) setCurrentIndex(currentIndex + 1);
     },
   };
 
-  return { currentIndex, playing, currentTime, duration, toggle, seek, audioProps };
+  return { currentIndex, failedIndex, playing, currentTime, duration, toggle, seek, audioProps };
 }
 
 export default useAudioPlaylist;

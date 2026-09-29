@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../../components/ui/Container";
+import ErrorState from "../../components/ui/ErrorState";
+import RemoteImage from "../../components/ui/RemoteImage";
 import SubpageHeader from "../../sections/media/SubpageHeader";
 import Socials from "../../sections/shared/Socials";
 import useAsync from "../../hooks/useAsync";
@@ -19,7 +21,7 @@ function AlbumCard({ category, cover, count }) {
         aria-label={`${title}, ${count} photos`}
         className={`${cardClass} group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}
       >
-        <img
+        <RemoteImage
           src={cloudinaryResize(cover, { width: 800, height: 624 })}
           alt=""
           loading="lazy"
@@ -34,7 +36,7 @@ function AlbumCard({ category, cover, count }) {
 }
 
 function Images() {
-  const { status, data: albums } = useAsync(listGalleryAlbums);
+  const { status, data: albums, error, reload } = useAsync(listGalleryAlbums);
 
   return (
     <main>
@@ -42,9 +44,7 @@ function Images() {
         <SubpageHeader title="Images" />
 
         {status === "error" && (
-          <p className="mt-10 text-center text-body text-secondary">
-            We couldn&apos;t load the photo albums right now. Please try again later.
-          </p>
+          <ErrorState title="We couldn't load the photo albums" error={error} onRetry={reload} />
         )}
         {status === "success" && albums.length === 0 && (
           <p className="mt-10 text-center text-body text-secondary">No photos yet. Check back soon.</p>

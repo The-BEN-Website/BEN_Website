@@ -5,19 +5,24 @@ const COPIED_RESET_MS = 2000;
 
 function BankAccountCard({ bankName, accountNumber, accountName, logo }) {
   const [copied, setCopied] = useState(false);
+  const [copyFailed, setCopyFailed] = useState(false);
 
   useEffect(() => {
-    if (!copied) return undefined;
-    const timer = setTimeout(() => setCopied(false), COPIED_RESET_MS);
+    if (!copied && !copyFailed) return undefined;
+    const timer = setTimeout(() => {
+      setCopied(false);
+      setCopyFailed(false);
+    }, COPIED_RESET_MS);
     return () => clearTimeout(timer);
-  }, [copied]);
+  }, [copied, copyFailed]);
 
   const copyAccountNumber = async () => {
     try {
       await navigator.clipboard.writeText(accountNumber);
       setCopied(true);
     } catch {
-      // Clipboard can be unavailable (e.g. insecure context); the number is still selectable.
+      // Clipboard can be blocked or unavailable; the number is still selectable by hand.
+      setCopyFailed(true);
     }
   };
 
@@ -43,8 +48,12 @@ function BankAccountCard({ bankName, accountNumber, accountName, logo }) {
             {copied ? <IoCheckmark size={22} /> : <IoCopyOutline size={22} />}
           </button>
         </div>
+        {copyFailed && (
+          <p className="mt-2 text-sm text-primary">Couldn&apos;t copy. Select the number to copy it.</p>
+        )}
         <p aria-live="polite" className="sr-only">
           {copied ? "Account number copied" : ""}
+          {copyFailed ? "Couldn't copy. Select the number to copy it." : ""}
         </p>
       </div>
 

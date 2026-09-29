@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { IoPlay } from "react-icons/io5";
+import RemoteImage from "../../components/ui/RemoteImage";
 import { youtubeThumbnail } from "../../lib/youtube";
 
 export const videoDateFormat = new Intl.DateTimeFormat(undefined, {
@@ -19,7 +20,7 @@ function VideoCard({ id, title, category, youtube_video_id: videoId, published_a
         className="group block rounded-[20px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
       >
         <div className="relative aspect-video overflow-hidden rounded-[20px] bg-placeholder">
-          <img
+          <RemoteImage
             src={youtubeThumbnail(videoId)}
             alt=""
             loading="lazy"

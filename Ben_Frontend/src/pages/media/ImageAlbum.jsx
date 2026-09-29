@@ -1,47 +1,36 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Button from "../../components/ui/Button";
 import Container from "../../components/ui/Container";
+import ErrorState from "../../components/ui/ErrorState";
+import LoadMore from "../../components/ui/LoadMore";
+import RemoteImage from "../../components/ui/RemoteImage";
 import Lightbox from "../../sections/media/Lightbox";
 import SubpageHeader from "../../sections/media/SubpageHeader";
 import Socials from "../../sections/shared/Socials";
+import usePaginatedList from "../../hooks/usePaginatedList";
 import { categoryFromSlug, listGalleryImages, UNCATEGORIZED_TITLE } from "../../api/gallery";
 import { cloudinaryResize } from "../../lib/cloudinary";
 
 const PAGE_SIZE = 24;
+const cursorOf = (image) => image.created_at;
 
 function ImageAlbum() {
   const { album } = useParams();
   const category = categoryFromSlug(album);
   const title = category ?? UNCATEGORIZED_TITLE;
 
-  const [images, setImages] = useState([]);
-  const [status, setStatus] = useState("loading");
-  const [hasMore, setHasMore] = useState(false);
-  const [viewerIndex, setViewerIndex] = useState(null);
-
-  const loadPage = useCallback(
-    async (before) => {
-      setStatus(before ? "loading-more" : "loading");
-      try {
-        const page = await listGalleryImages({ category, before, limit: PAGE_SIZE });
-        setImages((current) => (before ? [...current, ...page] : page));
-        setHasMore(page.length === PAGE_SIZE);
-        setStatus("success");
-      } catch {
-        setStatus("error");
-      }
-    },
+  const fetchPage = useCallback(
+    (before) => listGalleryImages({ category, before, limit: PAGE_SIZE }),
     [category],
   );
+  const { items: images, status, error, hasMore, loadMore, retry } = usePaginatedList(
+    fetchPage,
+    cursorOf,
+    PAGE_SIZE,
+  );
+  const [viewerIndex, setViewerIndex] = useState(null);
 
-  useEffect(() => {
-    setImages([]);
-    setViewerIndex(null);
-    loadPage();
-  }, [loadPage]);
-
-  const loadMore = () => loadPage(images[images.length - 1].created_at);
+  useEffect(() => setViewerIndex(null), [category]);
 
   return (
     <main>
@@ -49,9 +38,7 @@ function ImageAlbum() {
         <SubpageHeader title={title} backTo="/media/images" />
 
         {status === "error" && images.length === 0 && (
-          <p className="mt-10 text-center text-body text-secondary">
-            We couldn&apos;t load these photos right now. Please try again later.
-          </p>
+          <ErrorState title="We couldn't load these photos" error={error} onRetry={retry} />
         )}
         {status === "success" && images.length === 0 && (
           <p className="mt-10 text-center text-body text-secondary">No photos in this album yet.</p>
@@ -77,7 +64,7 @@ function ImageAlbum() {
                 aria-label={`Open photo ${i + 1}`}
                 className="group block aspect-[3/2] w-full overflow-hidden rounded-[14px] bg-placeholder focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
-                <img
+                <RemoteImage
                   src={cloudinaryResize(image.image_url, { width: 600, height: 400 })}
                   alt={image.title ?? ""}
                   loading="lazy"
@@ -88,18 +75,14 @@ function ImageAlbum() {
           ))}
         </ul>
 
-        {hasMore && (
-          <div className="mt-10 flex justify-center">
-            <Button variant="secondary" onClick={loadMore} disabled={status === "loading-more"}>
-              {status === "loading-more" ? "Loading..." : "Load more"}
-            </Button>
-          </div>
-        )}
-        {status === "error" && images.length > 0 && (
-          <p role="alert" className="mt-6 text-center text-sm text-primary">
-            Couldn&apos;t load more photos. Please try again.
-          </p>
-        )}
+        <LoadMore
+          status={status}
+          hasMore={hasMore}
+          error={error}
+          itemCount={images.length}
+          onLoadMore={loadMore}
+          onRetry={retry}
+        />
       </Container>
 
       <Lightbox

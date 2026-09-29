@@ -36,6 +36,7 @@ function Lightbox({ images, index, onClose, onIndexChange }) {
   const dialogRef = useRef(null);
   const touchStartX = useRef(null);
   const [loaded, setLoaded] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   const open = index !== null;
   const image = open ? images[index] : null;
@@ -61,6 +62,7 @@ function Lightbox({ images, index, onClose, onIndexChange }) {
   useEffect(() => {
     if (!open) return;
     setLoaded(false);
+    setFailed(false);
     [images[index - 1], images[index + 1]].filter(Boolean).forEach((neighbour) => {
       new Image().src = viewUrl(neighbour);
     });
@@ -128,7 +130,12 @@ function Lightbox({ images, index, onClose, onIndexChange }) {
             }}
             onTouchEnd={handleTouchEnd}
           >
-            {!loaded && (
+            {failed && (
+              <p role="alert" className="absolute max-w-xs text-center text-sm text-white/80">
+                This photo couldn&apos;t load. Check your connection, or try the next one.
+              </p>
+            )}
+            {!loaded && !failed && (
               <span
                 aria-hidden="true"
                 className="absolute h-8 w-8 animate-spin rounded-full border-2 border-white/20 border-t-white"
@@ -139,6 +146,7 @@ function Lightbox({ images, index, onClose, onIndexChange }) {
               src={viewUrl(image)}
               alt={image.title ?? `Photo ${index + 1} of ${images.length}`}
               onLoad={() => setLoaded(true)}
+              onError={() => setFailed(true)}
               className={`max-h-full max-w-full select-none object-contain transition-opacity duration-200 ${
                 loaded ? "opacity-100" : "opacity-0"
               }`}

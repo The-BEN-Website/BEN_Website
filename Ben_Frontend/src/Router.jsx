@@ -1,29 +1,30 @@
-import React, { lazy } from "react";
+import React from "react";
+import lazyWithRetry from "./lib/lazyWithRetry";
 import { Navigate } from "react-router-dom";
 
-const Home = lazy(() => import("./pages/Home"));
-const About = lazy(() => import("./pages/About"));
-const Event = lazy(() => import("./pages/Events"));
-const Giving = lazy(() => import("./pages/Giving"));
-const Contact = lazy(() => import("./pages/Contact"));
-const EventDeets = lazy(() => import("./pages/Events_Section/EventDeets"))
-const ResourceDeets = lazy(() => import("./pages/Resources_Section/ResourceDeets"))
-const Map = lazy(() => import("./pages/Map"))
-const Payment = lazy(() => import("./pages/Payment"))
-const Payment1 = lazy(() => import("./pages/Payment1"))
-const items = lazy(() => import("../public/EventData"))
-const Anniversary = lazy(() => import("../src/pages/Anniversary.jsx"))
-const PrivacyPolicy = lazy(() => import("./pages/Legal/PrivacyPolicy"))
-const TermsOfService = lazy(() => import("./pages/Legal/TermsOfService"))
-const Live = lazy(() => import("./pages/Live"))
-const Media = lazy(() => import("./pages/Media"))
-const MediaImages = lazy(() => import("./pages/media/Images"))
-const ImageAlbum = lazy(() => import("./pages/media/ImageAlbum"))
-const MediaSongs = lazy(() => import("./pages/media/Songs"))
-const AudioTeachings = lazy(() => import("./pages/media/AudioTeachings"))
-const MediaVideos = lazy(() => import("./pages/media/Videos"))
-const MediaSermons = lazy(() => import("./pages/media/Sermons"))
-const VideoWatch = lazy(() => import("./pages/media/VideoWatch"))
+const Home = lazyWithRetry(() => import("./pages/Home"));
+const About = lazyWithRetry(() => import("./pages/About"));
+const Event = lazyWithRetry(() => import("./pages/Events"));
+const Giving = lazyWithRetry(() => import("./pages/Giving"));
+const Contact = lazyWithRetry(() => import("./pages/Contact"));
+const EventDeets = lazyWithRetry(() => import("./pages/Events_Section/EventDeets"))
+const ResourceDeets = lazyWithRetry(() => import("./pages/Resources_Section/ResourceDeets"))
+const Map = lazyWithRetry(() => import("./pages/Map"))
+const Payment = lazyWithRetry(() => import("./pages/Payment"))
+const Payment1 = lazyWithRetry(() => import("./pages/Payment1"))
+const Anniversary = lazyWithRetry(() => import("../src/pages/Anniversary.jsx"))
+const PrivacyPolicy = lazyWithRetry(() => import("./pages/Legal/PrivacyPolicy"))
+const TermsOfService = lazyWithRetry(() => import("./pages/Legal/TermsOfService"))
+const Live = lazyWithRetry(() => import("./pages/Live"))
+const NotFound = lazyWithRetry(() => import("./pages/NotFound"))
+const Media = lazyWithRetry(() => import("./pages/Media"))
+const MediaImages = lazyWithRetry(() => import("./pages/media/Images"))
+const ImageAlbum = lazyWithRetry(() => import("./pages/media/ImageAlbum"))
+const MediaSongs = lazyWithRetry(() => import("./pages/media/Songs"))
+const AudioTeachings = lazyWithRetry(() => import("./pages/media/AudioTeachings"))
+const MediaVideos = lazyWithRetry(() => import("./pages/media/Videos"))
+const MediaSermons = lazyWithRetry(() => import("./pages/media/Sermons"))
+const VideoWatch = lazyWithRetry(() => import("./pages/media/VideoWatch"))
 
 
 const AppRoutes = [
@@ -129,7 +130,7 @@ const AppRoutes = [
   },
   {
     path: "*",
-    element: <div>Not found</div>,
+    element: <NotFound />,
   },
 ];
 

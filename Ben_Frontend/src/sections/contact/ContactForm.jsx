@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "../../components/ui/Button";
 import Card from "../../components/ui/Card";
 import Field from "../../components/ui/Field";
+import { describeSubmitError } from "../../lib/errors";
 import SuccessPanel from "../../components/ui/SuccessPanel";
 import { submitContactMessage } from "../../api/contact";
 
@@ -11,6 +12,7 @@ const emptyForm = { name: "", email: "", message: "" };
 function ContactForm() {
   const [values, setValues] = useState(emptyForm);
   const [status, setStatus] = useState("idle");
+  const [submitError, setSubmitError] = useState(null);
   const successHeadingRef = useRef(null);
 
   // Move focus to the confirmation so screen-reader users hear it.
@@ -30,7 +32,8 @@ function ContactForm() {
       await submitContactMessage(values);
       setValues(emptyForm);
       setStatus("success");
-    } catch {
+    } catch (error) {
+      setSubmitError(error);
       setStatus("error");
     }
   };
@@ -89,7 +92,7 @@ function ContactForm() {
 
         {status === "error" && (
           <p role="alert" className="text-sm text-primary">
-            Something went wrong while sending your message. Please try again.
+            {describeSubmitError(submitError)}
           </p>
         )}
 

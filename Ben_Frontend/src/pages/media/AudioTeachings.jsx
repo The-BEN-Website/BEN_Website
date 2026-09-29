@@ -21,7 +21,7 @@ function AudioTeachings() {
       Icon={IoMic}
       tone={mediaTones.violet}
       emptyMessage="No teachings have been uploaded yet. Recordings of our teachings will appear here — check back soon."
-      errorMessage="We couldn't load the teachings right now. Please try again later."
+      errorMessage="We couldn't load the teachings"
     />
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../components/ui/Button";
 import Container from "../components/ui/Container";
 import LiveDot from "../components/ui/LiveDot";
+import ErrorState from "../components/ui/ErrorState";
 import useAsync from "../hooks/useAsync";
 import { getLiveStreamStatus } from "../api/liveStream";
 import {
@@ -49,13 +50,12 @@ function LiveNow({ title, youtubeVideoId, meetingUrl }) {
   );
 }
 
-function NotLive({ nextServiceAt, failed }) {
+function NotLive({ nextServiceAt }) {
   const next = nextServiceAt ? new Date(nextServiceAt) : null;
   const hasUpcoming = next && next > new Date();
-
-  let message = "Join us during our service times, or catch up on past services on YouTube.";
-  if (failed) message = "We couldn't check the live stream right now. You can still find our services on YouTube.";
-  else if (hasUpcoming) message = `Our next service starts ${nextServiceFormat.format(next)}.`;
+  const message = hasUpcoming
+    ? `Our next service starts ${nextServiceFormat.format(next)}.`
+    : "Join us during our service times, or catch up on past services on YouTube.";
 
   return (
     <div className="mx-auto max-w-xl py-8 text-center md:py-16">
@@ -83,7 +83,7 @@ function LiveSkeleton() {
 const storeLink = "font-medium text-primary hover:underline";
 
 function Live() {
-  const { status, data } = useAsync(getLiveStreamStatus);
+  const { status, data, error, reload } = useAsync(getLiveStreamStatus);
   const isLive = status === "success" && data?.is_live && data.youtube_video_id;
 
   return (
@@ -96,8 +96,23 @@ function Live() {
           meetingUrl={data.meeting_url}
         />
       )}
-      {status !== "loading" && !isLive && (
-        <NotLive nextServiceAt={data?.next_service_at} failed={status === "error"} />
+      {status === "success" && !isLive && <NotLive nextServiceAt={data?.next_service_at} />}
+      {status === "error" && (
+        <>
+          <ErrorState title="We couldn't check the live stream" error={error} onRetry={reload} />
+          <p className="-mt-8 text-center text-base text-secondary">
+            If a service is on, you can also watch it on{" "}
+            <a
+              href={YOUTUBE_CHANNEL_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium text-primary hover:underline"
+            >
+              our YouTube channel
+            </a>
+            .
+          </p>
+        </>
       )}
 
       <p className="mt-16 text-center text-base text-secondary">

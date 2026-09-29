@@ -1,5 +1,7 @@
 import React from "react";
 import Container from "../../components/ui/Container";
+import ErrorState from "../../components/ui/ErrorState";
+import RemoteImage from "../../components/ui/RemoteImage";
 import useAsync from "../../hooks/useAsync";
 import { listLocations } from "../../api/locations";
 import branchImages from "./branchImages";
@@ -19,7 +21,7 @@ function BranchCard({ id, name, address, phones }) {
       <div className="overflow-hidden rounded-3xl">
         <div className="aspect-[376/270] bg-placeholder">
           {image && (
-            <img src={image} alt="" loading="lazy" className="h-full w-full object-cover" />
+            <RemoteImage src={image} alt="" loading="lazy" className="h-full w-full object-cover" />
           )}
         </div>
         <h3 className="bg-primary px-4 py-1.5 text-center text-xl font-medium leading-[27px] text-white">
@@ -63,7 +65,7 @@ function BranchCardSkeleton() {
 }
 
 function Branches() {
-  const { status, data: branches } = useAsync(listLocations);
+  const { status, data: branches, error, reload } = useAsync(listLocations);
 
   if (status === "success" && branches.length === 0) return null;
 
@@ -82,9 +84,7 @@ function Branches() {
 
       {status === "error" ? (
         <Container>
-          <p className="mt-6 text-body text-secondary">
-            We couldn&apos;t load our branches right now. Please try again later.
-          </p>
+          <ErrorState compact title="We couldn't load our branches" error={error} onRetry={reload} />
         </Container>
       ) : (
         <ul

@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "../../components/ui/Container";
+import ErrorState from "../../components/ui/ErrorState";
 import SubpageHeader from "./SubpageHeader";
 import TrackRow from "./TrackRow";
 import Socials from "../shared/Socials";
@@ -10,8 +11,8 @@ import { storageDownloadUrl } from "../../lib/storage";
 // Shared page for audio lists (Songs, Audio teachings): loads the tracks, then
 // plays them through one player. `describe(track)` returns the row's subtitle.
 function TrackListPage({ title, load, describe, Icon, tone, emptyMessage, errorMessage }) {
-  const { status, data: tracks } = useAsync(load);
-  const { currentIndex, playing, currentTime, duration, toggle, seek, audioProps } =
+  const { status, data: tracks, error, reload } = useAsync(load);
+  const { currentIndex, failedIndex, playing, currentTime, duration, toggle, seek, audioProps } =
     useAudioPlaylist(tracks);
 
   return (
@@ -20,7 +21,7 @@ function TrackListPage({ title, load, describe, Icon, tone, emptyMessage, errorM
         <SubpageHeader title={title} />
 
         {status === "error" && (
-          <p className="mt-10 text-center text-body text-secondary">{errorMessage}</p>
+          <ErrorState title={errorMessage} error={error} onRetry={reload} />
         )}
         {status === "success" && tracks.length === 0 && (
           <p className="mx-auto mt-10 max-w-md text-center text-body text-secondary">
@@ -51,6 +52,7 @@ function TrackListPage({ title, load, describe, Icon, tone, emptyMessage, errorM
                   tone={tone}
                   active={active}
                   playing={active && playing}
+                  failed={index === failedIndex}
                   currentTime={active ? currentTime : 0}
                   duration={active ? duration : NaN}
                   onToggle={() => toggle(index)}

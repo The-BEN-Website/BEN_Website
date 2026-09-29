@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { IoLogoYoutube } from "react-icons/io5";
 import Container from "../../components/ui/Container";
+import ErrorState from "../../components/ui/ErrorState";
 import SubpageHeader from "../../sections/media/SubpageHeader";
 import VideoCard, { videoDateFormat } from "../../sections/media/VideoCard";
 import Socials from "../../sections/shared/Socials";
@@ -21,7 +22,7 @@ async function loadWatchPage(id) {
 
 function VideoWatch() {
   const { id } = useParams();
-  const { status, data } = useAsync(() => loadWatchPage(id), [id]);
+  const { status, data, error, reload } = useAsync(() => loadWatchPage(id), [id]);
   const video = data?.video;
   const section = VIDEO_TYPES[video ? videoTypeOf(video) : "sermons"];
 
@@ -36,11 +37,12 @@ function VideoWatch() {
             <div className="mt-6 h-8 w-2/3 animate-pulse rounded bg-placeholder" />
           </div>
         )}
-        {(status === "error" || (status === "success" && !video)) && (
+        {status === "error" && (
+          <ErrorState title="We couldn't load this video" error={error} onRetry={reload} />
+        )}
+        {status === "success" && !video && (
           <p className="mt-10 text-center text-body text-secondary">
-            {status === "error"
-              ? "We couldn't load this video right now. Please try again later."
-              : "This video isn't available."}
+            This video isn&apos;t available. It may have been removed.
           </p>
         )}
 

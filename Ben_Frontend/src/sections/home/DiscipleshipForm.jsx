@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../../components/ui/Button";
 import Field from "../../components/ui/Field";
+import { describeSubmitError } from "../../lib/errors";
 import { submitDiscipleshipInterest } from "../../api/discipleship";
 
 const emptyForm = { fullName: "", phone: "", email: "" };
@@ -9,6 +10,7 @@ const emptyForm = { fullName: "", phone: "", email: "" };
 function DiscipleshipForm({ headingRef, onSubmitted }) {
   const [values, setValues] = useState(emptyForm);
   const [status, setStatus] = useState("idle");
+  const [submitError, setSubmitError] = useState(null);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -21,7 +23,8 @@ function DiscipleshipForm({ headingRef, onSubmitted }) {
     try {
       await submitDiscipleshipInterest(values);
       onSubmitted();
-    } catch {
+    } catch (error) {
+      setSubmitError(error);
       setStatus("error");
     }
   };
@@ -78,7 +81,7 @@ function DiscipleshipForm({ headingRef, onSubmitted }) {
 
       {status === "error" && (
         <p role="alert" className="mt-6 text-sm text-primary">
-          Something went wrong while submitting. Please try again.
+          {describeSubmitError(submitError)}
         </p>
       )}
 

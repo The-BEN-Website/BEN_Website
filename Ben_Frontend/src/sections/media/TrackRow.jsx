@@ -1,5 +1,6 @@
 import React from "react";
 import { IoDownloadOutline, IoPause, IoPlay } from "react-icons/io5";
+import { isOffline } from "../../lib/errors";
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) return "0:00";
@@ -19,6 +20,7 @@ function TrackRow({
   tone,
   active,
   playing,
+  failed,
   currentTime,
   duration,
   onToggle,
@@ -72,7 +74,15 @@ function TrackRow({
         </button>
       </div>
 
-      {active && (
+      {failed && (
+        <p role="alert" className="mt-3 text-sm text-primary">
+          {isOffline()
+            ? "You're offline, so this can't play right now. Reconnect and press play to try again."
+            : "This track couldn't be played. Press play to try again."}
+        </p>
+      )}
+
+      {active && !failed && (
         <div className="mt-4 flex items-center gap-3 text-xs font-medium tabular-nums text-subtitle">
           <span>{formatTime(currentTime)}</span>
           <input

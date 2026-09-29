@@ -1,14 +1,17 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
-import Button from "../../components/ui/Button";
 import Container from "../../components/ui/Container";
+import ErrorState from "../../components/ui/ErrorState";
+import LoadMore from "../../components/ui/LoadMore";
 import SubpageHeader from "./SubpageHeader";
 import VideoCard from "./VideoCard";
 import Socials from "../shared/Socials";
+import usePaginatedList from "../../hooks/usePaginatedList";
 import { listVideos, VIDEO_TYPES } from "../../api/videos";
 
 const PAGE_SIZE = 24;
 const SEARCH_DEBOUNCE_MS = 300;
+const cursorOf = (video) => video.published_at;
 
 // Searchable, paginated grid of one kind of video ("sermons" or "videos").
 function VideoListPage({ type }) {
@@ -17,9 +20,6 @@ function VideoListPage({ type }) {
 
   const [searchInput, setSearchInput] = useState("");
   const [search, setSearch] = useState("");
-  const [videos, setVideos] = useState([]);
-  const [status, setStatus] = useState("loading");
-  const [hasMore, setHasMore] = useState(false);
 
   // Only query once typing pauses.
   useEffect(() => {
@@ -27,27 +27,15 @@ function VideoListPage({ type }) {
     return () => clearTimeout(timer);
   }, [searchInput]);
 
-  const loadPage = useCallback(
-    async (before) => {
-      setStatus(before ? "loading-more" : "loading");
-      try {
-        const page = await listVideos({ type, search, before, limit: PAGE_SIZE });
-        setVideos((current) => (before ? [...current, ...page] : page));
-        setHasMore(page.length === PAGE_SIZE);
-        setStatus("success");
-      } catch {
-        setStatus("error");
-      }
-    },
+  const fetchPage = useCallback(
+    (before) => listVideos({ type, search, before, limit: PAGE_SIZE }),
     [type, search],
   );
-
-  useEffect(() => {
-    setVideos([]);
-    loadPage();
-  }, [loadPage]);
-
-  const loadMore = () => loadPage(videos[videos.length - 1].published_at);
+  const { items: videos, status, error, hasMore, loadMore, retry } = usePaginatedList(
+    fetchPage,
+    cursorOf,
+    PAGE_SIZE,
+  );
 
   return (
     <main>
@@ -73,9 +61,7 @@ function VideoListPage({ type }) {
         </div>
 
         {status === "error" && videos.length === 0 && (
-          <p className="mt-10 text-center text-body text-secondary">
-            We couldn&apos;t load {noun} right now. Please try again later.
-          </p>
+          <ErrorState title={`We couldn't load ${noun}`} error={error} onRetry={retry} />
         )}
         {status === "success" && videos.length === 0 && (
           <p className="mt-10 text-center text-body text-secondary">
@@ -98,18 +84,14 @@ function VideoListPage({ type }) {
           {status !== "loading" && videos.map((video) => <VideoCard key={video.id} {...video} />)}
         </ul>
 
-        {hasMore && status !== "loading" && (
-          <div className="mt-10 flex justify-center">
-            <Button variant="secondary" onClick={loadMore} disabled={status === "loading-more"}>
-              {status === "loading-more" ? "Loading..." : "Load more"}
-            </Button>
-          </div>
-        )}
-        {status === "error" && videos.length > 0 && (
-          <p role="alert" className="mt-6 text-center text-sm text-primary">
-            Couldn&apos;t load more {noun}. Please try again.
-          </p>
-        )}
+        <LoadMore
+          status={status}
+          hasMore={hasMore}
+          error={error}
+          itemCount={videos.length}
+          onLoadMore={loadMore}
+          onRetry={retry}
+        />
       </Container>
 
       <Socials />
