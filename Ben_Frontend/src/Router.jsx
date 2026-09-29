@@ -6,7 +6,6 @@ const About = lazy(() => import("./pages/About"));
 const Event = lazy(() => import("./pages/Events"));
 const Giving = lazy(() => import("./pages/Giving"));
 const Contact = lazy(() => import("./pages/Contact"));
-const Resources = lazy(() => import("./pages/Resources"));
 const EventDeets = lazy(() => import("./pages/Events_Section/EventDeets"))
 const ResourceDeets = lazy(() => import("./pages/Resources_Section/ResourceDeets"))
 const Map = lazy(() => import("./pages/Map"))
@@ -17,6 +16,7 @@ const Anniversary = lazy(() => import("../src/pages/Anniversary.jsx"))
 const PrivacyPolicy = lazy(() => import("./pages/Legal/PrivacyPolicy"))
 const TermsOfService = lazy(() => import("./pages/Legal/TermsOfService"))
 const Live = lazy(() => import("./pages/Live"))
+const Media = lazy(() => import("./pages/Media"))
 
 
 const AppRoutes = [
@@ -41,8 +41,12 @@ const AppRoutes = [
     element: <Giving />,
   },
   {
+    path: "/media",
+    element: <Media />,
+  },
+  {
     path: "/resources",
-    element: <Resources />,
+    element: <Navigate to="/media" replace />,
   },
   {
     path: "/mailing",

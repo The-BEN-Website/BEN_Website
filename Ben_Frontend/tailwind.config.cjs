@@ -28,6 +28,7 @@ module.exports = {
         subtle: "#717171",
         muted: "#909090",
         caption: "#959595",
+        subtitle: "#8F8F8F",
         line: "#EEEEEE",
         "line-strong": "#E5E5E5",
         "input-line": "#E8E8E8",
@@ -39,6 +40,16 @@ module.exports = {
         "card-line": "#F2F2F2",
         tile: "#FCFCFC",
         "tile-line": "#EDEDED",
+        // Media category colours
+        "media-line": "#EBEBEB",
+        "media-red": "#FF3333",
+        "media-red-soft": "#FFEAEA",
+        "media-green": "#12B76A",
+        "media-green-soft": "#12B76A1A",
+        "media-blue": "#005EEB",
+        "media-blue-soft": "#005EEB1A",
+        "media-pink": "#E0218A",
+        "media-pink-soft": "#FFEAFC",
       },
       fontSize: {
         // UI rework type scale
