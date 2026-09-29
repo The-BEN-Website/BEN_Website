@@ -17,6 +17,8 @@ const PrivacyPolicy = lazy(() => import("./pages/Legal/PrivacyPolicy"))
 const TermsOfService = lazy(() => import("./pages/Legal/TermsOfService"))
 const Live = lazy(() => import("./pages/Live"))
 const Media = lazy(() => import("./pages/Media"))
+const MediaImages = lazy(() => import("./pages/media/Images"))
+const ImageAlbum = lazy(() => import("./pages/media/ImageAlbum"))
 
 
 const AppRoutes = [
@@ -43,6 +45,14 @@ const AppRoutes = [
   {
     path: "/media",
     element: <Media />,
+  },
+  {
+    path: "/media/images",
+    element: <MediaImages />,
+  },
+  {
+    path: "/media/images/:album",
+    element: <ImageAlbum />,
   },
   {
     path: "/resources",
