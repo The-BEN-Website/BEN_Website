@@ -1,20 +1,29 @@
 import React from "react";
 import Container from "../../components/ui/Container";
+import RemoteImage from "../../components/ui/RemoteImage";
+import useCachedAsync from "../../hooks/useCachedAsync";
+import { listServiceTimes } from "../../api/serviceTimes";
+import { cloudinaryResize } from "../../lib/cloudinary";
+import { weeklyLabel } from "../../lib/serviceTimes";
 import classroomImage from "../../assets/home/home-classroom.jpg";
+import foundationClassImage from "../../assets/home/join-foundation-class.jpg";
 import thursdayMeetingImage from "../../assets/home/join-thursday-meeting.jpg";
 
-// Images are added as they're exported from Figma; cards without one show a neutral placeholder.
-const gatherings = [
-  { name: "Sunday Service", time: "1pm", image: classroomImage },
-  { name: "Foundation Class", time: "4pm", image: null },
-  { name: "Thursday Meeting", time: "4pm", image: thursdayMeetingImage },
+// Shown only if the services can't be loaded and none are remembered on this device.
+const fallbackGatherings = [
+  { id: "sunday", name: "Sunday Service", schedule: "Sundays · 8:30am", image: classroomImage },
+  { id: "foundation", name: "Foundation Class", schedule: "Mondays · 4:00pm", image: foundationClassImage },
+  { id: "thursday", name: "Midweek Service", schedule: "Thursdays · 8:00pm", image: thursdayMeetingImage },
 ];
 
-function GatheringCard({ name, time, image }) {
+const cardClass =
+  "relative aspect-[376/309] w-[80%] shrink-0 snap-start overflow-hidden rounded-3xl bg-placeholder sm:w-[45%] lg:w-auto";
+
+function GatheringCard({ name, schedule, image }) {
   return (
-    <li className="relative aspect-[376/309] w-[80%] shrink-0 snap-start overflow-hidden rounded-3xl bg-placeholder sm:w-[45%] lg:w-auto">
+    <li className={cardClass}>
       {image && (
-        <img
+        <RemoteImage
           src={image}
           alt=""
           loading="lazy"
@@ -25,15 +34,30 @@ function GatheringCard({ name, time, image }) {
         <h3 className="rounded-r-md bg-primary px-2 py-0.5 text-xl font-medium leading-[27px] text-white">
           {name}
         </h3>
-        <p className="w-28 rounded-br-md bg-white text-center text-base font-medium leading-[27px] text-black">
-          {time}
+        <p className="rounded-br-md bg-white px-3 text-base font-medium leading-[27px] text-black">
+          {schedule}
         </p>
       </div>
     </li>
   );
 }
 
+// Every public service from the admin's Service Times page (running or not),
+// in the admin's order, each with its photo if one was uploaded. Shares the cached
+// "service-times" data with the hero.
 function JoinUs() {
+  const { status, data } = useCachedAsync("service-times", listServiceTimes);
+
+  const gatherings =
+    data?.length > 0
+      ? data.map((service) => ({
+          id: service.id,
+          name: service.name,
+          schedule: weeklyLabel(service),
+          image: service.image_url ? cloudinaryResize(service.image_url, { width: 800, height: 656 }) : null,
+        }))
+      : fallbackGatherings;
+
   return (
     <section aria-labelledby="join-us-heading">
       <Container className="py-12 md:py-16">
@@ -45,10 +69,15 @@ function JoinUs() {
           and Spirit in a community of faith.
         </p>
 
-        <ul className="-mx-4 mt-12 flex snap-x snap-mandatory scroll-px-4 gap-6 overflow-x-auto scrollbar-none px-4 sm:-mx-8 sm:scroll-px-8 sm:px-8 md:mx-0 md:scroll-px-0 md:px-0 lg:grid lg:grid-cols-3 lg:overflow-visible">
-          {gatherings.map((gathering) => (
-            <GatheringCard key={gathering.name} {...gathering} />
-          ))}
+        <ul
+          aria-busy={status === "loading"}
+          className="-mx-4 mt-12 flex snap-x snap-mandatory scroll-px-4 gap-6 overflow-x-auto scrollbar-none px-4 sm:-mx-8 sm:scroll-px-8 sm:px-8 md:mx-0 md:scroll-px-0 md:px-0 lg:grid lg:grid-cols-3 lg:overflow-visible"
+        >
+          {status === "loading"
+            ? Array.from({ length: 3 }, (_, i) => (
+                <li key={i} aria-hidden="true" className={`${cardClass} animate-pulse`} />
+              ))
+            : gatherings.map(({ id, ...gathering }) => <GatheringCard key={id} {...gathering} />)}
         </ul>
       </Container>
     </section>

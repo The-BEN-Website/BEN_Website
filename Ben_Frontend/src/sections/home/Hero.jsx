@@ -44,7 +44,9 @@ function UpcomingServices() {
     );
   }
 
-  const upcoming = data ? upcomingServices(data, 2) : [];
+  // `!== false`: copies remembered before `is_active` was fetched count as running.
+  const running = (data ?? []).filter((service) => service.is_active !== false);
+  const upcoming = upcomingServices(running, 2);
   const services = upcoming.length > 0 ? upcoming : fallbackServices;
 
   return (

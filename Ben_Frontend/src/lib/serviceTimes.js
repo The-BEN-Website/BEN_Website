@@ -30,6 +30,15 @@ export function formatMinutes(minutes) {
   return `${hours12}:${String(minutes % 60).padStart(2, "0")}${period}`;
 }
 
+// Recurring schedule label: "Sundays · 8:30am". Falls back to the raw values
+// if the stored time can't be read.
+export function weeklyLabel({ day, time }) {
+  const minutes = parseTimeToMinutes(time);
+  const dayName = day.trim();
+  const days = dayName.endsWith("s") ? dayName : `${dayName}s`;
+  return `${days} · ${minutes === null ? time : formatMinutes(minutes)}`;
+}
+
 // Current weekday (0 = Sunday) and minutes past midnight in the church's time zone.
 function churchNow(now) {
   const parts = Object.fromEntries(

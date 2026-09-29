@@ -1,9 +1,0 @@
-<!doctype html><html><body style="margin:0">
-<iframe id="f" style="width:100vw;height:100vh;border:0;display:block"></iframe>
-<script>
-// 1st load: empty cache -> real times after load. Then reload with cache present and capture immediately.
-localStorage.removeItem("ben:cache:service-times");
-const f=document.getElementById('f'); let n=0;
-f.onload=()=>{ n++; if(n===1) setTimeout(()=>{ f.src='/?again'; },3000); };
-f.src='/';
-</script></body></html>
