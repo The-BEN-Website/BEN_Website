@@ -8,6 +8,10 @@
         @apply bg-white text-ink antialiased;
     }
 
+    #root {
+        min-height: 100vh;
+    }
+
     @media (prefers-reduced-motion: no-preference) {
         html {
             scroll-behavior: smooth;
@@ -16,48 +20,6 @@
 }
 
 
-@layer components {
-    @media (max-width: 375px) {
-        .s-wr {
-            justify-content: start;
-            flex-wrap: wrap;
-        }
-
-    }
-
-     .sel_aft {
-        content: "";
-        display: block;
-        width: 0.8em;
-        height: 0.5em;
-        clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-    }
-    .border-w {
-        border-width: 1px;
-    }
-
-    .btneffect {
-        background: linear-gradient(to left, transparent 50%, white 50%) right;
-        background-size: 200%;
-        transition: .3s ease-in-out;
-    }
-    .btneffect:hover {
-        background-position: left;
-        color: #f74946;
-        outline-color: #f74946;
-    }
-    .btneffectred {
-        background: linear-gradient(to left, white 50%, #f74946 50%) right;
-        background-size: 200%;
-        transition: .3s ease-in-out;
-    }
-    .btneffectred:hover {
-        background-position: left;
-        background-color: #f74946;
-        color: white;
-        outline-color: white;
-    }
-}
 @layer utilities {
     /* Hides the scrollbar while keeping the element scrollable (touch, trackpad, keyboard). */
     .scrollbar-none {

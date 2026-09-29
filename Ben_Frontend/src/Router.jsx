@@ -4,15 +4,8 @@ import { Navigate } from "react-router-dom";
 
 const Home = lazyWithRetry(() => import("./pages/Home"));
 const About = lazyWithRetry(() => import("./pages/About"));
-const Event = lazyWithRetry(() => import("./pages/Events"));
 const Giving = lazyWithRetry(() => import("./pages/Giving"));
 const Contact = lazyWithRetry(() => import("./pages/Contact"));
-const EventDeets = lazyWithRetry(() => import("./pages/Events_Section/EventDeets"))
-const ResourceDeets = lazyWithRetry(() => import("./pages/Resources_Section/ResourceDeets"))
-const Map = lazyWithRetry(() => import("./pages/Map"))
-const Payment = lazyWithRetry(() => import("./pages/Payment"))
-const Payment1 = lazyWithRetry(() => import("./pages/Payment1"))
-const Anniversary = lazyWithRetry(() => import("../src/pages/Anniversary.jsx"))
 const PrivacyPolicy = lazyWithRetry(() => import("./pages/Legal/PrivacyPolicy"))
 const TermsOfService = lazyWithRetry(() => import("./pages/Legal/TermsOfService"))
 const Live = lazyWithRetry(() => import("./pages/Live"))
@@ -26,12 +19,8 @@ const MediaVideos = lazyWithRetry(() => import("./pages/media/Videos"))
 const MediaSermons = lazyWithRetry(() => import("./pages/media/Sermons"))
 const VideoWatch = lazyWithRetry(() => import("./pages/media/VideoWatch"))
 
-
+// Old addresses from the previous site redirect to their closest new page.
 const AppRoutes = [
-  // {
-  //   path: "/",
-  //   element: <Anniversary />,
-  // },
   {
     path: "/",
     element: <Home />,
@@ -42,7 +31,7 @@ const AppRoutes = [
   },
   {
     path: "/event",
-    element: <Event />,
+    element: <Navigate to="/media" replace />,
   },
   {
     path: "/giving",
@@ -94,7 +83,7 @@ const AppRoutes = [
   },
   {
     path: "/visit",
-    element: <Map />,
+    element: <Navigate to="/#branches" replace />,
   },
   {
     path: "/contact",
@@ -102,19 +91,19 @@ const AppRoutes = [
   },
   {
     path: `/event/:id`,
-    element: <EventDeets />,
+    element: <Navigate to="/media" replace />,
   },
   {
     path: `/resources/:id`,
-    element: <ResourceDeets />,
+    element: <Navigate to="/media" replace />,
   },
   {
     path: `/payment`,
-    element: <Payment />,
+    element: <Navigate to="/giving" replace />,
   },
   {
     path: `/payment1`,
-    element: <Payment1 />,
+    element: <Navigate to="/giving" replace />,
   },
   {
     path: "/privacy",

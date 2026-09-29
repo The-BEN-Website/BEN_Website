@@ -1,7 +1,6 @@
 import React, { Suspense } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import AppRoutes from "./Router";
-import "./App.css";
 import ErrorBoundary from "./components/ErrorBoundary";
 import OfflineBanner from "./components/OfflineBanner";
 import PageLoader from "./components/ui/PageLoader";
