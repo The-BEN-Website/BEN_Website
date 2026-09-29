@@ -1,11 +1,13 @@
 // Gallery images are hosted on Cloudinary. Inserting a transformation after
 // `/upload/` returns a resized, auto-format, auto-quality variant instead of the
 // original upload. Non-Cloudinary URLs are returned unchanged.
-export function cloudinaryResize(url, { width, height }) {
+// When cropping (`height` given), `gravity` picks what to keep: "auto" lets
+// Cloudinary choose the most interesting area, "center" keeps the middle.
+export function cloudinaryResize(url, { width, height, gravity = "auto" }) {
   if (!url || !url.includes("res.cloudinary.com") || !url.includes("/upload/")) return url;
 
   const transform = [
-    height ? "c_fill,g_auto" : "c_limit",
+    height ? `c_fill,g_${gravity}` : "c_limit",
     `w_${width}`,
     height && `h_${height}`,
     "q_auto",

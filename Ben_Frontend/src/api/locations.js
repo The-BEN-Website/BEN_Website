@@ -4,7 +4,7 @@ import { getSupabase } from "../lib/supabase";
 export async function listLocations() {
   const { data, error } = await getSupabase()
     .from("locations")
-    .select("id, name, address, phones")
+    .select("id, name, address, phones, image_url")
     .eq("is_active", true)
     .order("sort_order", { ascending: true })
     .order("name", { ascending: true });

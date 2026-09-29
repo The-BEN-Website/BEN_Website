@@ -4,7 +4,7 @@ import ErrorState from "../../components/ui/ErrorState";
 import RemoteImage from "../../components/ui/RemoteImage";
 import useAsync from "../../hooks/useAsync";
 import { listLocations } from "../../api/locations";
-import branchImages from "./branchImages";
+import { cloudinaryResize } from "../../lib/cloudinary";
 
 // Lines the first card up with the page container while letting the row
 // scroll out to the right edge of the screen.
@@ -13,8 +13,12 @@ const rowInset =
 
 const cardWidth = "w-[85%] shrink-0 snap-start sm:w-[376px]";
 
-function BranchCard({ id, name, address, phones }) {
-  const image = branchImages[id];
+// `image_url` is uploaded from the admin's Locations page.
+function BranchCard({ name, address, phones, image_url: imageUrl }) {
+  // Centred crop: branch photos are group shots, often much wider than the card.
+  const image = imageUrl
+    ? cloudinaryResize(imageUrl, { width: 752, height: 540, gravity: "center" })
+    : null;
 
   return (
     <li className={cardWidth}>
