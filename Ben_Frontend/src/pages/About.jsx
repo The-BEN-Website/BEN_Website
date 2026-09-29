@@ -17,6 +17,14 @@ const images = {
   mission: missionImage,
 };
 
+const missionStatements = [
+  "To Know the Gospel",
+  "To live it",
+  "To preach it",
+  "To demonstrate the authority of the Gospel",
+  "To disciple others through it",
+];
+
 function About() {
   return (
     <main>
@@ -65,18 +73,38 @@ function About() {
         </AboutText>
       </AboutBlock>
 
-      <AboutBlock
-        image={images.mission}
-        imageAlt="A large group photo of the congregation"
-        imageSide="right"
+      <section
+        aria-labelledby="mission-heading"
+        className="py-8 md:py-12 lg:py-16"
       >
-        <AboutText title="Our Mission">
-          We train believers in the work of the ministry in an atmosphere of
-          love, fellowship, faith and power. We equip believers with the Word to
-          the intent that the same is grounded and able to teach others the same
-          also.
-        </AboutText>
-      </AboutBlock>
+        <Container className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12 xl:gap-16">
+          <div>
+            <h2
+              id="mission-heading"
+              className="text-[40px] font-semibold leading-[100%] tracking-[-0.04em] text-black sm:text-[44px] md:text-[48px] lg:text-[40px]"
+            >
+              Our Mission
+            </h2>
+
+            <div className="mt-8 space-y-4">
+              {missionStatements.map((statement) => (
+                <div
+                  key={statement}
+                  className="rounded-[18px] border border-[#FFFFFF] bg-[#FBFBFB] px-5 py-4 text-[16px] font-medium leading-[24px] text-[#717171] sm:text-[17px] sm:leading-[25px] md:px-6 md:text-[18px] md:leading-[27px]"
+                >
+                  {statement}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <AboutImage
+            src={images.mission}
+            alt="A large group photo of the congregation"
+            className="h-full rounded-[30px]"
+          />
+        </Container>
+      </section>
 
       <Socials />
     </main>
