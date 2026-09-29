@@ -2,8 +2,13 @@ import React from "react";
 import Container from "../components/ui/Container";
 import ContactForm from "../sections/contact/ContactForm";
 import ContactDetails from "../sections/contact/ContactDetails";
+import usePageMeta from "../hooks/usePageMeta";
 
 function Contact() {
+  usePageMeta({
+    title: "Contact Us",
+    description: "Get in touch with Believers Equipping Network. Send us a message, call, or email and a BEN representative will follow up with you.",
+  });
   return (
     <Container as="main" className="py-12 md:py-20">
       <header className="mx-auto max-w-lg text-center">

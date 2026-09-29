@@ -1,10 +1,15 @@
 import React from "react";
 import { LegalLink, LegalList, LegalPage, LegalSection } from "../../components/legal/Legal";
+import usePageMeta from "../../hooks/usePageMeta";
 
 const CONTACT_EMAIL = "believersequippingnetwork@gmail.com";
 const CONTACT_PHONE = "+234 701 767 3889";
 
 function TermsOfService() {
+  usePageMeta({
+    title: "Terms of Service",
+    description: "The terms for using the Believers Equipping Network app and website.",
+  });
   return (
     <LegalPage title="Terms of Service" lastUpdated="September 28, 2026">
       <p>

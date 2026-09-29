@@ -1,8 +1,10 @@
 import React from "react";
 import Button from "../components/ui/Button";
 import Container from "../components/ui/Container";
+import usePageMeta from "../hooks/usePageMeta";
 
 function NotFound() {
+  usePageMeta({ title: "Page Not Found", noindex: true });
   return (
     <Container as="main" className="flex flex-col items-center py-20 text-center md:py-28">
       <p className="rounded-[10px] border border-line bg-white px-2.5 py-1 text-body font-medium text-primary shadow-glow">

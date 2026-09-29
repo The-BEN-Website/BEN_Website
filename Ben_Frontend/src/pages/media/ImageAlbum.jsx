@@ -10,6 +10,7 @@ import Socials from "../../sections/shared/Socials";
 import usePaginatedList from "../../hooks/usePaginatedList";
 import { categoryFromSlug, listGalleryImages, UNCATEGORIZED_TITLE } from "../../api/gallery";
 import { cloudinaryResize } from "../../lib/cloudinary";
+import usePageMeta from "../../hooks/usePageMeta";
 
 const PAGE_SIZE = 24;
 const cursorOf = (image) => image.created_at;
@@ -18,6 +19,10 @@ function ImageAlbum() {
   const { album } = useParams();
   const category = categoryFromSlug(album);
   const title = category ?? UNCATEGORIZED_TITLE;
+  usePageMeta({
+    title: `${title} Photos`,
+    description: `Photos from ${title}, Believers Equipping Network.`,
+  });
 
   const fetchPage = useCallback(
     (before) => listGalleryImages({ category, before, limit: PAGE_SIZE }),

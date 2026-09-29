@@ -8,6 +8,7 @@ import Socials from "../../sections/shared/Socials";
 import useAsync from "../../hooks/useAsync";
 import { albumSlug, listGalleryAlbums, UNCATEGORIZED_TITLE } from "../../api/gallery";
 import { cloudinaryResize } from "../../lib/cloudinary";
+import usePageMeta from "../../hooks/usePageMeta";
 
 const cardClass = "relative block aspect-[397/309] overflow-hidden rounded-[20px] bg-placeholder";
 
@@ -36,6 +37,10 @@ function AlbumCard({ category, cover, count }) {
 }
 
 function Images() {
+  usePageMeta({
+    title: "Photos",
+    description: "Photo albums from Believers Equipping Network services and events.",
+  });
   const { status, data: albums, error, reload } = useAsync(listGalleryAlbums);
 
   return (

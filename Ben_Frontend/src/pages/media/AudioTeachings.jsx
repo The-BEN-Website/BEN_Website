@@ -3,6 +3,7 @@ import { IoMic } from "react-icons/io5";
 import TrackListPage from "../../sections/media/TrackListPage";
 import mediaTones from "../../sections/media/tones";
 import { listAudioTeachings } from "../../api/audio";
+import usePageMeta from "../../hooks/usePageMeta";
 
 const publishedFormat = new Intl.DateTimeFormat(undefined, {
   day: "numeric",
@@ -11,6 +12,10 @@ const publishedFormat = new Intl.DateTimeFormat(undefined, {
 });
 
 function AudioTeachings() {
+  usePageMeta({
+    title: "Audio Teachings",
+    description: "Recorded teachings from Believers Equipping Network to listen to anytime.",
+  });
   return (
     <TrackListPage
       title="Audio"

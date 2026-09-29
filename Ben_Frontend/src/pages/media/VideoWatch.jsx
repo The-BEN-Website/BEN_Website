@@ -8,7 +8,8 @@ import VideoCard, { videoDateFormat } from "../../sections/media/VideoCard";
 import Socials from "../../sections/shared/Socials";
 import useAsync from "../../hooks/useAsync";
 import { getVideo, listVideos, VIDEO_TYPES, videoTypeOf } from "../../api/videos";
-import { youtubeEmbed, youtubeWatch } from "../../lib/youtube";
+import { youtubeEmbed, youtubeThumbnail, youtubeWatch } from "../../lib/youtube";
+import usePageMeta from "../../hooks/usePageMeta";
 
 const MORE_COUNT = 3;
 
@@ -25,6 +26,17 @@ function VideoWatch() {
   const { status, data, error, reload } = useAsync(() => loadWatchPage(id), [id]);
   const video = data?.video;
   const section = VIDEO_TYPES[video ? videoTypeOf(video) : "sermons"];
+
+  usePageMeta({
+    title: video?.title ?? section.title,
+    description:
+      video?.description?.trim().slice(0, 160) ||
+      (video
+        ? `Watch "${video.title}" from Believers Equipping Network.`
+        : "Watch sermons and videos from Believers Equipping Network."),
+    image: video ? youtubeThumbnail(video.youtube_video_id) : undefined,
+    noindex: status === "success" && !video,
+  });
 
   return (
     <main>
