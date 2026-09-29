@@ -11,6 +11,7 @@ import {
   YOUTUBE_CHANNEL_URL,
   YOUTUBE_STREAMS_URL,
 } from "../config/links";
+import usePageMeta from "../hooks/usePageMeta";
 
 // /live is also the app's universal link, so phones with the app installed
 // open it there; everyone else lands on this page.
@@ -83,6 +84,10 @@ function LiveSkeleton() {
 const storeLink = "font-medium text-primary hover:underline";
 
 function Live() {
+  usePageMeta({
+    title: "Watch Live",
+    description: "Watch Believers Equipping Network services live online, or catch up on past services.",
+  });
   const { status, data, error, reload } = useAsync(getLiveStreamStatus);
   const isLive = status === "success" && data?.is_live && data.youtube_video_id;
 

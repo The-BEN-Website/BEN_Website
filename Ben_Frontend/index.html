@@ -2,17 +2,85 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>Believers Equipping Network</title>
+
+    <!--
+      Site-wide defaults. Pages update the title, description and canonical URL
+      when they load (src/hooks/usePageMeta.js); link-preview crawlers that don't
+      run JavaScript (WhatsApp, Facebook, X) always see these values.
+    -->
+    <title>Believers Equipping Network | Raising Godly Seeds</title>
+    <meta
+      name="description"
+      content="Believers Equipping Network (BEN) is a church ministry raising godly seeds: equipping believers through sound teaching and spiritual empowerment. Join us in Auchi, Abuja, Asaba, Benin, Lagos or online."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.believersequippingnetwork.org/" />
+    <meta name="theme-color" content="#FF3333" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Believers Equipping Network" />
+    <meta property="og:locale" content="en_NG" />
+    <meta property="og:title" content="Believers Equipping Network | Raising Godly Seeds" />
+    <meta
+      property="og:description"
+      content="A church ministry equipping believers through sound teaching and spiritual empowerment. Join us in person or online."
+    />
+    <meta property="og:url" content="https://www.believersequippingnetwork.org/" />
+    <meta property="og:image" content="https://www.believersequippingnetwork.org/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The pastor ministering at a Believers Equipping Network meeting" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Believers Equipping Network | Raising Godly Seeds" />
+    <meta
+      name="twitter:description"
+      content="A church ministry equipping believers through sound teaching and spiritual empowerment. Join us in person or online."
+    />
+    <meta name="twitter:image" content="https://www.believersequippingnetwork.org/og-image.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Church",
+        "name": "Believers Equipping Network",
+        "alternateName": "BEN",
+        "slogan": "Raising godly seeds",
+        "url": "https://www.believersequippingnetwork.org/",
+        "logo": "https://www.believersequippingnetwork.org/apple-touch-icon.png",
+        "image": "https://www.believersequippingnetwork.org/og-image.jpg",
+        "email": "believersequippingnetwork@gmail.com",
+        "telephone": "+2347017673889",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Edo State University Iyamho",
+          "addressLocality": "Auchi",
+          "addressRegion": "Edo State",
+          "addressCountry": "NG"
+        },
+        "sameAs": [
+          "https://www.facebook.com/share/1BNM4SUmsY/",
+          "https://www.instagram.com/believersequippingnetwork",
+          "https://www.youtube.com/@BelieversEquippingNetworkGM"
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <noscript>
+      Believers Equipping Network needs JavaScript enabled to display this site.
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>
 </html>

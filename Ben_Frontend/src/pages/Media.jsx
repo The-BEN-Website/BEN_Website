@@ -4,6 +4,7 @@ import Container from "../components/ui/Container";
 import MediaCard from "../sections/media/MediaCard";
 import Socials from "../sections/shared/Socials";
 import tones from "../sections/media/tones";
+import usePageMeta from "../hooks/usePageMeta";
 
 const categories = [
   {
@@ -44,6 +45,10 @@ const categories = [
 ];
 
 function Media() {
+  usePageMeta({
+    title: "Media",
+    description: "Sermons, videos, audio teachings, worship songs and photos from Believers Equipping Network.",
+  });
   return (
     <main>
       <Container className="py-12 md:py-20">

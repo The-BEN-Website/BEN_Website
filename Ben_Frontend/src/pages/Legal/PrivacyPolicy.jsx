@@ -7,10 +7,15 @@ import {
   LegalSubheading,
   Term,
 } from "../../components/legal/Legal";
+import usePageMeta from "../../hooks/usePageMeta";
 
 const CONTACT_EMAIL = "believersequippingnetwork@gmail.com";
 
 function PrivacyPolicy() {
+  usePageMeta({
+    title: "Privacy Policy",
+    description: "How Believers Equipping Network collects, uses and protects information through its app and website.",
+  });
   return (
     <LegalPage title="Privacy Policy" lastUpdated="September 28, 2026">
       <p>

@@ -9,6 +9,7 @@ import Socials from "../sections/shared/Socials";
 import heroImage from "../assets/about/about-hero.jpg";
 import identityImage from "../assets/about/about-identity.jpg";
 import missionImage from "../assets/about/about-mission.jpg";
+import usePageMeta from "../hooks/usePageMeta";
 
 // Photos are added as they're exported; blocks without one show a neutral placeholder.
 const images = {
@@ -26,6 +27,11 @@ const missionStatements = [
 ];
 
 function About() {
+  usePageMeta({
+    title: "About Us",
+    description:
+      "BEN is a Bible-believing church ministry with a passion to see souls saved, discipled and trained for the work of the ministry through accurate teaching of God's word.",
+  });
   return (
     <main>
       <section aria-labelledby="about-heading">
