@@ -6,7 +6,7 @@ import Loader from '../src/assets/Home_assets/Loader.gif'
 import Footer from './components/Footer'
 import Back from './components/BackBtn'
 import Navbar from './components/Navbar/NavHead'
-import ScrollToHash from './components/ScrollToHash'
+import ScrollManager from './components/ScrollManager'
 // import Red from './pages/Anniversary'
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     <>
       {/* {window.location.href != "https://www.believersequippingnetwork.org/" ? <Navbar /> : null} */}
       <Navbar />
-      <ScrollToHash />
+      <ScrollManager />
       <Suspense
         fallback={
           <div className="flex flex-col justify-center items-center w-full h-full">

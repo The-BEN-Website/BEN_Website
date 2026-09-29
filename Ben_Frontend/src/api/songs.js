@@ -10,11 +10,3 @@ export async function listSongs() {
   if (error) throw error;
   return data ?? [];
 }
-
-// Supabase Storage serves a public object as an attachment when `download` is set.
-export function songDownloadUrl(song) {
-  const extension = song.audio_url.split(".").pop();
-  const url = new URL(song.audio_url);
-  url.searchParams.set("download", `${song.title}.${extension}`);
-  return url.toString();
-}

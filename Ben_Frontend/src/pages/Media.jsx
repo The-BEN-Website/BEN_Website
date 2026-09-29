@@ -1,16 +1,9 @@
 import React from "react";
-import { IoImage, IoLogoYoutube, IoMusicalNote, IoPlay } from "react-icons/io5";
+import { IoImage, IoLogoYoutube, IoMic, IoMusicalNote, IoPlay } from "react-icons/io5";
 import Container from "../components/ui/Container";
 import MediaCard from "../sections/media/MediaCard";
 import Socials from "../sections/shared/Socials";
-
-// Full class strings so Tailwind can see them at build time.
-const tones = {
-  red: { soft: "bg-media-red-soft", text: "text-media-red" },
-  green: { soft: "bg-media-green-soft", text: "text-media-green" },
-  blue: { soft: "bg-media-blue-soft", text: "text-media-blue" },
-  pink: { soft: "bg-media-pink-soft", text: "text-media-pink" },
-};
+import tones from "../sections/media/tones";
 
 const categories = [
   {
@@ -33,6 +26,13 @@ const categories = [
     description: "Sermons, classes and past services",
     Icon: IoLogoYoutube,
     tone: tones.blue,
+  },
+  {
+    to: "/media/audio",
+    label: "Audio",
+    description: "Recorded teachings to listen to anytime",
+    Icon: IoMic,
+    tone: tones.violet,
   },
   {
     to: "/media/songs",

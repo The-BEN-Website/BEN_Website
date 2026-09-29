@@ -50,6 +50,8 @@ module.exports = {
         "media-blue-soft": "#005EEB1A",
         "media-pink": "#E0218A",
         "media-pink-soft": "#FFEAFC",
+        "media-violet": "#7C4DFF",
+        "media-violet-soft": "#EDE7FF",
       },
       fontSize: {
         // UI rework type scale

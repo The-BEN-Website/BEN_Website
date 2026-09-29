@@ -20,6 +20,7 @@ const Media = lazy(() => import("./pages/Media"))
 const MediaImages = lazy(() => import("./pages/media/Images"))
 const ImageAlbum = lazy(() => import("./pages/media/ImageAlbum"))
 const MediaSongs = lazy(() => import("./pages/media/Songs"))
+const AudioTeachings = lazy(() => import("./pages/media/AudioTeachings"))
 const MediaVideos = lazy(() => import("./pages/media/Videos"))
 const VideoWatch = lazy(() => import("./pages/media/VideoWatch"))
 
@@ -60,6 +61,10 @@ const AppRoutes = [
   {
     path: "/media/songs",
     element: <MediaSongs />,
+  },
+  {
+    path: "/media/audio",
+    element: <AudioTeachings />,
   },
   {
     path: "/media/videos",
