@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useRef } from "react";
 import Container from "../../components/ui/Container";
 import Button from "../../components/ui/Button";
 import LiveDot from "../../components/ui/LiveDot";
 import useAsync from "../../hooks/useAsync";
+import useCachedAsync from "../../hooks/useCachedAsync";
 import { getLiveStreamStatus } from "../../api/liveStream";
 import { listServiceTimes } from "../../api/serviceTimes";
 import { upcomingServices } from "../../lib/serviceTimes";
 import heroImage from "../../assets/home/home-hero.jpg";
 
-// Shown while the real service times load, and if they can't be loaded.
-const placeholderServices = [
+// Fallback only when nothing has ever loaded on this device and loading fails.
+const fallbackServices = [
   { id: "sunday", name: "Sunday Services", when: "8:30am" },
   { id: "thursday", name: "Thursday Services", when: "4:00pm" },
 ];
@@ -19,15 +20,38 @@ const labelClass =
 const timeClass =
   "mt-2.5 text-base font-semibold leading-none text-ink-soft sm:text-lg lg:text-base xl:text-lg";
 
-// The next two services (admin-managed on the dashboard's Service Times page),
-// with the fixed placeholder times shown until they load or if they can't.
+// The next two services (admin-managed on the dashboard's Service Times page).
+// Returning visitors see the times remembered from their last visit straight
+// away while a fresh copy loads in the background; "next two" is always worked
+// out from the current time. First-time visitors see a same-size placeholder,
+// then the times fade in. The fixed fallback appears only if loading fails with
+// nothing remembered, so visitors never see times that are about to change.
 function UpcomingServices() {
-  const { status, data } = useAsync(listServiceTimes);
-  const upcoming = status === "success" ? upcomingServices(data, 2) : [];
-  const services = upcoming.length > 0 ? upcoming : placeholderServices;
+  const { status, data } = useCachedAsync("service-times", listServiceTimes);
+  // Fade in only when replacing the placeholder, not when a remembered copy is refreshed.
+  const startedEmpty = useRef(status === "loading").current;
+
+  if (status === "loading") {
+    return (
+      <div aria-hidden="true" className="mt-5 flex">
+        {[0, 1].map((i) => (
+          <div key={i} className="border-r border-line px-2 py-2">
+            <div className="h-[18px] w-32 animate-pulse rounded bg-placeholder" />
+            <div className="mt-2.5 h-[18px] w-24 animate-pulse rounded bg-placeholder" />
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  const upcoming = data ? upcomingServices(data, 2) : [];
+  const services = upcoming.length > 0 ? upcoming : fallbackServices;
 
   return (
-    <dl aria-label="Upcoming services" className="mt-5 flex">
+    <dl
+      aria-label="Upcoming services"
+      className={`mt-5 flex ${startedEmpty ? "motion-safe:animate-fade-in" : ""}`}
+    >
       {services.map(({ id, name, when }) => (
         <div key={id} className="min-w-0 border-r border-line px-2 py-2">
           <dt className={labelClass}>{name}</dt>
