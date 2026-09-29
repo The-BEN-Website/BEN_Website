@@ -6,7 +6,7 @@ import SubpageHeader from "../../sections/media/SubpageHeader";
 import VideoCard, { videoDateFormat } from "../../sections/media/VideoCard";
 import Socials from "../../sections/shared/Socials";
 import useAsync from "../../hooks/useAsync";
-import { getVideo, listVideos } from "../../api/videos";
+import { getVideo, listVideos, VIDEO_TYPES, videoTypeOf } from "../../api/videos";
 import { youtubeEmbed, youtubeWatch } from "../../lib/youtube";
 
 const MORE_COUNT = 3;
@@ -15,10 +15,7 @@ const MORE_COUNT = 3;
 async function loadWatchPage(id) {
   const video = await getVideo(id);
   if (!video) return { video: null, more: [] };
-  const recent = await listVideos({
-    type: video.is_sermon ? "sermons" : "videos",
-    limit: MORE_COUNT + 1,
-  });
+  const recent = await listVideos({ type: videoTypeOf(video), limit: MORE_COUNT + 1 });
   return { video, more: recent.filter((item) => item.id !== id).slice(0, MORE_COUNT) };
 }
 
@@ -26,12 +23,12 @@ function VideoWatch() {
   const { id } = useParams();
   const { status, data } = useAsync(() => loadWatchPage(id), [id]);
   const video = data?.video;
-  const backTo = video && !video.is_sermon ? "/media/videos?type=videos" : "/media/videos";
+  const section = VIDEO_TYPES[video ? videoTypeOf(video) : "sermons"];
 
   return (
     <main>
       <Container className="py-10 md:py-14">
-        <SubpageHeader title={video?.is_sermon === false ? "Videos" : "Sermons"} backTo={backTo} />
+        <SubpageHeader title={section.title} backTo={section.path} />
 
         {status === "loading" && (
           <div aria-busy="true" className="mx-auto mt-8 max-w-5xl">
@@ -90,7 +87,7 @@ function VideoWatch() {
         {data?.more.length > 0 && (
           <section aria-labelledby="more-videos-heading" className="mx-auto mt-16 max-w-5xl">
             <h2 id="more-videos-heading" className="text-2xl font-semibold text-black">
-              More {video.is_sermon ? "sermons" : "videos"}
+              More {section.title.toLowerCase()}
             </h2>
             <ul className="mt-6 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
               {data.more.map((item) => (

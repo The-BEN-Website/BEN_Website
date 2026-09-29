@@ -1,11 +1,15 @@
 import { getSupabase } from "../lib/supabase";
 
-// `video_sermons` holds every video; `is_sermon` splits sermons from other videos
-// (the app shows them as separate "Sermons" and "Videos" screens).
+// `video_sermons` holds every video; `is_sermon` splits sermons from other videos.
+// On the website each kind has its own page.
 export const VIDEO_TYPES = {
-  sermons: { label: "Sermons", isSermon: true },
-  videos: { label: "Other Videos", isSermon: false },
+  sermons: { title: "Sermons", path: "/media/sermons", isSermon: true },
+  videos: { title: "Videos", path: "/media/videos", isSermon: false },
 };
+
+export function videoTypeOf(video) {
+  return video.is_sermon ? "sermons" : "videos";
+}
 
 const VIDEO_FIELDS = "id, title, description, category, youtube_video_id, published_at, is_sermon";
 

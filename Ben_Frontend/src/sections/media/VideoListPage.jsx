@@ -1,44 +1,19 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import Button from "../../components/ui/Button";
 import Container from "../../components/ui/Container";
-import SubpageHeader from "../../sections/media/SubpageHeader";
-import VideoCard from "../../sections/media/VideoCard";
-import Socials from "../../sections/shared/Socials";
+import SubpageHeader from "./SubpageHeader";
+import VideoCard from "./VideoCard";
+import Socials from "../shared/Socials";
 import { listVideos, VIDEO_TYPES } from "../../api/videos";
 
 const PAGE_SIZE = 24;
 const SEARCH_DEBOUNCE_MS = 300;
-const DEFAULT_TYPE = "sermons";
 
-function TypeTabs({ value, onChange }) {
-  return (
-    <div role="tablist" aria-label="Video type" className="inline-flex rounded-full bg-surface p-1">
-      {Object.entries(VIDEO_TYPES).map(([key, { label }]) => {
-        const selected = key === value;
-        return (
-          <button
-            key={key}
-            type="button"
-            role="tab"
-            aria-selected={selected}
-            onClick={() => onChange(key)}
-            className={`rounded-full px-5 py-2 text-base font-medium transition-colors ${
-              selected ? "bg-white text-black shadow-sm" : "text-secondary hover:text-black"
-            }`}
-          >
-            {label}
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
-function Videos() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const type = VIDEO_TYPES[searchParams.get("type")] ? searchParams.get("type") : DEFAULT_TYPE;
+// Searchable, paginated grid of one kind of video ("sermons" or "videos").
+function VideoListPage({ type }) {
+  const { title } = VIDEO_TYPES[type];
+  const noun = title.toLowerCase();
 
   const [searchInput, setSearchInput] = useState("");
   const [search, setSearch] = useState("");
@@ -72,18 +47,16 @@ function Videos() {
     loadPage();
   }, [loadPage]);
 
-  const changeType = (next) => setSearchParams(next === DEFAULT_TYPE ? {} : { type: next });
   const loadMore = () => loadPage(videos[videos.length - 1].published_at);
 
   return (
     <main>
       <Container className="py-10 md:py-14">
-        <SubpageHeader title="Videos" />
+        <SubpageHeader title={title} />
 
-        <div className="mt-8 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <TypeTabs value={type} onChange={changeType} />
-          <label className="relative block sm:w-72">
-            <span className="sr-only">Search videos</span>
+        <div className="mt-8 flex justify-end">
+          <label className="relative block w-full sm:w-72">
+            <span className="sr-only">Search {noun}</span>
             <IoSearch
               aria-hidden="true"
               size={18}
@@ -101,12 +74,12 @@ function Videos() {
 
         {status === "error" && videos.length === 0 && (
           <p className="mt-10 text-center text-body text-secondary">
-            We couldn&apos;t load videos right now. Please try again later.
+            We couldn&apos;t load {noun} right now. Please try again later.
           </p>
         )}
         {status === "success" && videos.length === 0 && (
           <p className="mt-10 text-center text-body text-secondary">
-            {search ? `No videos match "${search}".` : "No videos here yet. Check back soon."}
+            {search ? `No ${noun} match "${search}".` : `No ${noun} here yet. Check back soon.`}
           </p>
         )}
 
@@ -134,7 +107,7 @@ function Videos() {
         )}
         {status === "error" && videos.length > 0 && (
           <p role="alert" className="mt-6 text-center text-sm text-primary">
-            Couldn&apos;t load more videos. Please try again.
+            Couldn&apos;t load more {noun}. Please try again.
           </p>
         )}
       </Container>
@@ -144,4 +117,4 @@ function Videos() {
   );
 }
 
-export default Videos;
+export default VideoListPage;

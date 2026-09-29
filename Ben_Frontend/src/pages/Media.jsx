@@ -7,9 +7,9 @@ import tones from "../sections/media/tones";
 
 const categories = [
   {
-    to: "/live",
-    label: "Live Stream",
-    description: "Join the service as it happens",
+    to: "/media/sermons",
+    label: "Sermons",
+    description: "Messages from our meetings",
     Icon: IoPlay,
     tone: tones.red,
   },
@@ -23,7 +23,7 @@ const categories = [
   {
     to: "/media/videos",
     label: "Videos",
-    description: "Sermons, classes and past services",
+    description: "Worship, events and more",
     Icon: IoLogoYoutube,
     tone: tones.blue,
   },
