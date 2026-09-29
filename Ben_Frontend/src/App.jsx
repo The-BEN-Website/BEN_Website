@@ -4,7 +4,6 @@ import AppRoutes from "./Router";
 import "./App.css";
 import PageLoader from "./components/ui/PageLoader";
 import Footer from "./components/Footer";
-import Back from "./components/BackBtn";
 import Navbar from "./components/Navbar/NavHead";
 import ScrollManager from "./components/ScrollManager";
 
@@ -20,7 +19,6 @@ function App() {
           ))}
         </Routes>
       </Suspense>
-      <Back />
       <Footer />
     </>
   );
