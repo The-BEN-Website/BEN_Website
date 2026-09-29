@@ -19,6 +19,7 @@ const Live = lazy(() => import("./pages/Live"))
 const Media = lazy(() => import("./pages/Media"))
 const MediaImages = lazy(() => import("./pages/media/Images"))
 const ImageAlbum = lazy(() => import("./pages/media/ImageAlbum"))
+const MediaSongs = lazy(() => import("./pages/media/Songs"))
 
 
 const AppRoutes = [
@@ -53,6 +54,10 @@ const AppRoutes = [
   {
     path: "/media/images/:album",
     element: <ImageAlbum />,
+  },
+  {
+    path: "/media/songs",
+    element: <MediaSongs />,
   },
   {
     path: "/resources",
