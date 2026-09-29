@@ -1,22 +1,22 @@
-import React from 'react'
-import Header from './Home_Sections/Header';
-import Words from './Home_Sections/Words';
-import Experience from './Home_Sections/Experience';
-import Community from './Home_Sections/Community'
-import Discipleship from './Home_Sections/Discipleship'
-import NewsLetter from './Home_Sections/Newsletter'
+import React from "react";
+import Hero from "../sections/home/Hero";
+import Welcome from "../sections/home/Welcome";
+import JoinUs from "../sections/home/JoinUs";
+import Branches from "../sections/home/Branches";
+import Discipleship from "../sections/home/Discipleship";
+import Socials from "../sections/shared/Socials";
 
-const Home = () => {
+function Home() {
   return (
-    <div className="App flex flex-col gap-20 h-fit">
-      <Header />
-      <Words />
-      <Experience />
-      <Community />
+    <>
+      <Hero />
+      <Welcome />
+      <JoinUs />
+      <Branches />
       <Discipleship />
-      <NewsLetter />
-    </div>
-  )
+      <Socials />
+    </>
+  );
 }
 
-export default Home
+export default Home;

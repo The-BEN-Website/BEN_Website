@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    html,
+    body {
+        @apply bg-white text-ink antialiased;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            scroll-behavior: smooth;
+        }
+    }
+}
+
 
 @layer components {
     @media (max-width: 375px) {
@@ -43,5 +56,14 @@
         background-color: #f74946;
         color: white;
         outline-color: white;
+    }
+}
+@layer utilities {
+    /* Hides the scrollbar while keeping the element scrollable (touch, trackpad, keyboard). */
+    .scrollbar-none {
+        scrollbar-width: none;
+    }
+    .scrollbar-none::-webkit-scrollbar {
+        display: none;
     }
 }

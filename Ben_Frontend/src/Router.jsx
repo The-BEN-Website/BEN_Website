@@ -1,23 +1,30 @@
-import React, { lazy } from "react";
+import React from "react";
+import lazyWithRetry from "./lib/lazyWithRetry";
+import { Navigate } from "react-router-dom";
 
-const Home = lazy(() => import("./pages/Home"));
-const About = lazy(() => import("./pages/About"));
-const Event = lazy(() => import("./pages/Events"));
-const Partnership = lazy(() => import("./pages/Partnership"));
-const Contact = lazy(() => import("./pages/Contact"));
-const Resources = lazy(() => import("./pages/Resources"));
-const Mailing = lazy(() => import("./pages/Mailing"))
-const Enroll = lazy(() => import("./pages/Enroll"))
-const EventDeets = lazy(() => import("./pages/Events_Section/EventDeets"))
-const ResourceDeets = lazy(() => import("./pages/Resources_Section/ResourceDeets"))
-const Map = lazy(() => import("./pages/Map"))
-const Payment = lazy(() => import("./pages/Payment"))
-const Payment1 = lazy(() => import("./pages/Payment1"))
-const items = lazy(() => import("../public/EventData"))
-const Anniversary = lazy(() => import("../src/pages/Anniversary.jsx"))
-const PrivacyPolicy = lazy(() => import("./pages/Legal/PrivacyPolicy"))
-const TermsOfService = lazy(() => import("./pages/Legal/TermsOfService"))
-const Live = lazy(() => import("./pages/Live"))
+const Home = lazyWithRetry(() => import("./pages/Home"));
+const About = lazyWithRetry(() => import("./pages/About"));
+const Event = lazyWithRetry(() => import("./pages/Events"));
+const Giving = lazyWithRetry(() => import("./pages/Giving"));
+const Contact = lazyWithRetry(() => import("./pages/Contact"));
+const EventDeets = lazyWithRetry(() => import("./pages/Events_Section/EventDeets"))
+const ResourceDeets = lazyWithRetry(() => import("./pages/Resources_Section/ResourceDeets"))
+const Map = lazyWithRetry(() => import("./pages/Map"))
+const Payment = lazyWithRetry(() => import("./pages/Payment"))
+const Payment1 = lazyWithRetry(() => import("./pages/Payment1"))
+const Anniversary = lazyWithRetry(() => import("../src/pages/Anniversary.jsx"))
+const PrivacyPolicy = lazyWithRetry(() => import("./pages/Legal/PrivacyPolicy"))
+const TermsOfService = lazyWithRetry(() => import("./pages/Legal/TermsOfService"))
+const Live = lazyWithRetry(() => import("./pages/Live"))
+const NotFound = lazyWithRetry(() => import("./pages/NotFound"))
+const Media = lazyWithRetry(() => import("./pages/Media"))
+const MediaImages = lazyWithRetry(() => import("./pages/media/Images"))
+const ImageAlbum = lazyWithRetry(() => import("./pages/media/ImageAlbum"))
+const MediaSongs = lazyWithRetry(() => import("./pages/media/Songs"))
+const AudioTeachings = lazyWithRetry(() => import("./pages/media/AudioTeachings"))
+const MediaVideos = lazyWithRetry(() => import("./pages/media/Videos"))
+const MediaSermons = lazyWithRetry(() => import("./pages/media/Sermons"))
+const VideoWatch = lazyWithRetry(() => import("./pages/media/VideoWatch"))
 
 
 const AppRoutes = [
@@ -39,19 +46,51 @@ const AppRoutes = [
   },
   {
     path: "/giving",
-    element: <Partnership />,
+    element: <Giving />,
+  },
+  {
+    path: "/media",
+    element: <Media />,
+  },
+  {
+    path: "/media/images",
+    element: <MediaImages />,
+  },
+  {
+    path: "/media/images/:album",
+    element: <ImageAlbum />,
+  },
+  {
+    path: "/media/songs",
+    element: <MediaSongs />,
+  },
+  {
+    path: "/media/audio",
+    element: <AudioTeachings />,
+  },
+  {
+    path: "/media/sermons",
+    element: <MediaSermons />,
+  },
+  {
+    path: "/media/videos",
+    element: <MediaVideos />,
+  },
+  {
+    path: "/media/videos/:id",
+    element: <VideoWatch />,
   },
   {
     path: "/resources",
-    element: <Resources />,
+    element: <Navigate to="/media" replace />,
   },
   {
     path: "/mailing",
-    element: <Mailing />,
+    element: <Navigate to="/" replace />,
   },
   {
     path: "/enroll",
-    element: <Enroll />,
+    element: <Navigate to="/#discipleship" replace />,
   },
   {
     path: "/visit",
@@ -91,7 +130,7 @@ const AppRoutes = [
   },
   {
     path: "*",
-    element: <div>Not found</div>,
+    element: <NotFound />,
   },
 ];
 
