@@ -24,9 +24,9 @@ export function LegalPage({ title, lastUpdated, children }) {
   );
 }
 
-export function LegalSection({ title, children }) {
+export function LegalSection({ title, children, id }) {
   return (
-    <section className="flex flex-col gap-4">
+    <section id={id} className="flex flex-col gap-4">
       <h2 className="text-2xl font-semibold leading-tight text-subheading">{title}</h2>
       {children}
     </section>
