@@ -134,15 +134,33 @@ function PrivacyPolicy() {
         </LegalList>
       </LegalSection>
 
-      <LegalSection title="Data Retention and Deletion">
+      <LegalSection title="Data Retention and Deletion" id="data-deletion">
         <p>
           We retain your App account and the information you provide until you ask us to delete it.
           Information submitted through the Website is kept only as long as we need it to follow up
           with you, after which church administrators delete it.
         </p>
         <p>
-          To request deletion of your App account, or of anything you submitted through the
-          Website, email <LegalLink href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</LegalLink>.
+          <Term>
+            To request deletion of your Believers Equipping Network App account, or of specific
+            data within it (for example, a single prayer request), or of anything you submitted
+            through the Website,
+          </Term>{" "}
+          email <LegalLink href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</LegalLink> from the
+          email address associated with your account (or the one you used on the Website), stating
+          what you&apos;d like deleted. We process deletion requests within 30 days.
+        </p>
+        <p>Deleting your App account permanently removes:</p>
+        <LegalList>
+          <li>Your profile (name, email, membership status)</li>
+          <li>Your prayer requests and Ask the Pastor questions</li>
+          <li>Your service attendance records</li>
+          <li>Your device&apos;s push notification token</li>
+        </LegalList>
+        <p>
+          Bulletin read receipts are not tied to your account (they use an anonymous,
+          device-generated identifier) and cannot be individually attributed or deleted on request.
+          We do not retain any of your App account data beyond what&apos;s listed above.
         </p>
       </LegalSection>
 
