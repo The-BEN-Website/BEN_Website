@@ -81,6 +81,12 @@ function PrivacyPolicy() {
           <li>
             <Term>Contact form.</Term> Your name, email address, and the message you send us.
           </li>
+          <li>
+            <Term>Holy Spirit Camp Meeting registration.</Term> Your full name, email address,
+            phone number, gender, whether you can pay for the camp, your service unit(s), where you
+            will travel from, an emergency contact&apos;s name, relationship and phone number, and
+            any allergies or other health information you choose to share.
+          </li>
         </LegalList>
         <p>
           The Website does not use cookies or similar technologies for analytics, advertising, or
@@ -97,6 +103,10 @@ function PrivacyPolicy() {
           <li>Send push notifications about church bulletins and announcements</li>
           <li>Contact you about the Discipleship Class when you sign up on the Website</li>
           <li>Reply to messages you send through the Website&apos;s contact form</li>
+          <li>
+            Plan for and look after you at the Holy Spirit Camp Meeting, including in a health
+            emergency, when you register on the Website
+          </li>
         </LegalList>
         <p>
           We do not use your information for advertising, marketing to third parties, or analytics

@@ -9,6 +9,7 @@ const Contact = lazyWithRetry(() => import("./pages/Contact"));
 const PrivacyPolicy = lazyWithRetry(() => import("./pages/Legal/PrivacyPolicy"))
 const TermsOfService = lazyWithRetry(() => import("./pages/Legal/TermsOfService"))
 const Live = lazyWithRetry(() => import("./pages/Live"))
+const Hscm = lazyWithRetry(() => import("./pages/Hscm"))
 const NotFound = lazyWithRetry(() => import("./pages/NotFound"))
 const Media = lazyWithRetry(() => import("./pages/Media"))
 const MediaImages = lazyWithRetry(() => import("./pages/media/Images"))
@@ -116,6 +117,10 @@ const AppRoutes = [
   {
     path: "/live",
     element: <Live />,
+  },
+  {
+    path: "/hscm",
+    element: <Hscm />,
   },
   {
     path: "*",
