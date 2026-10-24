@@ -14,6 +14,7 @@
   <url><loc>https://www.believersequippingnetwork.org/media/images</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.believersequippingnetwork.org/live</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.believersequippingnetwork.org/giving</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.believersequippingnetwork.org/hscm</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.believersequippingnetwork.org/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.believersequippingnetwork.org/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://www.believersequippingnetwork.org/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>

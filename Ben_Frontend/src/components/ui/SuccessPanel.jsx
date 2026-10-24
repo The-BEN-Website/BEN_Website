@@ -2,8 +2,18 @@ import React from "react";
 import { MdCheck } from "react-icons/md";
 import Button from "./Button";
 
-// Confirmation shown in place of a form after it's submitted.
-function SuccessPanel({ headingId, headingRef, title, message, actionLabel, onAction, className = "" }) {
+// Confirmation shown in place of a form after it's submitted. `children`, if
+// given, appear between the message and the action (e.g. a reference number).
+function SuccessPanel({
+  headingId,
+  headingRef,
+  title,
+  message,
+  actionLabel,
+  onAction,
+  className = "",
+  children,
+}) {
   return (
     <div className={`flex flex-col items-center text-center ${className}`} role="status">
       <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-white">
@@ -18,6 +28,7 @@ function SuccessPanel({ headingId, headingRef, title, message, actionLabel, onAc
         {title}
       </h2>
       <p className="mt-4 text-body font-medium text-secondary">{message}</p>
+      {children}
       <Button className="mt-8 w-full" onClick={onAction}>
         {actionLabel}
       </Button>
