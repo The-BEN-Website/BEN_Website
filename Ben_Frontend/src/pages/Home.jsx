@@ -13,7 +13,7 @@ function Home() {
   return (
     <>
       <Hero />
-      <HscmBanner />
+      {/* <HscmBanner /> */}
       <Welcome />
       <JoinUs />
       <Branches />
