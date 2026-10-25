@@ -42,6 +42,11 @@ module.exports = {
         "media-pink-soft": "#FFEAFC",
         "media-violet": "#7C4DFF",
         "media-violet-soft": "#EDE7FF",
+        // Birthday page: balloons and photos, picked from the photoshoot
+        "festive-maroon": "#9E1B32",
+        "festive-cream": "#F4EBCB",
+        "festive-gold": "#F5B83D",
+        "festive-blush": "#FFB8B8",
       },
       fontSize: {
         // UI rework type scale
@@ -53,15 +58,34 @@ module.exports = {
       },
       keyframes: {
         "fade-in": { from: { opacity: "0" }, to: { opacity: "1" } },
+        "rise-in": {
+          from: { opacity: "0", transform: "translateY(24px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "balloon-rise": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(-150vh)" },
+        },
+        "balloon-sway": {
+          "0%, 100%": { transform: "rotate(-8deg)" },
+          "50%": { transform: "rotate(8deg)" },
+        },
       },
       animation: {
         "fade-in": "fade-in 300ms ease-out",
+        "rise-in": "rise-in 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both",
+        // Duration and delay come from each balloon's --rise-duration and --rise-delay.
+        "balloon-rise":
+          "balloon-rise var(--rise-duration) cubic-bezier(0.35, 0.1, 0.6, 1) var(--rise-delay) both",
+        "balloon-sway": "balloon-sway 3s ease-in-out infinite",
       },
       boxShadow: {
         glow: "0 0 4px 0 #FF333317",
+        polaroid: "0 18px 40px -12px rgb(0 0 0 / 0.35)",
       },
       fontFamily: {
         sans: ["Geist", "ui-sans-serif", "system-ui", "sans-serif"],
+        hand: ["Caveat", "cursive"],
       },
     },
   },

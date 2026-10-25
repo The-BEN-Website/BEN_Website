@@ -87,6 +87,10 @@ function PrivacyPolicy() {
             will travel from, an emergency contact&apos;s name, relationship and phone number, and
             any allergies or other health information you choose to share.
           </li>
+          <li>
+            <Term>Birthday messages.</Term> Your full name, phone number, and the birthday message
+            you send for the Pastor.
+          </li>
         </LegalList>
         <p>
           The Website does not use cookies or similar technologies for analytics, advertising, or
@@ -107,6 +111,7 @@ function PrivacyPolicy() {
             Plan for and look after you at the Holy Spirit Camp Meeting, including in a health
             emergency, when you register on the Website
           </li>
+          <li>Pass your birthday message on to the Pastor, with your name</li>
         </LegalList>
         <p>
           We do not use your information for advertising, marketing to third parties, or analytics
