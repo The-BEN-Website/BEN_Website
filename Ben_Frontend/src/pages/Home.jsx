@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "../sections/home/Hero";
+import BirthdayBanner from "../sections/home/BirthdayBanner";
 import HscmBanner from "../sections/home/HscmBanner";
 import Welcome from "../sections/home/Welcome";
 import JoinUs from "../sections/home/JoinUs";
@@ -13,6 +14,7 @@ function Home() {
   return (
     <>
       <Hero />
+      <BirthdayBanner />
       {/* <HscmBanner /> */}
       <Welcome />
       <JoinUs />

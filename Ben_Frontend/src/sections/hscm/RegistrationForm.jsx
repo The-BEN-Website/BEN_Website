@@ -4,11 +4,8 @@ import Button from "../../components/ui/Button";
 import ChoiceGroup from "../../components/ui/ChoiceGroup";
 import Field from "../../components/ui/Field";
 import { describeSubmitError } from "../../lib/errors";
-import {
-  isRegistrationClosedError,
-  newRegistrationId,
-  submitHscmRegistration,
-} from "../../api/hscm";
+import { newSubmissionId } from "../../lib/submissionId";
+import { isRegistrationClosedError, submitHscmRegistration } from "../../api/hscm";
 
 const emptyForm = {
   fullName: "",
@@ -59,7 +56,7 @@ function RegistrationForm({ units, onSubmitted, onClosed }) {
   const [status, setStatus] = useState("idle");
   const [submitError, setSubmitError] = useState(null);
   // One id per registration, reused if the visitor retries after an error.
-  const registrationId = useRef(newRegistrationId());
+  const registrationId = useRef(newSubmissionId());
 
   const setValue = (name) => (value) => setValues((current) => ({ ...current, [name]: value }));
 
