@@ -13,7 +13,10 @@ function BirthdayBanner() {
   if (status !== "success" || !isOpen) return null;
 
   return (
-    <section aria-labelledby="birthday-banner-heading" className="motion-safe:animate-fade-in">
+    <section
+      aria-labelledby="birthday-banner-heading"
+      className="motion-safe:animate-fade-in"
+    >
       <Container className="pb-4 md:pb-8">
         <div className="flex flex-col gap-6 rounded-3xl border border-card-line bg-media-red-soft p-6 sm:flex-row sm:items-center sm:p-8">
           <img
@@ -23,9 +26,14 @@ function BirthdayBanner() {
             className="hidden h-24 w-24 shrink-0 rounded-2xl object-cover object-top sm:block"
           />
           <div className="flex-1">
-            <p className="text-base font-medium text-primary">Happy Birthday, Pastor</p>
-            <h2 id="birthday-banner-heading" className="mt-1 text-2xl font-semibold text-black">
-              Send the Pastor a birthday message
+            <p className="text-base font-medium text-primary">
+              Happy Birthday, Pastor
+            </p>
+            <h2
+              id="birthday-banner-heading"
+              className="mt-1 text-2xl font-semibold text-black"
+            >
+              Send Pastor a birthday message
             </h2>
             <p className="mt-2 text-body font-medium text-secondary">
               Celebrate with us and send him your wishes and prayers.
