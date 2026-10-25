@@ -36,7 +36,7 @@ function BirthdayBanner() {
               Send Pastor a birthday message
             </h2>
             <p className="mt-2 text-body font-medium text-secondary">
-              Celebrate with us and send him your wishes and prayers.
+              Let&apos;s celebrate him together. Send him your wishes and prayers.
             </p>
           </div>
           <Button to="/birthday" className="shrink-0 self-start sm:self-center">

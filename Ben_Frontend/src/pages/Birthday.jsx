@@ -80,7 +80,7 @@ function Birthday() {
           headingId="birthday-success-heading"
           headingRef={successHeadingRef}
           title="Your message has been sent"
-          message="Thank you for celebrating our Pastor with us."
+          message="Thank you for celebrating our Pastor."
           actionLabel="Send another message"
           onAction={() => setStep("form")}
         />
@@ -113,7 +113,7 @@ function Birthday() {
             <span className="mt-3 block text-[32px] leading-tight sm:text-heading">{PASTOR_NAME}</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-body font-medium text-secondary lg:mx-0">
-            It&apos;s our Pastor&apos;s birthday! Join us in thanking God for his life and ministry,
+            It&apos;s our Pastor&apos;s birthday! Let&apos;s thank God together for his life and ministry,
             and send him a message of love, prayer and appreciation.
           </p>
           {acceptingMessages && (
