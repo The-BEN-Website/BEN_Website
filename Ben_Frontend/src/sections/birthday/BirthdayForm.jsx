@@ -81,13 +81,6 @@ function BirthdayForm({ onSubmitted, onClosed }) {
       <Button type="submit" className="mt-3 w-full" disabled={status === "submitting"}>
         {status === "submitting" ? "Sending..." : "Send Message"}
       </Button>
-      <p className="text-center text-xs text-secondary">
-        Your name and phone number go with your message so the Pastor knows who it&apos;s from. See our{" "}
-        <Link to="/privacy" className="underline underline-offset-2 hover:text-primary">
-          Privacy Policy
-        </Link>
-        .
-      </p>
     </form>
   );
 }

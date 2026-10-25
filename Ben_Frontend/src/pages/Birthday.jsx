@@ -6,17 +6,13 @@ import Container from "../components/ui/Container";
 import ErrorState from "../components/ui/ErrorState";
 import PageLoader from "../components/ui/PageLoader";
 import SuccessPanel from "../components/ui/SuccessPanel";
+import Balloons from "../sections/birthday/Balloons";
 import BirthdayForm from "../sections/birthday/BirthdayForm";
+import PhotoDeck from "../sections/birthday/PhotoDeck";
 import useAsync from "../hooks/useAsync";
 import usePageMeta from "../hooks/usePageMeta";
 import { getBirthdayMessagesOpen } from "../api/birthday";
 import { PASTOR_NAME } from "../config/pastor";
-import portraitImage from "../assets/birthday/pastor-portrait.jpg";
-import agbadaImage from "../assets/birthday/pastor-agbada.jpg";
-import deskSmileImage from "../assets/birthday/pastor-desk-smile.jpg";
-import deskBooksImage from "../assets/birthday/pastor-desk-books.jpg";
-
-const photoClass = "h-full w-full rounded-3xl object-cover";
 
 function ClosedNotice() {
   return (
@@ -35,45 +31,13 @@ function ClosedNotice() {
   );
 }
 
-// Three more shots from the birthday photoshoot. The wide desk photo spans two
-// columns, on its own row on phones and between the portraits from tablet up.
-function Photos() {
-  return (
-    <section aria-label={`Photos of ${PASTOR_NAME}`}>
-      <Container className="grid grid-cols-2 gap-4 pb-12 sm:grid-cols-4 sm:gap-6 md:pb-20">
-        <img
-          src={deskBooksImage}
-          alt={`${PASTOR_NAME} smiling at his desk beside stacks of books`}
-          width={1800}
-          height={1200}
-          loading="lazy"
-          className={`${photoClass} col-span-2 aspect-[3/2] sm:order-2 sm:aspect-auto`}
-        />
-        <img
-          src={agbadaImage}
-          alt={`${PASTOR_NAME} standing in a cream agbada and red cap`}
-          width={800}
-          height={1200}
-          loading="lazy"
-          className={`${photoClass} aspect-[2/3] object-top sm:order-1`}
-        />
-        <img
-          src={deskSmileImage}
-          alt={`${PASTOR_NAME} laughing at his desk`}
-          width={800}
-          height={1200}
-          loading="lazy"
-          className={`${photoClass} aspect-[2/3] object-top sm:order-3`}
-        />
-      </Container>
-    </section>
-  );
-}
-
 function Birthday() {
   const { status, data: isOpen, error, reload } = useAsync(getBirthdayMessagesOpen);
   const [step, setStep] = useState("form");
+  // Bumped after each message is sent, to send up another round of balloons.
+  const [launch, setLaunch] = useState(0);
   const successHeadingRef = useRef(null);
+  const messageSectionRef = useRef(null);
 
   usePageMeta({
     title: "Happy Birthday, Pastor",
@@ -99,6 +63,13 @@ function Birthday() {
 
   const acceptingMessages = isOpen && step !== "closed";
 
+  // Scrolls to the form without adding #birthday-message to the URL, which
+  // would bring the visitor back down to the form on every reload.
+  const startMessage = () => {
+    messageSectionRef.current.scrollIntoView();
+    messageSectionRef.current.querySelector("input, textarea")?.focus({ preventScroll: true });
+  };
+
   let content;
   if (!acceptingMessages) {
     content = <ClosedNotice />;
@@ -118,46 +89,50 @@ function Birthday() {
   } else {
     content = (
       <Card className="p-6 sm:p-10">
-        <BirthdayForm onSubmitted={() => setStep("success")} onClosed={() => setStep("closed")} />
+        <BirthdayForm
+          onSubmitted={() => {
+            setStep("success");
+            setLaunch((current) => current + 1);
+          }}
+          onClosed={() => setStep("closed")}
+        />
       </Card>
     );
   }
 
   return (
     <main>
-      <Container className="grid items-center gap-10 py-12 md:py-20 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:gap-16">
-        <header className="text-center lg:text-left">
-          <p className="inline-block rounded-[10px] border border-line bg-white px-2.5 py-1 text-body font-medium text-primary shadow-glow">
-            Happy Birthday
-          </p>
-          <h1 className="mt-4 text-[32px] font-semibold leading-tight text-black sm:text-heading">
-            Celebrating {PASTOR_NAME}
+      <Balloons launch={launch} />
+
+      <Container className="grid items-center gap-14 overflow-x-clip py-12 md:py-20 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:gap-16">
+        <header className="text-center motion-safe:animate-rise-in lg:text-left">
+          <h1 className="font-semibold text-black">
+            <span className="block font-hand text-[52px] leading-none text-primary sm:text-[64px]">
+              Happy Birthday,
+            </span>
+            <span className="mt-3 block text-[32px] leading-tight sm:text-heading">{PASTOR_NAME}</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-body font-medium text-secondary lg:mx-0">
             It&apos;s our Pastor&apos;s birthday! Join us in thanking God for his life and ministry,
             and send him a message of love, prayer and appreciation.
           </p>
           {acceptingMessages && (
-            <Button href="#birthday-message" className="mt-8">
+            <Button onClick={startMessage} className="mt-8">
               Write a message
             </Button>
           )}
         </header>
 
-        <img
-          src={portraitImage}
-          alt={`Portrait of ${PASTOR_NAME} smiling in a cream agbada and red cap`}
-          width={997}
-          height={1600}
-          fetchpriority="high"
-          className="mx-auto aspect-[4/5] w-full max-w-md rounded-3xl object-cover object-top lg:max-w-none"
-        />
+        <div className="relative motion-safe:animate-rise-in [animation-delay:150ms]">
+          <div aria-hidden="true" className="absolute inset-[8%] rounded-full bg-media-red-soft blur-3xl" />
+          <div className="relative">
+            <PhotoDeck />
+          </div>
+        </div>
       </Container>
 
-      <Photos />
-
       <section
-        id="birthday-message"
+        ref={messageSectionRef}
         aria-labelledby={acceptingMessages ? "birthday-message-heading" : undefined}
         className="scroll-mt-24 bg-surface py-12 md:py-20"
       >
