@@ -35,7 +35,8 @@ export async function submitHscmRegistration(id, values) {
     p_email: values.email.trim(),
     p_phone: values.phone.trim(),
     p_gender: values.gender,
-    p_can_pay_fee: values.canPayFee === "yes",
+    // Legacy required backend argument; the form no longer asks this question.
+    p_can_pay_fee: false,
     p_service_unit_ids: values.serviceUnitIds,
     p_has_allergies: values.hasAllergies === "yes",
     p_allergy_details: values.allergyDetails.trim(),

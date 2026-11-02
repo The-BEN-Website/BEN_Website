@@ -12,7 +12,6 @@ const emptyForm = {
   email: "",
   phone: "",
   gender: "",
-  canPayFee: "",
   serviceUnitIds: [],
   hasAllergies: "",
   allergyDetails: "",
@@ -122,14 +121,6 @@ function RegistrationForm({ units, onSubmitted, onClosed }) {
       </Section>
 
       <Section title="Camp">
-        <ChoiceGroup
-          name="canPayFee"
-          legend="Will you be able to pay for camp meeting?"
-          options={yesNo}
-          value={values.canPayFee}
-          onChange={setValue("canPayFee")}
-          required
-        />
         {units.length > 0 && (
           <ChoiceGroup
             name="serviceUnitIds"
