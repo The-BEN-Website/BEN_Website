@@ -16,7 +16,7 @@ function Home() {
     <>
       <Hero />
       <BirthdayBanner />
-      {/* <StoreBanner /> */}
+      <StoreBanner />
       {/* <HscmBanner /> */}
       <Welcome />
       <JoinUs />
