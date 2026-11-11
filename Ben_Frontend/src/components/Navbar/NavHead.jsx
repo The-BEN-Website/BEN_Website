@@ -9,6 +9,7 @@ const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/media", label: "Media" },
+  { to: "/store", label: "Store" },
   { to: "/giving", label: "Giving" },
   { to: "/contact", label: "Contact" },
 ];
@@ -35,7 +36,7 @@ function Header() {
           <img src={Logo} alt="Believers Equipping Network" className="h-9 w-auto md:h-12" />
         </NavLink>
 
-        <nav className="hidden md:block">
+        <nav className="hidden lg:block">
           <ul className="flex items-center gap-6">
             {links.map(({ to, label }) => (
               <li key={to}>
@@ -49,7 +50,7 @@ function Header() {
 
         <button
           type="button"
-          className="text-ink md:hidden"
+          className="text-ink lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
@@ -59,7 +60,7 @@ function Header() {
       </Container>
 
       {open && (
-        <nav className="border-t border-line bg-white md:hidden">
+        <nav className="border-t border-line bg-white lg:hidden">
           <ul className="flex flex-col px-4 py-2 sm:px-8">
             {links.map(({ to, label }) => (
               <li key={to}>
