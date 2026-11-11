@@ -2,6 +2,7 @@ import React from "react";
 import lazyWithRetry from "./lib/lazyWithRetry";
 import { Navigate } from "react-router-dom";
 
+const Store = lazyWithRetry(() => import("./pages/Store"));
 const Home = lazyWithRetry(() => import("./pages/Home"));
 const About = lazyWithRetry(() => import("./pages/About"));
 const Giving = lazyWithRetry(() => import("./pages/Giving"));
@@ -23,6 +24,8 @@ const VideoWatch = lazyWithRetry(() => import("./pages/media/VideoWatch"))
 
 // Old addresses from the previous site redirect to their closest new page.
 const AppRoutes = [
+  { path: "/store", element: <Store /> },
+  { path: "/camp-store", element: <Navigate to="/store" replace /> },
   {
     path: "/",
     element: <Home />,
