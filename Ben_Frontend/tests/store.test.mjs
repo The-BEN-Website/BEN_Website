@@ -1,7 +1,14 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {addCartItem,cartTotal,reconcileCart,readSavedCart} from '../src/data/store.js';
+import {addCartItem,cartTotal,reconcileCart,readSavedCart,storeImageUrl} from '../src/data/store.js';
 const line={productId:'ben',name:'BEN shirt',colour:'Black',size:'M',quantity:2,price_kobo:700000};
+test('seed images use the current deployment while hosted admin images keep their URL',()=>{
+ assert.equal(storeImageUrl('https://www.believersequippingnetwork.org/images/camp-store/hscm-white-front.png'),'/images/camp-store/hscm-white-front.png');
+ const hosted='https://res.cloudinary.com/ben/image/upload/front.png';
+ assert.equal(storeImageUrl(hosted),hosted);
+ const unrelated='https://example.com/images/camp-store/front.png';
+ assert.equal(storeImageUrl(unrelated),unrelated);
+});
 test('one product can be ordered in several sizes and colours together',()=>{
  const items=[line,{...line,size:'XL'},{...line,colour:'White',size:'L',quantity:1}];
  const cart=items.reduce(addCartItem,[]);

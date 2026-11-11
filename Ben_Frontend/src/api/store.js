@@ -1,4 +1,5 @@
 import { getSupabase } from '../lib/supabase';
+import { storeImageUrl } from '../data/store';
 export const checkoutConfigured = Boolean(import.meta.env.VITE_STORE_API_URL);
 export async function loadCampCatalogue() {
  const db=getSupabase();
@@ -7,7 +8,16 @@ export async function loadCampCatalogue() {
   db.from('store_settings').select('checkout_open,collection_note').eq('id',true).single(),
  ]);
  if(products.error || settings.error)throw Error('The store is temporarily unavailable. Please try again shortly.');
- return {products:products.data,settings:settings.data};
+ return {
+  products: products.data.map(product => ({
+   ...product,
+   options: product.options.map(option => ({
+    ...option,
+    images: option.images.map(image => ({ ...image, url: storeImageUrl(image.url) })),
+   })),
+  })),
+  settings: settings.data,
+ };
 }
 export async function campStoreRequest(action,data) {
  const base=import.meta.env.VITE_STORE_API_URL;

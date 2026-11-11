@@ -1,4 +1,21 @@
 // Product names, prices, options and galleries come from the admin catalogue.
+import { SITE_URL } from '../config/site.js';
+
+// Seed images ship with the website. Resolve them on the current deployment,
+// rather than sending local/preview browsers to an older production release.
+export function storeImageUrl(value) {
+  if (!value) return value;
+  try {
+    const url = new URL(value, SITE_URL);
+    const site = new URL(SITE_URL);
+    if (url.hostname.replace(/^www\./, '') === site.hostname.replace(/^www\./, '') &&
+        url.pathname.startsWith('/images/camp-store/')) {
+      return `${url.pathname}${url.search}${url.hash}`;
+    }
+  } catch { /* Leave malformed URLs to the image component. */ }
+  return value;
+}
+
 export const MAX_QUANTITY = 100;
 export const formatNaira = (kobo) => new Intl.NumberFormat('en-NG', {style:'currency',currency:'NGN',maximumFractionDigits:2}).format(kobo/100);
 export const lineKey = ({productId,colour,size}) => JSON.stringify([productId,colour,size]);
